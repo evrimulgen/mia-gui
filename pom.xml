@@ -8,12 +8,18 @@
         <version>1.3.3.RELEASE</version>
         <relativePath/>
     </parent>
-
+    
     <groupId>nl.maastro.mia.gui</groupId>
     <artifactId>mia</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>mia</name>
+    
+    <scm>
+        <connection>scm:git:http://fs-bitbucket-01/scm/mia/gui.git</connection>
+        <url>http://fs-bitbucket-01/scm/mia/gui.git</url>
+        <tag>1.15.1</tag>
+    </scm>
 
     <repositories>
         <repository>
