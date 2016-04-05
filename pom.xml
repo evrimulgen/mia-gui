@@ -7,7 +7,14 @@
         <groupId>org.springframework.boot</groupId>
         <version>1.3.3.RELEASE</version>
         <relativePath/>
-    </parent>
+    </parent> 
+    
+<!--     <parent>
+        <groupId>nl.maastro</groupId>
+        <artifactId>maastro-parent-pom</artifactId>
+        <version>3.0.0</version>
+        <relativePath/>
+    </parent> -->
     
     <groupId>nl.maastro.mia.gui</groupId>
     <artifactId>mia</artifactId>
@@ -798,5 +805,21 @@
             </plugin>
         </plugins>
     </reporting>
+
+
+    
+  <!--  Define our organizartion default package repositories for our builds -->
+  <distributionManagement>
+    <repository>
+      <id>libs-release</id>
+      <name>release</name>
+      <url>http://fs-artifactory-01/artifactory/libs-release-local</url>
+    </repository>
+    <snapshotRepository>
+      <id>libs-snapshot</id>
+      <name>snapshots</name>
+      <url>http://fs-artifactory-01/artifactory/libs-snapshot-local</url>
+    </snapshotRepository>
+  </distributionManagement>
 
 </project>
