@@ -1,0 +1,15 @@
+version: '2'
+services:
+    mia-app:
+        image: mia
+        external_links:
+            - mia-mysql:mysql
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/mia?useUnicode=true&characterEncoding=utf8&useSSL=false
+        ports:
+            - 8080:8080
+    mia-mysql:
+        extends:
+            file: mysql.yml
+            service: mia-mysql
