@@ -7,7 +7,7 @@
     VolumeOfInterest.$inject = ['$resource'];
 
     function VolumeOfInterest ($resource) {
-        var resourceUrl =  'api/volume-of-interests/:id';
+        var resourceUrl = 'configservice/' + 'api/volume-of-interests/:id';
 
         return $resource(resourceUrl, {}, {
             'query': { method: 'GET', isArray: true},
