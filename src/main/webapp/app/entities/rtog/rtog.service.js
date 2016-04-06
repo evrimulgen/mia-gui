@@ -7,7 +7,7 @@
     Rtog.$inject = ['$resource'];
 
     function Rtog ($resource) {
-        var resourceUrl =  'api/rtogs/:id';
+        var resourceUrl =  'configservice/' + 'api/rtogs/:id';
 
         return $resource(resourceUrl, {}, {
             'query': { method: 'GET', isArray: true},

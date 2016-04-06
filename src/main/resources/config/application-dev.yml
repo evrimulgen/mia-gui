@@ -78,3 +78,9 @@ jhipster:
             host: localhost
             port: 5000
             queueSize: 512
+
+zuul:
+  routes:
+    resource:
+      path: /configservice/api/**
+      url: http://configservice/api
