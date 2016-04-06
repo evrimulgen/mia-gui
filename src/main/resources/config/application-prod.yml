@@ -17,6 +17,7 @@ spring:
             enabled: false
         livereload:
             enabled: false
+    # use h2?
     datasource:
         url: jdbc:mysql://localhost:3306/mia?useUnicode=true&characterEncoding=utf8&useSSL=false
         name:
