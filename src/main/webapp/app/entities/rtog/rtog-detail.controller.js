@@ -5,9 +5,9 @@
         .module('miaApp')
         .controller('RtogDetailController', RtogDetailController);
 
-    RtogDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'entity', 'Rtog', 'VolumeOfInterest'];
+    RtogDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'entity', 'Rtog'];
 
-    function RtogDetailController($scope, $rootScope, $stateParams, entity, Rtog, VolumeOfInterest) {
+    function RtogDetailController($scope, $rootScope, $stateParams, entity, Rtog) {
         var vm = this;
         vm.rtog = entity;
         vm.load = function (id) {

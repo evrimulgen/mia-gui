@@ -91,7 +91,7 @@
                     resolve: {
                         entity: function () {
                             return {
-                                rtogName: null,
+                                name: null,
                                 id: null
                             };
                         }

@@ -19,14 +19,14 @@
             <thead>
                 <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
                     <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="rtogName"><span translate="miaApp.rtog.rtogName">RtogName</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="Name"><span translate="miaApp.rtog.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="rtog in vm.rtogs track by rtog.id">
                     <td><a ui-sref="rtog-detail({id:rtog.id})">{{rtog.id}}</a></td>
-                    <td>{{rtog.rtogName}}</td>
+                    <td>{{rtog.name}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"
