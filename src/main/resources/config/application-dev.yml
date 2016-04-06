@@ -82,5 +82,5 @@ jhipster:
 zuul:
   routes:
     resource:
-      path: /configservice/api/**
-      url: http://configservice/api
+      path: /configservice/**
+      serviceId: configservice
