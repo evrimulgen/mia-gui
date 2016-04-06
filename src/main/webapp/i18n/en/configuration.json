@@ -1,10 +1,24 @@
 {
-    "configuration": {
-        "title": "Configuration",
-        "filter": "Filter (by prefix)",
-        "table": {
-            "prefix": "Prefix",
-            "properties": "Properties"
+    "miaApp": {
+        "configuration" : {
+            "home": {
+                "title": "Configurations",
+                "createLabel": "Create a new Configuration",
+                "createOrEditLabel": "Create or edit a Configuration",
+                "search": "Search for Configuration"
+            },
+            "created": "A new Configuration is created with identifier {{ param }}",
+            "updated": "A Configuration is updated with identifier {{ param }}",
+            "deleted": "A Configuration is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Configuration {{ id }}?"
+            },
+            "detail": {
+                "title": "Configuration"
+            },
+            "userId": "UserId",
+            "configurationIdentifier": "ConfigurationIdentifier",
+            "module": "Module"
         }
     }
 }

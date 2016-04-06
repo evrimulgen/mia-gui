@@ -1,0 +1,23 @@
+{
+    "miaApp": {
+        "rtog" : {
+            "home": {
+                "title": "Rtogs",
+                "createLabel": "Create a new Rtog",
+                "createOrEditLabel": "Create or edit a Rtog",
+                "search": "Search for Rtog"
+            },
+            "created": "A new Rtog is created with identifier {{ param }}",
+            "updated": "A Rtog is updated with identifier {{ param }}",
+            "deleted": "A Rtog is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Rtog {{ id }}?"
+            },
+            "detail": {
+                "title": "Rtog"
+            },
+            "rtogName": "RtogName",
+            "voi": "Voi"
+        }
+    }
+}

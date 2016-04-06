@@ -1,0 +1,49 @@
+
+entity Configuration {
+	id Long,
+	userId String,
+    configurationIdentifier String
+}
+
+entity VolumeOfInterest {
+	id Long,
+	name String,
+}
+
+entity Rtog {
+	id Long,
+    rtogName String
+}
+
+entity Computation {
+	id Long,
+	computationIdentifier String,
+	config String
+}
+
+entity ModuleConfiguration {
+	id Long,
+	moduleName String
+}
+
+enum Operation {
+    PLUS , MINUS
+}
+
+relationship ManyToMany {
+	Computation{voi} to VolumeOfInterest{computation}
+}
+
+relationship ManyToMany {
+	VolumeOfInterest{rtogs} to Rtog{voi}
+}
+
+relationship ManyToMany {
+	Configuration{module} to ModuleConfiguration{configuration}
+}
+
+relationship ManyToMany {
+	ModuleConfiguration{computation} to Computation{module}
+}
+
+paginate Configuration, ModuleConfiguration, Computation, VolumeOfInterest, Rtog with pagination

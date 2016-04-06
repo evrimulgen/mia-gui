@@ -1,0 +1,24 @@
+{
+    "miaApp": {
+        "moduleConfiguration" : {
+            "home": {
+                "title": "ModuleConfigurations",
+                "createLabel": "Create a new ModuleConfiguration",
+                "createOrEditLabel": "Create or edit a ModuleConfiguration",
+                "search": "Search for ModuleConfiguration"
+            },
+            "created": "A new ModuleConfiguration is created with identifier {{ param }}",
+            "updated": "A ModuleConfiguration is updated with identifier {{ param }}",
+            "deleted": "A ModuleConfiguration is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete ModuleConfiguration {{ id }}?"
+            },
+            "detail": {
+                "title": "ModuleConfiguration"
+            },
+            "moduleName": "ModuleName",
+            "computation": "Computation",
+            "configuration": "Configuration"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "miaApp": {
+        "computation" : {
+            "home": {
+                "title": "Computations",
+                "createLabel": "Create a new Computation",
+                "createOrEditLabel": "Create or edit a Computation",
+                "search": "Search for Computation"
+            },
+            "created": "A new Computation is created with identifier {{ param }}",
+            "updated": "A Computation is updated with identifier {{ param }}",
+            "deleted": "A Computation is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Computation {{ id }}?"
+            },
+            "detail": {
+                "title": "Computation"
+            },
+            "computationIdentifier": "ComputationIdentifier",
+            "config": "Config",
+            "voi": "Voi",
+            "module": "Module"
+        }
+    }
+}
