@@ -1,15 +1,16 @@
 {
     "home": {
-        "title": "Welcome, Java Hipster!",
-        "subtitle": "This is your homepage",
+        "title": "Welcome!",
+        "subtitle": "Medical Image Analysis Framework.",
         "logged": {
             "message": "You are logged in as user \"{{username}}\"."
         },
-        "question": "If you have any question on JHipster:",
+        "question": "If you have any question on MIA:",
         "link": {
+            "confluence":"MIA on MAASTRO Confluence",
             "homepage": "JHipster homepage",
             "stackoverflow": "JHipster on Stack Overflow",
-            "bugtracker": "JHipster bug tracker",
+            "bugtracker": "MIA bug tracker",
             "chat": "JHipster public chat room",
             "follow": "follow @java_hipster on Twitter"
         },
