@@ -5,9 +5,9 @@
         .module('miaApp')
         .controller('VolumeOfInterestController', VolumeOfInterestController);
 
-    VolumeOfInterestController.$inject = ['$scope', '$state', 'VolumeOfInterest', 'ParseLinks', 'AlertService', 'pagingParams', 'paginationConstants'];
+    VolumeOfInterestController.$inject = ['$scope', '$state', 'VolumeOfInterest', 'Rtog', 'ParseLinks', 'AlertService', 'pagingParams', 'paginationConstants'];
 
-    function VolumeOfInterestController ($scope, $state, VolumeOfInterest, ParseLinks, AlertService, pagingParams, paginationConstants) {
+    function VolumeOfInterestController ($scope, $state, VolumeOfInterest, Rtog, ParseLinks, AlertService, pagingParams, paginationConstants) {
         var vm = this;
         vm.loadAll = loadAll;
         vm.loadPage = loadPage;
