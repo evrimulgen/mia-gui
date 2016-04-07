@@ -10,8 +10,15 @@
         <hr>
         <dt><span translate="miaApp.volumeOfInterest.rtogs">rtogs</span></dt>
         <dd>
-            <span ng-repeat="rtogs in vm.volumeOfInterest.rtogss">
-                <a ui-sref="rtog-detail({id: {{rtogs.id}}})">{{rtogs.id}}</a>{{$last ? '' : ', '}}
+            <span>
+                {{vm.volumeOfInterest.rtogs}}
+            </span>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.volumeOfInterest.operators">operators</span></dt>
+        <dd>
+            <span>
+                {{vm.volumeOfInterest.operators}}
             </span>
         </dd>
         <hr>
