@@ -11,7 +11,7 @@
         var vm = this;
         vm.volumeOfInterest = entity;
         vm.rtogs = Rtog.query();
-        vm.selectedRtog = {};
+        vm.selectedRtog = "";
         vm.computations = Computation.query();
         vm.load = function(id) {
             VolumeOfInterest.get({id : id}, function(result) {
@@ -50,7 +50,7 @@
         };
         
         vm.addRtog = function(){
-        	if(vm.selectedRtog.name)
+        	if(vm.selectedRtog)
         	vm.volumeOfInterest.rtogs.push(vm.selectedRtog);
         }
         

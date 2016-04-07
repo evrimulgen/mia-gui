@@ -18,7 +18,7 @@
 
         <div class="form-group">
             <label translate="miaApp.volumeOfInterest.rtog" for="field_rtogs">rtog</label>
-            <select class="form-control" id="field_rtogs" name="rtogs" ng-model="vm.selectedRtog" ng-options="rtog as rtog.name for rtog in vm.rtogs track by rtog.id"></select>
+            <select class="form-control" id="field_rtogs" name="rtogs" ng-model="vm.selectedRtog" ng-options="rtog as rtog for rtog in vm.rtogs"></select>
         </div>
                
         
@@ -27,8 +27,8 @@
             <div class="panel-heading" translate="miaApp.volumeOfInterest.rtogs">Panel heading</div>
             <div class="well">
             <ul class="nav nav-pills" role="tablist" id="voirtogslist">
-                <li role="presentation" class="active" ng-repeat="selectedRtog in vm.volumeOfInterest.rtoglist track by $index">
-                <a>{{selectedRtog.name}} <span ng-click="vm.removeRtog($index)"> <span class="glyphicon glyphicon-remove"></span></span></a>
+                <li role="presentation" class="active" ng-repeat="rtog in vm.volumeOfInterest.rtogs track by $index">
+                <a>{{rtog}} <span ng-click="vm.removeRtog($index)"> <span class="glyphicon glyphicon-remove"></span></span></a>
                 </li>
             </ul>
             </div>
