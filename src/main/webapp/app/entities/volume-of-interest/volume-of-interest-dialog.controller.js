@@ -5,9 +5,9 @@
         .module('miaApp')
         .controller('VolumeOfInterestDialogController', VolumeOfInterestDialogController);
 
-    VolumeOfInterestDialogController.$inject = ['$scope', '$stateParams', '$uibModalInstance', 'entity', 'VolumeOfInterest', 'Rtog', 'Computation'];
+    VolumeOfInterestDialogController.$inject = ['$scope', '$stateParams', '$uibModalInstance', 'entity', 'VolumeOfInterest', 'Rtog', 'Computation','AlertService'];
 
-    function VolumeOfInterestDialogController ($scope, $stateParams, $uibModalInstance, entity, VolumeOfInterest, Rtog, Computation) {
+    function VolumeOfInterestDialogController ($scope, $stateParams, $uibModalInstance, entity, VolumeOfInterest, Rtog, Computation, AlertService) {
         var vm = this;
         vm.volumeOfInterest = entity;
         vm.rtogs = Rtog.query();
@@ -18,7 +18,13 @@
                 vm.volumeOfInterest = result;
             });
         };
-        vm.volumeOfInterest.rtoglist = [];
+      
+        
+        if(!vm.volumeOfInterest.rtogs)
+        	vm.volumeOfInterest.rtogs = [];
+        if(!vm.volumeOfInterest.operators)
+    		vm.volumeOfInterest.operators = [];
+        
         
         var onSaveSuccess = function (result) {
             $scope.$emit('miaApp:volumeOfInterestUpdate', result);
@@ -43,19 +49,41 @@
             $uibModalInstance.dismiss('cancel');
         };
         
-        vm.addRtog = function(rtog){
-        	console.log("add rtog:" + vm.selectedRtog.name);
-        	vm.volumeOfInterest.rtoglist.push(vm.selectedRtog);
-        	console.log("list:" + vm.volumeOfInterest.rtoglist);
+        vm.addRtog = function(){
+        	if(vm.selectedRtog.name)
+        	vm.volumeOfInterest.rtogs.push(vm.selectedRtog);
         }
         
         vm.removeRtog = function(index){
-        	console.log("remove rtog:" + index);
-        	//var index = vm.volumeOfInterest.rtoglist.findIndex(x => x.name==name);
         	if (index > -1) {
-        		vm.volumeOfInterest.rtoglist.splice(index, 1);
+        		vm.volumeOfInterest.rtogs.splice(index, 1);
         	}
-        	console.log("list:" + vm.volumeOfInterest.rtoglist);
         }
+        
+        vm.addOperationPlus = function(){   
+        	var rtogLength = vm.volumeOfInterest.rtogs.length-1;
+        	
+        	var operationLength = vm.volumeOfInterest.operators.length;
+        	if(rtogLength > operationLength){
+        		vm.volumeOfInterest.operators.push("PLUS");
+        	}
+        }
+        
+        vm.addOperationMinus = function(){
+        	if(vm.volumeOfInterest.rtogs.length-1 > vm.volumeOfInterest.operators.length){
+        	vm.volumeOfInterest.operators.push("MINUS");
+        	}
+        	else{
+        		AlertService.error("This is an error message, it is red");
+        	}
+        }
+        
+        vm.removeOperation = function(index){
+        	if (index > -1) {
+        		vm.volumeOfInterest.operators.splice(index, 1);
+        	}
+        }
+        
+        
     }
 })();

@@ -8,11 +8,7 @@
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
-        <div class="form-group">
-            <label for="id" translate="global.field.id">ID</label>
-            <input type="text" class="form-control" id="id" name="id"
-                    ng-model="vm.volumeOfInterest.id" readonly />
-        </div>
+   
         <div class="form-group">
             <label class="control-label" translate="miaApp.volumeOfInterest.name" for="field_name">Name</label>
             <input type="text" class="form-control" name="name" id="field_name"
@@ -24,21 +20,42 @@
             <label translate="miaApp.volumeOfInterest.rtog" for="field_rtogs">rtog</label>
             <select class="form-control" id="field_rtogs" name="rtogs" ng-model="vm.selectedRtog" ng-options="rtog as rtog.name for rtog in vm.rtogs track by rtog.id"></select>
         </div>
-        <button type="button" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary" ng-click="vm.addRtog()">
-            <span class="glyphicon glyphicon-plus"></span>&nbsp;<span translate="miaApp.volumeOfInterest.add">Add</span>
-        </button>
+               
+        
         <p>
         <div class="panel panel-default">
             <div class="panel-heading" translate="miaApp.volumeOfInterest.rtogs">Panel heading</div>
             <div class="well">
             <ul class="nav nav-pills" role="tablist" id="voirtogslist">
                 <li role="presentation" class="active" ng-repeat="selectedRtog in vm.volumeOfInterest.rtoglist track by $index">
-                <a>{{selectedRtog.name}} <span class="badge" ng-click="vm.removeRtog($index)"> <span class="glyphicon glyphicon-remove"></span></span></a>
+                <a>{{selectedRtog.name}} <span ng-click="vm.removeRtog($index)"> <span class="glyphicon glyphicon-remove"></span></span></a>
                 </li>
             </ul>
             </div>
         </div>
-        </p>
+      
+        <p>
+        <div class="panel panel-default">
+            <div class="panel-heading" translate="miaApp.volumeOfInterest.operators">Panel heading</div>
+            <div class="well">
+            <div>
+                <span role="presentation" class="active" ng-repeat="operator in vm.volumeOfInterest.operators track by $index">
+                <a ng-click="vm.removeOperation($index)">{{operator}}</a>
+                </span>
+            </div>
+            </div>
+        </div>
+      
+        <button type="button" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary" ng-click="vm.addRtog()">
+            <span class="glyphicon glyphicon-plus"></span>&nbsp;<span translate="miaApp.volumeOfInterest.add">Add</span>
+        </button>
+        <button type="button" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary" ng-click="vm.addOperationPlus()">
+            <span></span>&nbsp;+&nbsp;</span>
+        </button>
+        <button type="button" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary" ng-click="vm.addOperationMinus()">
+            <span></span>&nbsp;-&nbsp;</span>
+        </button>
+      
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
