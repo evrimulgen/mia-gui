@@ -39,8 +39,8 @@
             <div class="panel-heading" translate="miaApp.volumeOfInterest.operators">Panel heading</div>
             <div class="well">
             <div>
-                <span role="presentation" class="active" ng-repeat="operator in vm.volumeOfInterest.operators track by $index">
-                <a ng-click="vm.removeOperation($index)">{{operator}}</a>
+                <span ng-repeat="operator in vm.volumeOfInterest.operators track by $index"><font size="4">
+                <a ng-click="vm.removeOperation($index)"><span class="label label-primary">{{operator}}</span></a></font>
                 </span>
             </div>
             </div>
@@ -50,10 +50,10 @@
             <span class="glyphicon glyphicon-plus"></span>&nbsp;<span translate="miaApp.volumeOfInterest.add">Add</span>
         </button>
         <button type="button" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary" ng-click="vm.addOperationPlus()">
-            <span></span>&nbsp;+&nbsp;</span>
+            <span></span>&nbsp;plus&nbsp;</span>
         </button>
         <button type="button" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary" ng-click="vm.addOperationMinus()">
-            <span></span>&nbsp;-&nbsp;</span>
+            <span></span>&nbsp;minus&nbsp;</span>
         </button>
       
     </div>
