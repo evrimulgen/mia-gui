@@ -17,8 +17,10 @@
                 "title": "VolumeOfInterest"
             },
             "name": "Name",
+            "rtog": "Rtog",
             "rtogs": "Rtogs",
-            "computation": "Computation"
+            "computation": "Computation",
+            "add": "Add"
         }
     }
 }

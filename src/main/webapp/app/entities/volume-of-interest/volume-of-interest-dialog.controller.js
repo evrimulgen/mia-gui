@@ -11,13 +11,15 @@
         var vm = this;
         vm.volumeOfInterest = entity;
         vm.rtogs = Rtog.query();
+        vm.selectedRtog = {};
         vm.computations = Computation.query();
         vm.load = function(id) {
             VolumeOfInterest.get({id : id}, function(result) {
                 vm.volumeOfInterest = result;
             });
         };
-
+        vm.volumeOfInterest.rtoglist = [];
+        
         var onSaveSuccess = function (result) {
             $scope.$emit('miaApp:volumeOfInterestUpdate', result);
             $uibModalInstance.close(result);
@@ -40,5 +42,20 @@
         vm.clear = function() {
             $uibModalInstance.dismiss('cancel');
         };
+        
+        vm.addRtog = function(rtog){
+        	console.log("add rtog:" + vm.selectedRtog.name);
+        	vm.volumeOfInterest.rtoglist.push(vm.selectedRtog);
+        	console.log("list:" + vm.volumeOfInterest.rtoglist);
+        }
+        
+        vm.removeRtog = function(index){
+        	console.log("remove rtog:" + index);
+        	//var index = vm.volumeOfInterest.rtoglist.findIndex(x => x.name==name);
+        	if (index > -1) {
+        		vm.volumeOfInterest.rtoglist.splice(index, 1);
+        	}
+        	console.log("list:" + vm.volumeOfInterest.rtoglist);
+        }
     }
 })();
