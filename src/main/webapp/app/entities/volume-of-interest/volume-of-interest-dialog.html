@@ -26,11 +26,15 @@
         <div class="panel panel-default">
             <div class="panel-heading" translate="miaApp.volumeOfInterest.rtogs">Panel heading</div>
             <div class="well">
-            <ul class="nav nav-pills" role="tablist" id="voirtogslist">
-                <li role="presentation" class="active" ng-repeat="rtog in vm.volumeOfInterest.rtogs track by $index">
-                <a>{{rtog}} <span ng-click="vm.removeRtog($index)"> <span class="glyphicon glyphicon-remove"></span></span></a>
-                </li>
-            </ul>
+            <div class="rtogslist">
+                <span ng-repeat="rtog in vm.volumeOfInterest.rtogs track by $index" >
+                <span class="label label-info">
+                {{rtog}} 
+                <span class="glyphicon glyphicon-remove" ng-click="vm.removeRtog($index)"></span>
+                </span>
+                <span>&nbsp;</span>
+                </span>
+            </div>
             </div>
         </div>
       
@@ -38,9 +42,13 @@
         <div class="panel panel-default">
             <div class="panel-heading" translate="miaApp.volumeOfInterest.operators">Panel heading</div>
             <div class="well">
-            <div>
-                <span ng-repeat="operator in vm.volumeOfInterest.operators track by $index"><font size="4">
-                <a ng-click="vm.removeOperation($index)"><span class="label label-primary">{{operator}}</span></a></font>
+            <div class="operatorlist">
+                <span ng-repeat="operator in vm.volumeOfInterest.operators track by $index">
+                <span class="label label-info">
+                {{operator}} 
+                <span class="glyphicon glyphicon-remove" ng-click="vm.removeOperation($index)"></span>
+                </span>
+                <span>&nbsp;</span>
                 </span>
             </div>
             </div>
