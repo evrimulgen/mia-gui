@@ -17,8 +17,10 @@
                 "title": "Container"
             },
             "containerStatus": "ContainerStatus",
+            "patientId": "PatientId",
             "containerStatusDate": "ContainerStatusDate",
             "userId": "UserId",
+            "searchUserId": "UserId",
             "providerId": "ProviderId",
             "configurationId": "ConfigurationId",
             "calculationId": "CalculationId",

@@ -5,23 +5,36 @@
         .module('miaApp')
         .controller('ContainerController', ContainerController);
 
-    ContainerController.$inject = ['$scope', '$state', 'Container', 'ParseLinks', 'AlertService', 'pagingParams', 'paginationConstants'];
+    ContainerController.$inject = ['$scope', '$state', 'Container', 'ContainerSearch', 'ParseLinks', 'AlertService', 'pagingParams', 'paginationConstants'];
 
-    function ContainerController ($scope, $state, Container, ParseLinks, AlertService, pagingParams, paginationConstants) {
+    function ContainerController ($scope, $state, Container, ContainerSearch, ParseLinks, AlertService, pagingParams, paginationConstants) {
         var vm = this;
         vm.loadAll = loadAll;
         vm.loadPage = loadPage;
         vm.predicate = pagingParams.predicate;
         vm.reverse = pagingParams.ascending;
         vm.transition = transition;
+        vm.clear = clear;
+        vm.search = search;
+        vm.searchQuery = pagingParams.search;
+        vm.currentSearch = pagingParams.search;
         vm.loadAll();
 
         function loadAll () {
-            Container.query({
-                page: pagingParams.page - 1,
-                size: paginationConstants.itemsPerPage,
-                sort: sort()
-            }, onSuccess, onError);
+            if (pagingParams.search) {
+                ContainerSearch.query({
+                    query: pagingParams.search,
+                    page: pagingParams.page - 1,
+                    size: paginationConstants.itemsPerPage,
+                    sort: sort()
+                }, onSuccess, onError);
+            } else {
+                Container.query({
+                    page: pagingParams.page - 1,
+                    size: paginationConstants.itemsPerPage,
+                    sort: sort()
+                }, onSuccess, onError);
+            }
             function sort() {
                 var result = [vm.predicate + ',' + (vm.reverse ? 'asc' : 'desc')];
                 if (vm.predicate !== 'id') {
@@ -52,6 +65,27 @@
                 sort: vm.predicate + ',' + (vm.reverse ? 'asc' : 'desc'),
                 search: vm.currentSearch
             });
+        }
+
+        function search (searchQuery) {
+            if (!searchQuery){
+                return vm.clear();
+            }
+            vm.links = null;
+            vm.page = 1;
+            vm.predicate = 'id';
+            vm.reverse = true;
+            vm.currentSearch = searchQuery;
+            vm.transition();
+        }
+
+        function clear () {
+            vm.links = null;
+            vm.page = 1;
+            vm.predicate = 'id';
+            vm.reverse = true;
+            vm.currentSearch = null;
+            vm.transition();
         }
 
     }

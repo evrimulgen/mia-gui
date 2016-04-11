@@ -92,7 +92,7 @@
                         entity: function () {
                             return {
                                 containerStatus: null,
-                                //containerStatusDate: null,
+                                patientId: null,
                                 userId: null,
                                 providerId: null,
                                 configurationId: null,
