@@ -1,0 +1,30 @@
+{
+    "miaApp": {
+        "container" : {
+            "home": {
+                "title": "Containers",
+                "createLabel": "Create a new Container",
+                "createOrEditLabel": "Create or edit a Container",
+                "search": "Search for Container"
+            },
+            "created": "A new Container is created with identifier {{ param }}",
+            "updated": "A Container is updated with identifier {{ param }}",
+            "deleted": "A Container is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Container {{ id }}?"
+            },
+            "detail": {
+                "title": "Container"
+            },
+            "containerStatus": "ContainerStatus",
+            "containerStatusDate": "ContainerStatusDate",
+            "userId": "UserId",
+            "providerId": "ProviderId",
+            "configurationId": "ConfigurationId",
+            "calculationId": "CalculationId",
+            "configurationJson": "ConfigurationJson",
+            "dicomPackageEntity": "DicomPackageEntity",
+            "mappingRtogRoi": "MappingRtogRoi"
+        }
+    }
+}
