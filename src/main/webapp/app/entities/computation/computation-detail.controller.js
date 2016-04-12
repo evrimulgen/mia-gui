@@ -5,9 +5,9 @@
         .module('miaApp')
         .controller('ComputationDetailController', ComputationDetailController);
 
-    ComputationDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'entity', 'Computation', 'VolumeOfInterest', 'ModuleConfiguration'];
+    ComputationDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'entity', 'Computation', 'VolumeOfInterest'];
 
-    function ComputationDetailController($scope, $rootScope, $stateParams, entity, Computation, VolumeOfInterest, ModuleConfiguration) {
+    function ComputationDetailController($scope, $rootScope, $stateParams, entity, Computation, VolumeOfInterest) {
         var vm = this;
         vm.computation = entity;
         vm.load = function (id) {

@@ -8,16 +8,19 @@
             <span>{{vm.computation.computationIdentifier}}<span>
         </dd>
         <hr>
-        <dt><span translate="miaApp.computation.config">Config</dt></dt>
+        <dt><span translate="miaApp.computation.moduleName">ModuleName</dt></dt>
         <dd>
-            <span>{{vm.computation.config}}<span>
+            <span>{{vm.computation.moduleName}}<span>
         </dd>
         <hr>
-        <dt><span translate="miaApp.computation.voi">voi</span></dt>
+        <dt><span translate="miaApp.computation.computationConfiguration">ComputationConfiguration</dt></dt>
         <dd>
-            <span ng-repeat="voi in vm.computation.vois">
-                <a ui-sref="volume-of-interest-detail({id: {{voi.id}}})">{{voi.id}}</a>{{$last ? '' : ', '}}
-            </span>
+            <span>{{vm.computation.computationConfiguration}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.computation.volumeOfInterest">volumeOfInterest</span></dt>
+        <dd>
+            <a ui-sref="volume-of-interest-detail({id:vm.computation.volumeOfInterest.id})">{{vm.computation.volumeOfInterest.name}}</a>
         </dd>
         <hr>
     </dl>

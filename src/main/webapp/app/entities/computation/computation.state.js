@@ -92,7 +92,8 @@
                         entity: function () {
                             return {
                                 computationIdentifier: null,
-                                config: null,
+                                moduleName: null,
+                                computationConfiguration: null,
                                 id: null
                             };
                         }

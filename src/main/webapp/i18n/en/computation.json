@@ -17,9 +17,9 @@
                 "title": "Computation"
             },
             "computationIdentifier": "ComputationIdentifier",
-            "config": "Config",
-            "voi": "Voi",
-            "module": "Module"
+            "moduleName": "ModuleName",
+            "computationConfiguration": "ComputationConfiguration",
+            "volumeOfInterest": "VolumeOfInterest"
         }
     }
 }
