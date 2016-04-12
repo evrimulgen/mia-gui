@@ -50,7 +50,7 @@
         };
         
         vm.addRtog = function(){
-        	if(vm.selectedRtog.id && rtogs.indexOf(vm.selectedRtog)==-1)
+        	if(vm.selectedRtog)
         	vm.volumeOfInterest.rtogs.push(vm.selectedRtog);
         }
         
