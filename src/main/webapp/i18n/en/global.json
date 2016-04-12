@@ -88,6 +88,8 @@
             "cancel": "Cancel",
             "delete": "Delete",
             "edit": "Edit",
+            "configure": "Configure",
+            "map": "Map",
             "save": "Save",
             "view": "View"
         },

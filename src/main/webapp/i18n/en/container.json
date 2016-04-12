@@ -4,7 +4,7 @@
             "home": {
                 "title": "Containers",
                 "createLabel": "Create a new Container",
-                "createOrEditLabel": "Create or edit a Container",
+                "createOrEditLabel": "Edit the configuration for this container",
                 "search": "Search for Container"
             },
             "created": "A new Container is created with identifier {{ param }}",
@@ -20,7 +20,7 @@
             "patientId": "PatientId",
             "containerStatusDate": "ContainerStatusDate",
             "userId": "UserId",
-            "searchUserId": "UserId",
+            "searchId": "Search for ID or Status",
             "providerId": "ProviderId",
             "configurationId": "ConfigurationId",
             "calculationId": "CalculationId",

@@ -87,3 +87,6 @@ zuul:
     resource_container:
       path: /containerservice/**
       serviceId: containerservice
+    resource_manager:
+      path: /manager/**
+      serviceId: manager

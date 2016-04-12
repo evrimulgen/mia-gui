@@ -4,7 +4,7 @@
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                 ng-click="vm.clear()">&times;</button>
-        <h4 class="modal-title" id="myContainerLabel" translate="miaApp.container.home.createOrEditLabel">Create or edit a Container</h4>
+        <h4 class="modal-title" id="myContainerLabel" translate="miaApp.container.home.createOrEditLabel">Edit the configuration for this container</h4>
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
@@ -13,65 +13,6 @@
             <input type="text" class="form-control" id="id" name="id"
                     ng-model="vm.container.id" readonly />
         </div>
-        <div class="form-group">
-            <label class="control-label" translate="miaApp.container.containerStatus" for="field_containerStatus">ContainerStatus</label>
-            <input type="text" class="form-control" name="containerStatus" id="field_containerStatus"
-                    ng-model="vm.container.containerStatus"
-                     />
-        </div>
-        <!-- <div class="form-group">
-            <label class="control-label" translate="miaApp.container.containerStatusDate" for="field_containerStatusDate">ContainerStatusDate</label>
-                <div class="input-group">
-                    <input id="field_containerStatusDate" type="text" class="form-control" name="containerStatusDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.container.containerStatusDate" is-open="vm.datePickerOpenStatus.containerStatusDate"
-                    />
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('containerStatusDate')"><i class="glyphicon glyphicon-calendar"></i></button>
-                    </span>
-                </div>
-        </div> -->
-        <div class="form-group">
-            <label class="control-label" translate="miaApp.container.userId" for="field_userId">UserId</label>
-            <input type="text" class="form-control" name="userId" id="field_userId"
-                    ng-model="vm.container.userId"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="miaApp.container.providerId" for="field_providerId">ProviderId</label>
-            <input type="text" class="form-control" name="providerId" id="field_providerId"
-                    ng-model="vm.container.providerId"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="miaApp.container.configurationId" for="field_configurationId">ConfigurationId</label>
-            <input type="text" class="form-control" name="configurationId" id="field_configurationId"
-                    ng-model="vm.container.configurationId"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="miaApp.container.calculationId" for="field_calculationId">CalculationId</label>
-            <input type="text" class="form-control" name="calculationId" id="field_calculationId"
-                    ng-model="vm.container.calculationId"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="miaApp.container.configurationJson" for="field_configurationJson">ConfigurationJson</label>
-            <input type="text" class="form-control" name="configurationJson" id="field_configurationJson"
-                    ng-model="vm.container.configurationJson"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="miaApp.container.dicomPackageEntity" for="field_dicomPackageEntity">DicomPackageEntity</label>
-            <input type="text" class="form-control" name="dicomPackageEntity" id="field_dicomPackageEntity"
-                    ng-model="vm.container.dicomPackageEntity"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="miaApp.container.mappingRtogRoi" for="field_mappingRtogRoi">MappingRtogRoi</label>
-            <input type="text" class="form-control" name="mappingRtogRoi" id="field_mappingRtogRoi"
-                    ng-model="vm.container.mappingRtogRoi"
-                     />
-        </div>
-
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
