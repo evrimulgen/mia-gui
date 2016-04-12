@@ -18,7 +18,9 @@
             },
             "userId": "UserId",
             "configurationIdentifier": "ConfigurationIdentifier",
-            "computation": "Computation"
+            "computation": "Computation",
+            "computations": "Computations",
+            "add":"Add"
         }
     }
 }

@@ -11,11 +11,16 @@
         var vm = this;
         vm.configuration = entity;
         vm.computations = Computation.query();
+        vm.selectedComputation = {};
+        console.log(vm.computations)
         vm.load = function(id) {
             Configuration.get({id : id}, function(result) {
                 vm.configuration = result;
             });
         };
+        
+        if(!vm.configuration.computations)
+        	vm.configuration.computations = [];
 
         var onSaveSuccess = function (result) {
             $scope.$emit('miaApp:configurationUpdate', result);
@@ -39,5 +44,16 @@
         vm.clear = function() {
             $uibModalInstance.dismiss('cancel');
         };
+        
+        vm.addComputation = function(){
+        	if(vm.selectedComputation)
+        		vm.configuration.computations.push(vm.selectedComputation);
+        }
+        
+        vm.removeComputation= function(index){
+        	if (index > -1) {
+        		vm.configuration.computations.splice(index, 1);
+        	}
+        }
     }
 })();
