@@ -39,22 +39,31 @@
             <label translate="miaApp.configuration.computation" for="field_rtogs">Computation</label>
             <select class="form-control" id="field_computation" name="computation" ng-model="vm.selectedComputation"ng-options="computation as computation.computationIdentifier for computation in vm.computations"></select>
             </div>
-            <div>
-                <span ng-repeat="computation in vm.configuration.computations track by $index">
-                <span class="label label-info">
-                {{computation.computationIdentifier}} 
-                <span class="glyphicon glyphicon-remove" ng-click="vm.removeComputation($index)"></span>
-                </span>
-                <span>&nbsp;</span>
-                </span>
-                </div>
-                <hr>
-                <button type="button" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary" ng-click="vm.addComputation()">
+
+
+
+					<div ng-sortable="{animation:150}"  class="operatorlist">
+						<span ng-repeat="computation in vm.configuration.computations track by $index">
+							
+							<span class="label label-info">
+							{{computation.computationIdentifier}}
+							<span>&nbsp;</span>
+							<span class="glyphicon glyphicon-remove"
+							ng-click="vm.removeComputation($index)"></span>
+						</span>
+						<span>&nbsp;</span>
+						</span>
+						
+					</div>
+
+					<hr>
+                <button type="button" ng-disabled="editForm.$invalid || isSaving || vm.selectedComputation == {}" class="btn btn-primary" ng-click="vm.addComputation()">
                 <span class="glyphicon glyphicon-plus"></span>&nbsp;<span translate="miaApp.configuration.add">Add</span>
                 </button>
             </div>
             </div>
-        </div>
+
+    </div>    
 
     </div>
     <div class="modal-footer">

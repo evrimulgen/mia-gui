@@ -10,6 +10,7 @@
                 "volumeOfInterest": "VolumeOfInterest",
                 "rtog": "Rtog",
                 "computation": "Computation",
+                "configuration":"Configuration",
                 "moduleConfiguration": "ModuleConfiguration",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
