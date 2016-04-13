@@ -5,13 +5,15 @@
         .module('miaApp')
         .controller('ConfigurationDialogController', ConfigurationDialogController);
 
-    ConfigurationDialogController.$inject = ['$scope', '$stateParams', '$uibModalInstance', 'entity', 'Configuration', 'Computation'];
+    ConfigurationDialogController.$inject = ['$scope', '$stateParams', '$uibModalInstance', 'entity', 'Configuration', 'Computation', 'Principal'];
 
-    function ConfigurationDialogController ($scope, $stateParams, $uibModalInstance, entity, Configuration, Computation) {
+    function ConfigurationDialogController ($scope, $stateParams, $uibModalInstance, entity, Configuration, Computation, Principal) {
         var vm = this;
         vm.configuration = entity;
         vm.computations = Computation.query();
         vm.selectedComputation = {};
+        vm.account = null;
+
         console.log(vm.computations)
         vm.load = function(id) {
             Configuration.get({id : id}, function(result) {
@@ -37,6 +39,7 @@
             if (vm.configuration.id !== null) {
                 Configuration.update(vm.configuration, onSaveSuccess, onSaveError);
             } else {
+            	vm.configuration.userId = vm.account.login;
                 Configuration.save(vm.configuration, onSaveSuccess, onSaveError);
             }
         };
@@ -55,6 +58,14 @@
         	if (index > -1) {
         		vm.configuration.computations.splice(index, 1);
         	}
+        }
+        
+        getAccount();
+
+        function getAccount() {
+            Principal.identity().then(function(account) {
+                vm.account = account;
+            });
         }
         
     }
