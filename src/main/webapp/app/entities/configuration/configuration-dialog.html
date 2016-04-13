@@ -42,8 +42,8 @@
 
 
 
-					<div ng-sortable="{animation:150}"  class="operatorlist">
-						<span ng-repeat="computation in vm.configuration.computations track by $index">
+					<ul ng-sortable="{animation:150}"  class="operatorlist">
+						<li ng-repeat="computation in vm.configuration.computations track by $index">
 							
 							<span class="label label-info">
 							{{computation.computationIdentifier}}
@@ -52,9 +52,9 @@
 							ng-click="vm.removeComputation($index)"></span>
 						</span>
 						<span>&nbsp;</span>
-						</span>
+						</li>
 						
-					</div>
+					</ul>
 
 					<hr>
                 <button type="button" ng-disabled="editForm.$invalid || isSaving || vm.selectedComputation == {}" class="btn btn-primary" ng-click="vm.addComputation()">
