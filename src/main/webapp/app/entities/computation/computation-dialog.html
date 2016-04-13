@@ -1,5 +1,5 @@
 
-<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
 
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
@@ -17,18 +17,32 @@
             <label class="control-label" translate="miaApp.computation.computationIdentifier" for="field_computationIdentifier">ComputationIdentifier</label>
             <input type="text" class="form-control" name="computationIdentifier" id="field_computationIdentifier"
                     ng-model="vm.computation.computationIdentifier"
+                    required />
+            <div ng-show="editForm.computationIdentifier.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.computationIdentifier.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="miaApp.computation.moduleName" for="field_moduleName">ModuleName</label>
+            <input type="text" class="form-control" name="moduleName" id="field_moduleName"
+                    ng-model="vm.computation.moduleName"
                      />
         </div>
         <div class="form-group">
-            <label class="control-label" translate="miaApp.computation.config" for="field_config">Config</label>
-            <input type="text" class="form-control" name="config" id="field_config"
-                    ng-model="vm.computation.config"
+            <label class="control-label" translate="miaApp.computation.computationConfiguration" for="field_computationConfiguration">ComputationConfiguration</label>
+            <input type="text" class="form-control" name="computationConfiguration" id="field_computationConfiguration"
+                    ng-model="vm.computation.computationConfiguration"
                      />
         </div>
 
         <div class="form-group">
-            <label translate="miaApp.computation.voi" for="field_voi">voi</label>
-            <select class="form-control" id="field_voi" multiple name="voi" ng-model="vm.computation.vois" ng-options="volumeOfInterest as volumeOfInterest.id for volumeOfInterest in vm.volumeofinterests track by volumeOfInterest.id"></select>
+            <label translate="miaApp.computation.volumeOfInterest" for="field_volumeOfInterest">volumeOfInterest</label>
+            <select class="form-control" id="field_volumeOfInterest" name="volumeOfInterest" ng-model="vm.computation.volumeOfInterest" ng-options="volumeOfInterest as volumeOfInterest.name for volumeOfInterest in vm.volumeofinterests track by volumeOfInterest.id">
+                <option value=""></option>
+            </select>
         </div>
     </div>
     <div class="modal-footer">

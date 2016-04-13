@@ -5,13 +5,12 @@
         .module('miaApp')
         .controller('ComputationDialogController', ComputationDialogController);
 
-    ComputationDialogController.$inject = ['$scope', '$stateParams', '$uibModalInstance', 'entity', 'Computation', 'VolumeOfInterest', 'ModuleConfiguration'];
+    ComputationDialogController.$inject = ['$scope', '$stateParams', '$uibModalInstance', 'entity', 'Computation', 'VolumeOfInterest'];
 
-    function ComputationDialogController ($scope, $stateParams, $uibModalInstance, entity, Computation, VolumeOfInterest, ModuleConfiguration) {
+    function ComputationDialogController ($scope, $stateParams, $uibModalInstance, entity, Computation, VolumeOfInterest) {
         var vm = this;
         vm.computation = entity;
         vm.volumeofinterests = VolumeOfInterest.query();
-        vm.moduleconfigurations = ModuleConfiguration.query();
         vm.load = function(id) {
             Computation.get({id : id}, function(result) {
                 vm.computation = result;

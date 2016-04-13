@@ -5,9 +5,9 @@
         .module('miaApp')
         .controller('ConfigurationDetailController', ConfigurationDetailController);
 
-    ConfigurationDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'entity', 'Configuration', 'ModuleConfiguration'];
+    ConfigurationDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'entity', 'Configuration', 'Computation'];
 
-    function ConfigurationDetailController($scope, $rootScope, $stateParams, entity, Configuration, ModuleConfiguration) {
+    function ConfigurationDetailController($scope, $rootScope, $stateParams, entity, Configuration, Computation) {
         var vm = this;
         vm.configuration = entity;
         vm.load = function (id) {

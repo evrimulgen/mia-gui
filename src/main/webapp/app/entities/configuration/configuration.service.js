@@ -7,7 +7,7 @@
     Configuration.$inject = ['$resource'];
 
     function Configuration ($resource) {
-        var resourceUrl =  'api/configurations/:id';
+        var resourceUrl =  'configservice/' + 'api/configurations/:id';
 
         return $resource(resourceUrl, {}, {
             'query': { method: 'GET', isArray: true},

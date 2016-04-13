@@ -5,17 +5,22 @@
         .module('miaApp')
         .controller('ConfigurationDialogController', ConfigurationDialogController);
 
-    ConfigurationDialogController.$inject = ['$scope', '$stateParams', '$uibModalInstance', 'entity', 'Configuration', 'ModuleConfiguration'];
+    ConfigurationDialogController.$inject = ['$scope', '$stateParams', '$uibModalInstance', 'entity', 'Configuration', 'Computation'];
 
-    function ConfigurationDialogController ($scope, $stateParams, $uibModalInstance, entity, Configuration, ModuleConfiguration) {
+    function ConfigurationDialogController ($scope, $stateParams, $uibModalInstance, entity, Configuration, Computation) {
         var vm = this;
         vm.configuration = entity;
-        vm.moduleconfigurations = ModuleConfiguration.query();
+        vm.computations = Computation.query();
+        vm.selectedComputation = {};
+        console.log(vm.computations)
         vm.load = function(id) {
             Configuration.get({id : id}, function(result) {
                 vm.configuration = result;
             });
         };
+        
+        if(!vm.configuration.computations)
+        	vm.configuration.computations = [];
 
         var onSaveSuccess = function (result) {
             $scope.$emit('miaApp:configurationUpdate', result);
@@ -39,5 +44,18 @@
         vm.clear = function() {
             $uibModalInstance.dismiss('cancel');
         };
+        
+        vm.addComputation = function(){
+        	if(vm.selectedComputation.id && vm.configuration.computations.indexOf(vm.selectedComputation)==-1){
+        		vm.configuration.computations.push(vm.selectedComputation);
+        	}
+        }
+        
+        vm.removeComputation= function(index){
+        	if (index > -1) {
+        		vm.configuration.computations.splice(index, 1);
+        	}
+        }
+        
     }
 })();

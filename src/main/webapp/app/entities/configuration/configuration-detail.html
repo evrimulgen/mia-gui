@@ -13,13 +13,6 @@
             <span>{{vm.configuration.configurationIdentifier}}<span>
         </dd>
         <hr>
-        <dt><span translate="miaApp.configuration.module">module</span></dt>
-        <dd>
-            <span ng-repeat="module in vm.configuration.modules">
-                <a ui-sref="module-configuration-detail({id: {{module.id}}})">{{module.id}}</a>{{$last ? '' : ', '}}
-            </span>
-        </dd>
-        <hr>
     </dl>
 
     <button type="submit"

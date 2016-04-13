@@ -2,23 +2,25 @@
     "miaApp": {
         "configuration" : {
             "home": {
-                "title": "Configurations",
-                "createLabel": "Create a new Configuration",
-                "createOrEditLabel": "Create or edit a Configuration",
+                "title": "TaskList",
+                "createLabel": "Create a new TaskList",
+                "createOrEditLabel": "Create or edit a TaskList",
                 "search": "Search for Configuration"
             },
-            "created": "A new Configuration is created with identifier {{ param }}",
-            "updated": "A Configuration is updated with identifier {{ param }}",
-            "deleted": "A Configuration is deleted with identifier {{ param }}",
+            "created": "A new TaskList is created with identifier {{ param }}",
+            "updated": "A TaskList is updated with identifier {{ param }}",
+            "deleted": "A TaskList is deleted with identifier {{ param }}",
             "delete": {
-                "question": "Are you sure you want to delete Configuration {{ id }}?"
+                "question": "Are you sure you want to delete TaskList {{ id }}?"
             },
             "detail": {
                 "title": "Configuration"
             },
             "userId": "UserId",
             "configurationIdentifier": "ConfigurationIdentifier",
-            "module": "Module"
+            "computation": "Computation",
+            "computations": "Computations",
+            "add":"Add"
         }
     }
 }

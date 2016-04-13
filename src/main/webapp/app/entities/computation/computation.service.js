@@ -7,7 +7,7 @@
     Computation.$inject = ['$resource'];
 
     function Computation ($resource) {
-        var resourceUrl =  'api/computations/:id';
+        var resourceUrl =  'configservice/' +'api/computations/:id';
 
         return $resource(resourceUrl, {}, {
             'query': { method: 'GET', isArray: true},
