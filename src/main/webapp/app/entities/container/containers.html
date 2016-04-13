@@ -1,0 +1,91 @@
+<div>
+    <h2 translate="miaApp.container.home.title">Containers</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'miaApp.container.searchId' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="containerStatus"><span translate="miaApp.container.containerStatus">ContainerStatus</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="patientId"><span translate="miaApp.container.patientId">PatientId</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="userId"><span translate="miaApp.container.userId">UserId</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="providerId"><span translate="miaApp.container.providerId">ProviderId</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="configurationId"><span translate="miaApp.container.configurationId">ConfigurationId</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="calculationId"><span translate="miaApp.container.calculationId">CalculationId</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="container in vm.containers track by container.id">
+                    <td><a ui-sref="container-detail({id:container.id})">{{container.id}}</a></td>
+                    <td>{{container.containerStatus}}</td>
+                    <td>{{container.patientId}}</td>
+                    <td>{{container.userId}}</td>
+                    <td>{{container.providerId}}</td>
+                    <td>{{container.configurationId}}</td>
+                    <td>{{container.calculationId}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="container.edit({id:container.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.configure"></span>
+                            </button>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <a ng-href="manager/api/map/container/{{container.id}}" class="btn btn-warning btn-sm">
+                                <span class=" glyphicon glyphicon-new-window"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.map"></span>
+                            </a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit" 
+                                    ui-sref="container-detail({id:container.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit" 
+                                    ui-sref="container.delete({id:container.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

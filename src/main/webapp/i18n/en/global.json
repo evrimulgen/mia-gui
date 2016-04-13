@@ -12,6 +12,7 @@
                 "computation": "Computation",
                 "configuration":"TaskList",
                 "moduleConfiguration": "ModuleConfiguration",
+                "container": "Container",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
@@ -88,6 +89,8 @@
             "cancel": "Cancel",
             "delete": "Delete",
             "edit": "Edit",
+            "configure": "Configure",
+            "map": "Map",
             "save": "Save",
             "view": "View"
         },
