@@ -19,7 +19,15 @@
             "computationIdentifier": "ComputationIdentifier (Result Label)",
             "moduleName": "ModuleName",
             "computationConfiguration": "ComputationConfiguration",
-            "volumeOfInterest": "VolumeOfInterest"
+            "volumeOfInterest": "VolumeOfInterest",
+            "operation":"Operation",
+            "dvhvolumecomputation": {
+                "moduleOperations": "Module Operation",
+                "absoluteOutput": "Absolute Output",
+                "limit": "Limit",
+                "volumeType": "Volume Type",
+                "targetPrescriptionDose": "Target Prescription Dose"
+            }
         }
     }
 }
