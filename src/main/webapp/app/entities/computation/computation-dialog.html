@@ -52,11 +52,11 @@
 							name="doseoperatation"
 							ng-model="vm.configuredComputation.operation"
 							ng-options="operation as operation for operation in vm.modules.DoseComputation.moduleOperations"
-							required>
+							required >
 							<option value=""></option>
 						</select>
 						<p class="help-block"
-                        ng-show="editForm.field_doseoperation.$error.required" translate="entity.validation.required">
+                        ng-show="editForm.doseoperatation.$error.required" translate="entity.validation.required">
                         This field is required.
                         </p>
 					</div>
@@ -77,7 +77,7 @@
                             <option value=""></option>
                         </select>
                         <p class="help-block"
-                        ng-show="editForm.field_absoluteOutput.$error.required" translate="entity.validation.required">
+                        ng-show="editForm.absoluteOutput.$error.required" translate="entity.validation.required">
                         This field is required.
                         </p>
                     </div>
@@ -93,7 +93,7 @@
                             placeholder="{{ 'miaApp.computation.binsize' | translate }}" 
                             required />
                         <p class="help-block"
-                        ng-show="editForm.field_binsize.$error.required" translate="entity.validation.required">
+                        ng-show="editForm.binsize.$error.required" translate="entity.validation.required">
                         This field is required.
                         </p>
                     </div>
@@ -115,7 +115,7 @@
                             <option value=""></option>
                         </select>
                         <p class="help-block"
-                        ng-show="editForm.field_absoluteOutput.$error.required" translate="entity.validation.required">
+                        ng-show="editForm.absoluteOutput.$error.required" translate="entity.validation.required">
                         This field is required.
                         </p>
                     </div>
@@ -131,7 +131,7 @@
                             placeholder="{{ 'miaApp.computation.integer' | translate }}" 
                             required />
                         <p class="help-block"
-                        ng-show="editForm.field_limit.$error.required" translate="entity.validation.required">
+                        ng-show="editForm.limit.$error.required" translate="entity.validation.required">
                         This field is required.
                         </p>
                     </div>
@@ -171,7 +171,7 @@
                             <option value=""></option>
                         </select>
                         <p class="help-block"
-                        ng-show="editForm.volumeType.$error.required" translate="entity.validation.required">
+                        ng-show="editForm.absoluteOutput.$error.required" translate="entity.validation.required">
                         This field is required.
                         </p>
                     </div>
@@ -186,6 +186,10 @@
                             ng-model="vm.configuredComputation.limit"
                             placeholder="{{ 'miaApp.computation.integer' | translate }}" 
                             required />
+                        <p class="help-block"
+                        ng-show="editForm.limit.$error.required" translate="entity.validation.required">
+                        This field is required.
+                        </p>
                     </div>
                                           
                 </div>
