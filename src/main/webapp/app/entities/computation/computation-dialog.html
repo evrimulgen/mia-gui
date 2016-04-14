@@ -22,11 +22,7 @@
             </div>
         </div>
         
-        
-        
-        <div class="well">
-                   
-           <div class="form-group">
+         <div class="form-group">
                 <label translate="miaApp.computation.moduleName" for="field_volumeOfInterest">volumeOfInterest</label>
                 <select class="form-control" id="field_volumeOfInterest" name="moduleName" ng-model="vm.computation.moduleName" ng-options="module.moduleName as module.moduleName for module in vm.modules"
                 required>
@@ -36,9 +32,9 @@
                         ng-show="editForm.field_doseoperation.$error.required" translate="entity.validation.required">
                         This field is required.
                 </p>
-            </div>
-           
-           <hr>
+       </div>
+        
+        <div class="well">
             	        
 	         <div ng-switch="vm.selectedModuleName()">
 	         
