@@ -11,13 +11,23 @@
         var vm = this;
         vm.computation = entity;
         vm.volumeofinterests = VolumeOfInterest.query();
-        vm.selectedModule = {};
+
+        var jsonconfigstring = entity.computationConfiguration;
+        
+        entity.$promise.then(function(data){
+        	console.log(data.computationConfiguration);
+        	vm.configuredComputation = JSON.parse(data.computationConfiguration);
+        });
+        
+/*        console.log(entity);
+        console.log(vm.computation.computationConfiguration)*/
+        //vm.configuredComputation = JSON.parse(jsonconfigstring)
+        
+        
         vm.load = function(id) {
             Computation.get({id : id}, function(result) {
                 vm.computation = result;
             });
-        	console.log("load")
-        	entity.computationConfiguration = JSON.parse(vm.computation.computationConfiguration)
         };
 
         var onSaveSuccess = function (result) {
@@ -33,7 +43,9 @@
         vm.save = function () {
             vm.isSaving = true;
             vm.computation.computationConfiguration = JSON.stringify(vm.configuredComputation);
-
+            
+            console.log(vm.computation);
+            
             if (vm.computation.id !== null) {
                 Computation.update(vm.computation, onSaveSuccess, onSaveError);
             } else {
@@ -46,24 +58,25 @@
         };
         
         vm.selectedModuleName = function(){
-        	return vm.selectedModule.moduleName;
+        	return vm.computation.moduleName;
         }
         
-        vm.modules = [
-        {
-        	moduleName: "DoseComputation",
-        	moduleOperations: ["min","mean","max"]
-        },
-        {
-        	moduleName: "DvhVolumeComputation",
-        	moduleOperations: ["min","mean","max"],
-        	absoluteOutput: ["true","false"],
-        	limit: "integer",
-        	volumeType: ["%", "cc"],
-        	targetPrescriptionDose: "NaN"
-        },
-        
-        ];
+        vm.modules = {
+	        DoseComputation:
+	        {
+	        	moduleName: "DoseComputation",
+	        	moduleOperations: ["min","mean","max"]
+	        },
+	        DvhVolumeComputation:
+	        {
+	        	moduleName: "DvhVolumeComputation",
+	        	moduleOperations: ["min","mean","max"],
+	        	absoluteOutput: ["true","false"],
+	        	limit: "integer",
+	        	volumeType: ["%", "cc"],
+	        	targetPrescriptionDose: "NaN"
+	        }
+        };
         
     }
 })();

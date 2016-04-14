@@ -28,21 +28,13 @@
                    
            <div class="form-group">
                 <label translate="miaApp.computation.moduleName" for="field_volumeOfInterest">volumeOfInterest</label>
-                <select class="form-control" id="field_volumeOfInterest" name="moduleName" ng-model="vm.selectedModule" ng-options="module as module.moduleName for module in vm.modules">
+                <select class="form-control" id="field_volumeOfInterest" name="moduleName" ng-model="vm.computation.moduleName" ng-options="module.moduleName as module.moduleName for module in vm.modules">
                     <option value=""></option>
                 </select>
             </div>
            
            <hr>
-        
-        
-	        <!-- <div class="form-group">
-	            <label class="control-label" translate="miaApp.computation.computationConfiguration" for="field_computationConfiguration">ComputationConfiguration</label>
-	            <input type="text" class="form-control" name="computationConfiguration" id="field_computationConfiguration"
-	                    ng-model="vm.computation.computationConfiguration"
-	                     />
-	        </div> -->
-	        
+            	        
 	         <div ng-switch="vm.selectedModuleName()">
 				<div ng-switch-when="DoseComputation">
 					
@@ -53,7 +45,7 @@
 							id="field_doseoperation"
 							name="doseoperatation"
 							ng-model="vm.configuredComputation.operation"
-							ng-options="operation as operation for operation in vm.selectedModule.moduleOperations">
+							ng-options="operation as operation for operation in vm.modules.DoseComputation.moduleOperations">
 							<option value=""></option>
 						</select>
 					</div>
@@ -69,7 +61,7 @@
                             id="field_dvhvolumeoperation"
                             name="dvhvolumeoperation"
                             ng-model="vm.configuredComputation.operation"
-                            ng-options="operation as operation for operation in vm.selectedModule.moduleOperations">
+                            ng-options="operation as operation for operation in vm.modules.DvhVolumeComputation.moduleOperations">
                             <option value=""></option>
                         </select>
                     </div>
@@ -81,7 +73,7 @@
                             id="field_absoluteOutput"
                             name="absoluteOutput"
                             ng-model="vm.configuredComputation.absoluteOutput"
-                            ng-options="value as value for value in vm.selectedModule.absoluteOutput">
+                            ng-options="value as value for value in vm.modules.DvhVolumeComputation.absoluteOutput">
                             <option value=""></option>
                         </select>
                     </div>
