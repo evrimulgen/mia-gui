@@ -28,14 +28,20 @@
                    
            <div class="form-group">
                 <label translate="miaApp.computation.moduleName" for="field_volumeOfInterest">volumeOfInterest</label>
-                <select class="form-control" id="field_volumeOfInterest" name="moduleName" ng-model="vm.computation.moduleName" ng-options="module.moduleName as module.moduleName for module in vm.modules">
+                <select class="form-control" id="field_volumeOfInterest" name="moduleName" ng-model="vm.computation.moduleName" ng-options="module.moduleName as module.moduleName for module in vm.modules"
+                required>
                     <option value=""></option>
                 </select>
+                <p class="help-block"
+                        ng-show="editForm.field_doseoperation.$error.required" translate="entity.validation.required">
+                        This field is required.
+                </p>
             </div>
            
            <hr>
             	        
 	         <div ng-switch="vm.selectedModuleName()">
+	         
 				<div ng-switch-when="DoseComputation">
 					
 					<div class="form-group">
@@ -45,41 +51,144 @@
 							id="field_doseoperation"
 							name="doseoperatation"
 							ng-model="vm.configuredComputation.operation"
-							ng-options="operation as operation for operation in vm.modules.DoseComputation.moduleOperations">
+							ng-options="operation as operation for operation in vm.modules.DoseComputation.moduleOperations"
+							required>
 							<option value=""></option>
 						</select>
+						<p class="help-block"
+                        ng-show="editForm.field_doseoperation.$error.required" translate="entity.validation.required">
+                        This field is required.
+                        </p>
 					</div>
 
 				</div>
-
-                <div ng-switch-when="DvhVolumeComputation">
-                    
-                    <div class="form-group">
-                        <label translate="miaApp.computation.dvhvolumecomputation.moduleOperations" for="field_dvhvolumeoperation">dvhvolumeoperation</label> 
-                        <select
-                            class="form-control"
-                            id="field_dvhvolumeoperation"
-                            name="dvhvolumeoperation"
-                            ng-model="vm.configuredComputation.operation"
-                            ng-options="operation as operation for operation in vm.modules.DvhVolumeComputation.moduleOperations">
-                            <option value=""></option>
-                        </select>
-                    </div>
+				
+				<div ng-switch-when="DvhCurveComputation">
                     
                      <div class="form-group">
-                        <label translate="miaApp.computation.dvhvolumecomputation.absoluteOutput" for="field_absoluteOutput">absoluteOutput</label> 
+                        <label translate="miaApp.computation.absoluteOutput" for="field_absoluteOutput">absoluteOutput</label> 
+                        <select
+                            class="form-control"
+                            id="field_absoluteOutput"
+                            name="absoluteOutput"
+                            ng-model="vm.configuredComputation.absolute"
+                            ng-options="value as value for value in vm.modules.DvhCurveComputation.absolute"
+                            required >
+                            <option value=""></option>
+                        </select>
+                        <p class="help-block"
+                        ng-show="editForm.field_absoluteOutput.$error.required" translate="entity.validation.required">
+                        This field is required.
+                        </p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label translate="miaApp.computation.binsize" for="field_binsize">binsize</label> 
+                        <input
+                            type="number"
+                            class="form-control"
+                            id="field_limit"
+                            name="binsize"
+                            ng-model="vm.configuredComputation.binsize"
+                            placeholder="{{ 'miaApp.computation.binsize' | translate }}" 
+                            required />
+                        <p class="help-block"
+                        ng-show="editForm.field_binsize.$error.required" translate="entity.validation.required">
+                        This field is required.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div ng-switch-when="DvhDoseComputation">
+                                        
+                    <div class="form-group">
+                        <label translate="miaApp.computation.absoluteOutput" for="field_absoluteOutput">absoluteOutput</label> 
                         <select
                             class="form-control"
                             id="field_absoluteOutput"
                             name="absoluteOutput"
                             ng-model="vm.configuredComputation.absoluteOutput"
-                            ng-options="value as value for value in vm.modules.DvhVolumeComputation.absoluteOutput">
+                            ng-options="value as value for value in vm.modules.DvhVolumeComputation.absoluteOutput"
+                            required >
                             <option value=""></option>
                         </select>
+                        <p class="help-block"
+                        ng-show="editForm.field_absoluteOutput.$error.required" translate="entity.validation.required">
+                        This field is required.
+                        </p>
                     </div>
-
+                    
+					<div class="form-group">
+                        <label translate="miaApp.computation.limit" for="field_limit">limit</label> 
+                        <input
+                            type="number"
+                            class="form-control"
+                            id="field_limit"
+                            name="limit"
+                            ng-model="vm.configuredComputation.limit"
+                            placeholder="{{ 'miaApp.computation.integer' | translate }}" 
+                            required />
+                        <p class="help-block"
+                        ng-show="editForm.field_limit.$error.required" translate="entity.validation.required">
+                        This field is required.
+                        </p>
+                    </div>
+                       
+                    <div class="form-group">
+                        <label translate="miaApp.computation.volumeType" for="field_volumeType">volumeType</label> 
+                        <select
+                            class="form-control"
+                            id="field_volumeType"
+                            name="volumeType"
+                            ng-model="vm.configuredComputation.volumeType"
+                            ng-options="value as value for value in vm.modules.DvhDoseComputation.volumeType" 
+                            required>
+                            <option value=""></option>
+                        </select>
+                        <p class="help-block"
+                        ng-show="editForm.volumeType.$error.required" translate="entity.validation.required">
+                        This field is required.
+                        </p>
+                    </div>
+                   
                 </div>
 
+
+
+                <div ng-switch-when="DvhVolumeComputation">
+                                        
+                     <div class="form-group">
+                        <label translate="miaApp.computation.absoluteOutput" for="field_absoluteOutput">absoluteOutput</label> 
+                        <select
+                            class="form-control"
+                            id="field_absoluteOutput"
+                            name="absoluteOutput"
+                            ng-model="vm.configuredComputation.absoluteOutput"
+                            ng-options="value as value for value in vm.modules.DvhVolumeComputation.absoluteOutput"
+                            required >
+                            <option value=""></option>
+                        </select>
+                        <p class="help-block"
+                        ng-show="editForm.volumeType.$error.required" translate="entity.validation.required">
+                        This field is required.
+                        </p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label translate="miaApp.computation.limit" for="field_limit">limit</label> 
+                        <input
+                            type="number"
+                            class="form-control"
+                            id="field_limit"
+                            name="limit"
+                            ng-model="vm.configuredComputation.limit"
+                            placeholder="{{ 'miaApp.computation.integer' | translate }}" 
+                            required />
+                    </div>
+                                          
+                </div>
 
 			</div>
         
@@ -87,9 +196,14 @@
 
         <div class="form-group">
             <label translate="miaApp.computation.volumeOfInterest" for="field_volumeOfInterest">volumeOfInterest</label>
-            <select class="form-control" id="field_volumeOfInterest" name="volumeOfInterest" ng-model="vm.computation.volumeOfInterest" ng-options="volumeOfInterest as volumeOfInterest.name for volumeOfInterest in vm.volumeofinterests track by volumeOfInterest.id">
+            <select class="form-control" id="field_volumeOfInterest" name="volumeOfInterest" ng-model="vm.computation.volumeOfInterest" ng-options="volumeOfInterest as volumeOfInterest.name for volumeOfInterest in vm.volumeofinterests track by volumeOfInterest.id" 
+                required>
                 <option value=""></option>
             </select>
+            <p class="help-block"
+                    ng-show="editForm.volumeOfInterest.$error.required" translate="entity.validation.required">
+                    This field is required.
+            </p>
         </div>
     </div>
     <div class="modal-footer">

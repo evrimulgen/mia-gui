@@ -21,7 +21,6 @@
                     <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="computationIdentifier"><span translate="miaApp.computation.computationIdentifier">ComputationIdentifier</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="moduleName"><span translate="miaApp.computation.moduleName">ModuleName</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="computationConfiguration"><span translate="miaApp.computation.computationConfiguration">ComputationConfiguration</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="volumeOfInterest.name"><span translate="miaApp.computation.volumeOfInterest">volumeOfInterest</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
@@ -31,7 +30,6 @@
                     <td><a ui-sref="computation-detail({id:computation.id})">{{computation.id}}</a></td>
                     <td>{{computation.computationIdentifier}}</td>
                     <td>{{computation.moduleName}}</td>
-                    <td>{{computation.computationConfiguration}}</td>
                     <td>
                         <a ui-sref="volume-of-interest-detail({id:computation.volumeOfInterest.id})">{{computation.volumeOfInterest.name}}</a>
                     </td>

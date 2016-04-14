@@ -11,18 +11,12 @@
         var vm = this;
         vm.computation = entity;
         vm.volumeofinterests = VolumeOfInterest.query();
-
-        var jsonconfigstring = entity.computationConfiguration;
         
         entity.$promise.then(function(data){
         	console.log(data.computationConfiguration);
         	vm.configuredComputation = JSON.parse(data.computationConfiguration);
         });
-        
-/*        console.log(entity);
-        console.log(vm.computation.computationConfiguration)*/
-        //vm.configuredComputation = JSON.parse(jsonconfigstring)
-        
+                
         
         vm.load = function(id) {
             Computation.get({id : id}, function(result) {
@@ -61,22 +55,41 @@
         	return vm.computation.moduleName;
         }
         
+
+        
         vm.modules = {
 	        DoseComputation:
 	        {
 	        	moduleName: "DoseComputation",
 	        	moduleOperations: ["min","mean","max"]
 	        },
-	        DvhVolumeComputation:
+	        DvhCurveComputation:
 	        {
-	        	moduleName: "DvhVolumeComputation",
-	        	moduleOperations: ["min","mean","max"],
+	        	moduleName: "DvhCurveComputation",
+	        	absolute: ["true","false"],
+	        	binsize: "integer"
+	        },
+	        DvhDoseComputation:
+	        {
+	        	moduleName: "DvhDoseComputation",
 	        	absoluteOutput: ["true","false"],
 	        	limit: "integer",
 	        	volumeType: ["%", "cc"],
-	        	targetPrescriptionDose: "NaN"
+	        },
+	        DvhVolumeComputation:
+	        {
+	        	moduleName: "DvhVolumeComputation",
+	        	absoluteOutput: ["true","false"],
+	        	limit: "integer"
+	        },
+	        VolumeComputation:
+	        {
+	        	moduleName: "VolumeComputation",
 	        }
         };
+	    
+	        
+	      
         
     }
 })();
