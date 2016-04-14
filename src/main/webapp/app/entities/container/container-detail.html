@@ -1,0 +1,58 @@
+
+<div>
+    <h2><span translate="miaApp.container.detail.title">Container</span> {{vm.container.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="miaApp.container.containerStatus">ContainerStatus</dt></dt>
+        <dd>
+            <span>{{vm.container.containerStatus}}<span>
+        </dd>
+        <!-- <hr>
+        <dt><span translate="miaApp.container.containerStatusDate">ContainerStatusDate</dt></dt>
+        <dd>
+            <span>{{vm.container.containerStatusDate | date:'mediumDate'}}</span>
+        </dd> -->
+        <hr>
+        <dt><span translate="miaApp.container.userId">UserId</dt></dt>
+        <dd>
+            <span>{{vm.container.userId}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.container.providerId">ProviderId</dt></dt>
+        <dd>
+            <span>{{vm.container.providerId}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.container.configurationId">ConfigurationId</dt></dt>
+        <dd>
+            <span>{{vm.container.configurationId}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.container.calculationId">CalculationId</dt></dt>
+        <dd>
+            <span>{{vm.container.calculationId}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.container.configurationJson">ConfigurationJson</dt></dt>
+        <dd>
+            <span>{{vm.container.configurationJson}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.container.dicomPackageEntity">DicomPackageEntity</dt></dt>
+        <dd>
+            <span>{{vm.container.dicomPackage}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.container.mappingRtogRoi">MappingRtogRoi</dt></dt>
+        <dd>
+            <span>{{vm.container.mappingRtogRoi}}<span>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

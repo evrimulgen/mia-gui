@@ -1,0 +1,96 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myVolumeOfInterestLabel" translate="miaApp.volumeOfInterest.home.createOrEditLabel">Create or edit a VolumeOfInterest</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+   
+        <div class="form-group">
+            <label class="control-label" translate="miaApp.volumeOfInterest.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.volumeOfInterest.name" required />
+             <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+       
+               
+        
+        <p>
+        <div class="panel panel-default">
+            <div class="panel-heading" translate="miaApp.volumeOfInterest.rtogs">Panel heading</div>
+            
+            <div class="well">
+            
+            <div class="rtogslist">
+                <span ng-repeat="rtog in vm.volumeOfInterest.rtogs track by $index" >
+                <span class="label label-info">
+                {{rtog}} 
+                <span class="glyphicon glyphicon-remove" ng-click="vm.removeRtog($index)"></span>
+                </span>
+                <span>&nbsp;</span>
+                </span>
+            </div>
+            
+            <hr>
+            
+            <div class="form-group">
+            <label translate="miaApp.volumeOfInterest.rtog" for="field_rtogs">rtog</label>
+            <select class="form-control" id="field_rtogs" name="rtogs" ng-model="vm.selectedRtog" ng-options="rtog as rtog for rtog in vm.rtogs"></select>
+            </div>
+            
+            <button type="button" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary" ng-click="vm.addRtog()">
+            <span class="glyphicon glyphicon-plus"></span>&nbsp;<span translate="miaApp.volumeOfInterest.add">Add</span>
+            </button>
+            
+            </div>
+        </div>
+      
+        <p>
+        <div class="panel panel-default">
+            <div class="panel-heading" translate="miaApp.volumeOfInterest.operators">Panel heading</div>
+            <div class="well">
+                
+            <div class="operatorlist">
+                <span ng-repeat="operator in vm.volumeOfInterest.operators track by $index">
+                <span class="label label-info">
+                {{operator}} 
+                <span class="glyphicon glyphicon-remove" ng-click="vm.removeOperation($index)"></span>
+                </span>
+                <span>&nbsp;</span>
+                </span>
+            </div>
+            
+            <hr>
+            
+            <button type="button" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary" ng-click="vm.addOperationPlus()">
+            <span></span>&nbsp;plus&nbsp;</span>
+            </button>
+            <button type="button" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary" ng-click="vm.addOperationMinus()">
+            <span></span>&nbsp;minus&nbsp;</span>
+            </button>
+            
+            </div>
+        </div>
+      
+        
+        
+      
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

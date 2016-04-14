@@ -1,0 +1,32 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "volumeOfInterest",
+            "otherEntityName": "volumeOfInterest",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "computationIdentifier",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "moduleName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "computationConfiguration",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160412101612",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "computation",
+    "pagination": "pagination"
+}

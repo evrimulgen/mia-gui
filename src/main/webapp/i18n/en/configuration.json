@@ -1,10 +1,26 @@
 {
-    "configuration": {
-        "title": "Configuration",
-        "filter": "Filter (by prefix)",
-        "table": {
-            "prefix": "Prefix",
-            "properties": "Properties"
+    "miaApp": {
+        "configuration" : {
+            "home": {
+                "title": "ContainerConfiguration",
+                "createLabel": "Create a new ContainerConfiguration",
+                "createOrEditLabel": "Create or edit a ContainerConfiguration",
+                "search": "Search for ContainerConfiguration"
+            },
+            "created": "A new ContainerConfiguration is created with identifier {{ param }}",
+            "updated": "A ContainerConfiguration is updated with identifier {{ param }}",
+            "deleted": "A ContainerConfiguration is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete ContainerConfiguration {{ id }}?"
+            },
+            "detail": {
+                "title": "ContainerConfiguration"
+            },
+            "userId": "UserId",
+            "configurationIdentifier": "UserUnique Config Id (AE Port)",
+            "computation": "Computation",
+            "computations": "Computations",
+            "add":"Add"
         }
     }
 }

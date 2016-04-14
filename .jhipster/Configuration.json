@@ -1,0 +1,28 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "computation",
+            "otherEntityName": "computation",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "configuration"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "userId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "configurationIdentifier",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20160412110232",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "configuration",
+    "pagination": "pagination"
+}

@@ -1,0 +1,33 @@
+
+<div>
+    <h2><span translate="miaApp.computation.detail.title">Computation</span> {{vm.computation.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="miaApp.computation.computationIdentifier">ComputationIdentifier</dt></dt>
+        <dd>
+            <span>{{vm.computation.computationIdentifier}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.computation.moduleName">ModuleName</dt></dt>
+        <dd>
+            <span>{{vm.computation.moduleName}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.computation.computationConfiguration">ComputationConfiguration</dt></dt>
+        <dd>
+            <span>{{vm.computation.computationConfiguration}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.computation.volumeOfInterest">volumeOfInterest</span></dt>
+        <dd>
+            <a ui-sref="volume-of-interest-detail({id:vm.computation.volumeOfInterest.id})">{{vm.computation.volumeOfInterest.name}}</a>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

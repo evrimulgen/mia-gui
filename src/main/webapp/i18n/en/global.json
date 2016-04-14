@@ -7,6 +7,11 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
+                "volumeOfInterest": "VolumeOfInterest",
+                "rtog": "Rtog",
+                "computation": "Computation",
+                "configuration":"ContainerConfiguration",
+                "container": "Container",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
@@ -83,6 +88,8 @@
             "cancel": "Cancel",
             "delete": "Delete",
             "edit": "Edit",
+            "configure": "Configure",
+            "map": "Map",
             "save": "Save",
             "view": "View"
         },
