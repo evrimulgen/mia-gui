@@ -12,9 +12,14 @@
         vm.computation = entity;
         vm.volumeofinterests = VolumeOfInterest.query();
         
-        entity.$promise.then(function(data){
-        	vm.configuredComputation = JSON.parse(data.computationConfiguration);
-        });
+        try{
+        	entity.$promise.then(function(data){
+        		vm.configuredComputation = JSON.parse(data.computationConfiguration);
+        	});
+        }
+        catch(e){
+        	console.log("Create new entity --> try catch issue for undefined entity");
+        }
                 
         
         vm.load = function(id) {
@@ -36,9 +41,7 @@
         vm.save = function () {
             vm.isSaving = true;
             vm.computation.computationConfiguration = JSON.stringify(vm.configuredComputation);
-            
-            console.log(vm.computation);
-            
+                        
             if (vm.computation.id !== null) {
                 Computation.update(vm.computation, onSaveSuccess, onSaveError);
             } else {
