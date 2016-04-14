@@ -13,7 +13,6 @@
         vm.volumeofinterests = VolumeOfInterest.query();
         
         entity.$promise.then(function(data){
-        	console.log(data.computationConfiguration);
         	vm.configuredComputation = JSON.parse(data.computationConfiguration);
         });
                 
