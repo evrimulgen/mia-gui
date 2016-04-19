@@ -90,3 +90,9 @@ zuul:
     resource_manager:
       path: /manager/**
       serviceId: manager
+
+eureka:
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://localhost:8761}/eureka/
