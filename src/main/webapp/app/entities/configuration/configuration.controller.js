@@ -53,6 +53,14 @@
                 search: vm.currentSearch
             });
         }
+        
+       vm.startScp = function(userId, port){
+    	   console.log("port start" + port + userId)
+       }
+       
+       vm.stopScp = function(userId, port){
+    	   console.log("port stop" + port + userId)
+       }
 
     }
 })();

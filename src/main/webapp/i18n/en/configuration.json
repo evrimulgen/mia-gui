@@ -20,7 +20,10 @@
             "configurationIdentifier": "UserUnique Config Id (AE Port)",
             "computation": "Computation",
             "computations": "Computations",
-            "add":"Add"
+            "add":"Add",
+            "startstopScp":"Dicom SCP",
+            "start":"Start",
+            "stop":"Stop"
         }
     }
 }
