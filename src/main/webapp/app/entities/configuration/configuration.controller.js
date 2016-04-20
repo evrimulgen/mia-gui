@@ -5,9 +5,9 @@
         .module('miaApp')
         .controller('ConfigurationController', ConfigurationController);
 
-    ConfigurationController.$inject = ['$scope', '$state', 'Configuration', 'ParseLinks', 'AlertService', 'pagingParams', 'paginationConstants'];
+    ConfigurationController.$inject = ['$scope', '$state', '$http','Configuration', 'ParseLinks', 'AlertService', 'pagingParams', 'paginationConstants'];
 
-    function ConfigurationController ($scope, $state, Configuration, ParseLinks, AlertService, pagingParams, paginationConstants) {
+    function ConfigurationController ($scope, $state, $http, Configuration, ParseLinks, AlertService, pagingParams, paginationConstants) {
         var vm = this;
         vm.loadAll = loadAll;
         vm.loadPage = loadPage;
@@ -54,12 +54,28 @@
             });
         }
         
-       vm.startScp = function(userId, port){
-    	   console.log("port start" + port + userId)
-       }
+        vm.startScp = function(userId, port){
+        	var data = $.param({	
+        	});
+        	$http.post("fileservice/" + "api/storescp/start?aeTitle="+userId+"&port="+port, data).then(
+        			function(data, status){
+                        AlertService.success("Start SCP success aeTitle: " +userId + " port:"+port);
+        			}, 
+        			function(data, status){
+                        AlertService.error("Start SCP failed aeTitle: " +userId + " port:"+port);
+        			});
+        };
        
        vm.stopScp = function(userId, port){
-    	   console.log("port stop" + port + userId)
+    	var data = $.param({	
+       	});
+       	$http.post("fileservice/" + "api/storescp/stop?aeTitle="+userId+"&port="+port, data).then(
+       			function(data, status){
+                       AlertService.success("Stop SCP success aeTitle: " +userId + " port:"+port);
+       			}, 
+       			function(data, status){
+                       AlertService.error("Stop SCP failed aeTitle: " +userId + " port:"+port);
+       			});
        }
 
     }

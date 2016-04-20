@@ -101,6 +101,9 @@ zuul:
     resource_manager:
       path: /manager/**
       serviceId: manager
+    resource_fileservice:
+      path: /fileservice/**
+      serviceId: fileservice
 
 eureka:
   client:
