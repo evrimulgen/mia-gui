@@ -11,7 +11,10 @@
         
         <div class="form-group">
             <label class="control-label" translate="miaApp.configuration.configurationIdentifier" for="field_configurationIdentifier">ConfigurationIdentifier</label>
-            <input type="text" class="form-control" name="configurationIdentifier" id="field_configurationIdentifier"
+            <!-- type="number" min="49152" max="65535" -->
+            <input 
+            type="text"
+            class="form-control" name="configurationIdentifier" id="field_configurationIdentifier"
                     ng-model="vm.configuration.configurationIdentifier"
                     required />
             <div ng-show="editForm.configurationIdentifier.$invalid">
@@ -20,9 +23,12 @@
                     This field is required.
                 </p>
             </div>
-        </div>
-        
- 
+            
+             <p class="help-block"
+                    ng-show="editForm.configurationIdentifier.$error.number" translate="miaApp.configuration.invalidport">
+                    Not valid number!
+                </p>
+         </div>
         
         <p>
         <div class="panel panel-default">

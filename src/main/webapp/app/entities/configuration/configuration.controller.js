@@ -59,24 +59,22 @@
         	});
         	$http.post("fileservice/" + "api/storescp/start?aeTitle="+userId+"&port="+port, data).then(
         			function(data, status){
-                        AlertService.success("Start SCP success aeTitle: " +userId + " port:"+port);
         			}, 
         			function(data, status){
-                        AlertService.error("Start SCP failed aeTitle: " +userId + " port:"+port);
+        				AlertService.error(data.statusText);
         			});
         };
-       
-       vm.stopScp = function(userId, port){
-    	var data = $.param({	
-       	});
-       	$http.post("fileservice/" + "api/storescp/stop?aeTitle="+userId+"&port="+port, data).then(
-       			function(data, status){
-                       AlertService.success("Stop SCP success aeTitle: " +userId + " port:"+port);
-       			}, 
-       			function(data, status){
-                       AlertService.error("Stop SCP failed aeTitle: " +userId + " port:"+port);
-       			});
-       }
+
+        vm.stopScp = function(port){
+        	var data = $.param({	
+        	});
+        	$http.post("fileservice/" + "api/storescp/stop?port="+port, data).then(
+        			function(data, status){
+        			}, 
+        			function(data, status){
+        				AlertService.error(data.statusText);
+        			});
+        }
 
     }
 })();
