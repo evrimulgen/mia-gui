@@ -1,6 +1,8 @@
 {
     "error": {
         "title": "Error page!",
-        "403": "You are not authorized to access the page."
+        "403": "You are not authorized to access the page.",
+        "voiconstraintviolationexception": "Volume Of Interest is in use by a computation",
+        "computationconstraintviolationexception" : "Computation is in use by a containerconfiguration"
     }
 }
