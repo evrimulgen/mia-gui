@@ -21,6 +21,7 @@
                     <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="userId"><span translate="miaApp.configuration.userId">UserId</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="configurationIdentifier"><span translate="miaApp.configuration.configurationIdentifier">ConfigurationIdentifier</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th><span translate="miaApp.configuration.startstopScp">startstopScp</span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -29,6 +30,18 @@
                     <td><a ui-sref="configuration-detail({id:configuration.id})">{{configuration.id}}</a></td>
                     <td>{{configuration.userId}}</td>
                     <td>{{configuration.configurationIdentifier}}</td>
+                    <td>
+                        <button ng-click="vm.stopScp(configuration.configurationIdentifier)"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-stop"></span>
+                                <span class="hidden-xs hidden-sm" translate="miaApp.configuration.stop"></span>
+                            </button>
+                            <button ng-click="vm.startScp(configuration.userId , configuration.configurationIdentifier)"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-play"></span>
+                                <span class="hidden-xs hidden-sm" translate="miaApp.configuration.start"></span>
+                            </button>
+                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

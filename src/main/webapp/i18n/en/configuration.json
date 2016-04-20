@@ -17,10 +17,14 @@
                 "title": "ContainerConfiguration"
             },
             "userId": "UserId",
-            "configurationIdentifier": "UserUnique Config Id (AE Port)",
+            "configurationIdentifier": "Id (AE Port 49152-65535)",
             "computation": "Computation",
             "computations": "Computations",
-            "add":"Add"
+            "add":"Add",
+            "startstopScp":"Dicom SCP",
+            "start":"Start",
+            "stop":"Stop",
+            "invalidport":"Invalid port range is 49152-65535"
         }
     }
 }

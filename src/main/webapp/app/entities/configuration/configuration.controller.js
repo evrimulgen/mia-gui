@@ -5,9 +5,9 @@
         .module('miaApp')
         .controller('ConfigurationController', ConfigurationController);
 
-    ConfigurationController.$inject = ['$scope', '$state', 'Configuration', 'ParseLinks', 'AlertService', 'pagingParams', 'paginationConstants'];
+    ConfigurationController.$inject = ['$scope', '$state', '$http','Configuration', 'ParseLinks', 'AlertService', 'pagingParams', 'paginationConstants'];
 
-    function ConfigurationController ($scope, $state, Configuration, ParseLinks, AlertService, pagingParams, paginationConstants) {
+    function ConfigurationController ($scope, $state, $http, Configuration, ParseLinks, AlertService, pagingParams, paginationConstants) {
         var vm = this;
         vm.loadAll = loadAll;
         vm.loadPage = loadPage;
@@ -52,6 +52,28 @@
                 sort: vm.predicate + ',' + (vm.reverse ? 'asc' : 'desc'),
                 search: vm.currentSearch
             });
+        }
+        
+        vm.startScp = function(userId, port){
+        	var data = $.param({	
+        	});
+        	$http.post("fileservice/" + "api/storescp/start?aeTitle="+userId+"&port="+port, data).then(
+        			function(data, status){
+        			}, 
+        			function(data, status){
+        				AlertService.error(data.statusText);
+        			});
+        };
+
+        vm.stopScp = function(port){
+        	var data = $.param({	
+        	});
+        	$http.post("fileservice/" + "api/storescp/stop?port="+port, data).then(
+        			function(data, status){
+        			}, 
+        			function(data, status){
+        				AlertService.error(data.statusText);
+        			});
         }
 
     }
