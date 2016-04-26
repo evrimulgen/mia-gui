@@ -1,21 +1,32 @@
 {
-  "name": "sortable",
-  "version": "0.8.0",
-  "homepage": "http://adamschwartz.co/sortable",
+  "name": "Sortable",
+  "main": [
+    "Sortable.js",
+    "ng-sortable.js",
+    "knockout-sortable.js",
+    "react-sortable-mixin.js"
+  ],
+  "homepage": "http://rubaxa.github.io/Sortable/",
   "authors": [
-    "Adam Schwartz <adam.flynn.schwartz@gmail.com>"
+    "RubaXa <ibnRubaXa@gmail.com>"
   ],
-  "description": "The simplest, most elegant way to sort a table.",
-  "main": "sortable.coffee",
-  "license": "MIT",
+  "description": "Minimalist library for reorderable drag-and-drop lists on modern browsers and touch devices. No jQuery.",
   "keywords": [
-    "table",
-    "sort",
     "sortable",
-    "sorting"
+    "reorder",
+    "list",
+    "html5",
+    "drag",
+    "and",
+    "drop",
+    "dnd",
+    "web-components"
   ],
+  "license": "MIT",
   "ignore": [
     "node_modules",
-    "bower_components"
+    "bower_components",
+    "test",
+    "tests"
   ]
 }

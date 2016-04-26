@@ -1,30 +1,43 @@
 {
-  "name": "sortable",
-  "version": "0.8.0",
-  "homepage": "http://adamschwartz.co/sortable",
+  "name": "Sortable",
+  "main": [
+    "Sortable.js",
+    "ng-sortable.js",
+    "knockout-sortable.js",
+    "react-sortable-mixin.js"
+  ],
+  "homepage": "http://rubaxa.github.io/Sortable/",
   "authors": [
-    "Adam Schwartz <adam.flynn.schwartz@gmail.com>"
+    "RubaXa <ibnRubaXa@gmail.com>"
   ],
-  "description": "The simplest, most elegant way to sort a table.",
-  "main": "sortable.coffee",
-  "license": "MIT",
+  "description": "Minimalist library for reorderable drag-and-drop lists on modern browsers and touch devices. No jQuery.",
   "keywords": [
-    "table",
-    "sort",
     "sortable",
-    "sorting"
+    "reorder",
+    "list",
+    "html5",
+    "drag",
+    "and",
+    "drop",
+    "dnd",
+    "web-components"
   ],
+  "license": "MIT",
   "ignore": [
     "node_modules",
-    "bower_components"
+    "bower_components",
+    "test",
+    "tests"
   ],
-  "_release": "0.8.0",
+  "version": "1.4.2",
+  "_release": "1.4.2",
   "_resolution": {
     "type": "version",
-    "tag": "v0.8.0",
-    "commit": "3f9fdca0877af76da6e0ed6e98b788a30fde6bf1"
+    "tag": "1.4.2",
+    "commit": "d86937c8bca017f948aad04eb02dcaddfbb60ffa"
   },
-  "_source": "https://github.com/HubSpot/sortable.git",
-  "_target": "^0.8.0",
-  "_originalSource": "sortable"
+  "_source": "https://github.com/RubaXa/Sortable.git",
+  "_target": "^1.4.2",
+  "_originalSource": "angular-ng-sortablejs",
+  "_direct": true
 }
