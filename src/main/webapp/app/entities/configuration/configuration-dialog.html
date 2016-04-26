@@ -41,18 +41,10 @@
             <select class="form-control" id="field_computation" name="computation" ng-model="vm.selectedComputation"ng-options="computation as computation.computationIdentifier for computation in vm.computations"></select>
             </div>
 
-
-
-					<ul ng-sortable="{animation:150}"  class="operatorlist" ng-sortable>
-						<li ng-repeat="computation in vm.configuration.computations track by $index">
-							
-							<span class="label label-info">
+					<ul ng-sortable="{animation:150}" class="list-group" ng-sortable>
+						<li ng-repeat="computation in vm.configuration.computations track by $index" class="list-group-item">	
+							<span class="glyphicon glyphicon glyphicon-trash pull-right" ng-click="vm.removeComputation($index)"></span>
 							{{computation.computationIdentifier}}
-							<span>&nbsp;</span>
-							<span class="glyphicon glyphicon-remove"
-							ng-click="vm.removeComputation($index)"></span>
-						</span>
-						<span>&nbsp;</span>
 						</li>
 						
 					</ul>
