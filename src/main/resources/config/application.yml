@@ -14,7 +14,7 @@
 
 spring:
     application:
-        name: miagui
+        name: mia
     jpa:
         open-in-view: false
         hibernate:

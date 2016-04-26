@@ -17,21 +17,14 @@ spring:
             enabled: false
         livereload:
             enabled: false
-    # use h2?
     datasource:
-        url: jdbc:mysql://localhost:3306/mia?useUnicode=true&characterEncoding=utf8&useSSL=false
+        url: jdbc:postgresql://localhost:5432/mia
         name:
-        username: root
+        username: mia
         password:
-        hikari:
-            data-source-properties:
-                cachePrepStmts: true
-                prepStmtCacheSize: 250
-                prepStmtCacheSqlLimit: 2048
-                useServerPrepStmts: true
     jpa:
-        database-platform: org.hibernate.dialect.MySQLInnoDBDialect
-        database: MYSQL
+        database-platform: nl.maastro.mia.gui.domain.util.FixedPostgreSQL82Dialect
+        database: POSTGRESQL
         show_sql: false
         properties:
             hibernate.cache.use_second_level_cache: true
@@ -109,4 +102,5 @@ eureka:
   client:
     enabled: true
     serviceUrl:
-      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://localhost:8761}/eureka/
+      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://localhost:8761}/eureka/    swagger: # swagger is disabled. It can be disabled by pasing 'no-swagger' profile at run time as well
+        enabled: false

@@ -1,4 +1,4 @@
-// Generated on 2016-04-05 using generator-jhipster 3.0.0
+// Generated on 2016-04-26 using generator-jhipster 3.1.0
 'use strict';
 
 var gulp = require('gulp'),
@@ -105,22 +105,36 @@ gulp.task('inject', function () {
         .pipe(gulp.dest(config.app));
 });
 
+gulp.task('wiredep', ['wiredep:test', 'wiredep:app']);
+
 gulp.task('wiredep:app', function () {
     var stream = gulp.src(config.app + 'index.html')
         .pipe(plumber({errorHandler: handleErrors}))
-        .pipe(wiredep({
-            exclude: [
-                /angular-i18n/,  // localizations are loaded dynamically
-                'bower_components/bootstrap/dist/js/' // exclude bootstrap js files as we use ui-bootstrap
-            ]
-        }))
+        .pipe(wiredep())
         .pipe(gulp.dest(config.app));
 
     return stream;
 });
 
 gulp.task('wiredep:test', function () {
-
+    return gulp.src(config.test + 'karma.conf.js')
+        .pipe(plumber({errorHandler: handleErrors}))
+        .pipe(wiredep({
+            ignorePath: /\.\.\/\.\.\//, // remove ../../ from paths of injected JavaScript files
+            devDependencies: true,
+            fileTypes: {
+                js: {
+                    block: /(([\s\t]*)\/\/\s*bower:*(\S*))(\n|\r|.)*?(\/\/\s*endbower)/gi,
+                    detect: {
+                        js: /'(.*\.js)'/gi
+                    },
+                    replace: {
+                        js: '\'src/{{filePath}}\','
+                    }
+                }
+            }
+        }))
+        .pipe(gulp.dest(config.test));
 });
 
 gulp.task('assets:prod', ['images', 'styles', 'html'], build);
@@ -199,6 +213,10 @@ gulp.task('eslint:fix', function () {
 });
 
 gulp.task('test', ['wiredep:test', 'ngconstant:dev'], function (done) {
+    new KarmaServer({
+        configFile: __dirname + '/' + config.test + 'karma.conf.js',
+        singleRun: true
+    }, done).start();
 });
 
 

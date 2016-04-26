@@ -3,13 +3,13 @@ services:
     mia-app:
         image: mia
         external_links:
-            - mia-mysql:mysql
+            - mia-postgresql:postgresql
         environment:
             - SPRING_PROFILES_ACTIVE=prod
-            - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/mia?useUnicode=true&characterEncoding=utf8&useSSL=false
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/mia
         ports:
             - 8080:8080
-    mia-mysql:
+    mia-postgresql:
         extends:
-            file: mysql.yml
-            service: mia-mysql
+            file: postgresql.yml
+            service: mia-postgresql

@@ -155,7 +155,7 @@
     </changeSet>
     
     <!-- Manage the OAuth authentication -->
-    <changeSet id="2" author="jhipster">
+    <changeSet id="00000000000002" author="jhipster">
         <createTable tableName="oauth_client_details">
             <column name="client_id" type="varchar(255)">
                 <constraints nullable="false" primaryKey="true"/>
