@@ -18,10 +18,10 @@ spring:
         livereload:
             enabled: false
     datasource:
-        url: jdbc:postgresql://localhost:5432/mia
-        name:
-        username: mia
-        password:
+        url: ${mia.gui.datasource.url:jdbc:postgresql://localhost:5432/mia}
+        name: ${mia.gui.datasource.name:name}
+        username: ${mia.gui.datasource.username:username}
+        password: ${mia.gui.datasource.password:password}
     jpa:
         database-platform: nl.maastro.mia.gui.domain.util.FixedPostgreSQL82Dialect
         database: POSTGRESQL
@@ -83,6 +83,10 @@ jhipster:
             port: 5000
             queueSize: 512
 
+swagger: # swagger is disabled. It can be disabled by pasing 'no-swagger' profile at run time as well
+   enabled: false
+
+
 zuul:
   routes:
     resource:
@@ -102,5 +106,6 @@ eureka:
   client:
     enabled: true
     serviceUrl:
-      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://localhost:8761}/eureka/    swagger: # swagger is disabled. It can be disabled by pasing 'no-swagger' profile at run time as well
-        enabled: false
+      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://localhost:8761}/eureka/
+
+
