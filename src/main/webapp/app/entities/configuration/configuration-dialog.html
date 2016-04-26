@@ -4,13 +4,13 @@
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                 ng-click="vm.clear()">&times;</button>
-        <h4 class="modal-title" id="myConfigurationLabel" translate="miaApp.configuration.home.createOrEditLabel">Create or edit a Configuration</h4>
+        <h4 class="modal-title" id="myConfigurationLabel" translate="miaApp.containerconfiguration.home.createOrEditLabel">Create or edit a Configuration</h4>
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
         
         <div class="form-group">
-            <label class="control-label" translate="miaApp.configuration.configurationIdentifier" for="field_configurationIdentifier">ConfigurationIdentifier</label>
+            <label class="control-label" translate="miaApp.containerconfiguration.configurationIdentifier" for="field_configurationIdentifier">ConfigurationIdentifier</label>
             <!-- type="number" min="49152" max="65535" -->
             <input 
             type="text"
@@ -25,19 +25,19 @@
             </div>
             
              <p class="help-block"
-                    ng-show="editForm.configurationIdentifier.$error.number" translate="miaApp.configuration.invalidport">
+                    ng-show="editForm.configurationIdentifier.$error.number" translate="miaApp.containerconfiguration.invalidport">
                     Not valid number!
                 </p>
          </div>
         
         <p>
         <div class="panel panel-default">
-            <div class="panel-heading" translate="miaApp.configuration.computations">Panel heading</div>
+            <div class="panel-heading" translate="miaApp.containerconfiguration.computations">Panel heading</div>
             <div class="well">
             <div class="operatorlist">
                 
              <div class="form-group">
-            <label translate="miaApp.configuration.computation" for="field_rtogs">Computation</label>
+            <label translate="miaApp.containerconfiguration.computation" for="field_rtogs">Computation</label>
             <select class="form-control" id="field_computation" name="computation" ng-model="vm.selectedComputation"ng-options="computation as computation.computationIdentifier for computation in vm.computations"></select>
             </div>
 
@@ -58,8 +58,8 @@
 					</ul>
 
 					<hr>
-                <button type="button" ng-disabled="editForm.$invalid || isSaving || vm.selectedComputation == {}" class="btn btn-primary" ng-click="vm.addComputation()">
-                <span class="glyphicon glyphicon-plus"></span>&nbsp;<span translate="miaApp.configuration.add">Add</span>
+                <button type="button" class="btn btn-primary" ng-click="vm.addComputation()">
+                <span class="glyphicon glyphicon-plus"></span>&nbsp;<span translate="miaApp.containerconfiguration.add">Add</span>
                 </button>
             </div>
             </div>
@@ -71,7 +71,7 @@
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
             <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
         </button>
-        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving || vm.selectedComputation == {}" class="btn btn-primary">
             <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
         </button>
     </div>
