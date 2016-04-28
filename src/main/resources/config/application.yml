@@ -67,3 +67,6 @@ jhipster:
         contactEmail:
         license:
         licenseUrl:
+
+logging:
+ file: miagui.log
