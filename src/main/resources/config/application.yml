@@ -81,3 +81,18 @@ eureka:
 logging:
   file: miagui.log
   level.nl.maastro: INFO
+
+zuul:
+  routes:
+    resource:
+      path: /configservice/**
+      serviceId: configservice
+    resource_container:
+      path: /containerservice/**
+      serviceId: containerservice
+    resource_manager:
+      path: /manager/**
+      serviceId: manager
+    resource_fileservice:
+      path: /fileservice/**
+      serviceId: fileservice

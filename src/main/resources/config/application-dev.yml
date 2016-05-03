@@ -78,24 +78,3 @@ jhipster:
             host: localhost
             port: 5000
             queueSize: 512
-
-zuul:
-  routes:
-    resource:
-      path: /configservice/**
-      serviceId: configservice
-    resource_container:
-      path: /containerservice/**
-      serviceId: containerservice
-    resource_manager:
-      path: /manager/**
-      serviceId: manager
-    resource_fileservice:
-      path: /fileservice/**
-      serviceId: fileservice
-
-eureka:
-  client:
-    enabled: true
-    serviceUrl:
-      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://localhost:8761}/eureka/
