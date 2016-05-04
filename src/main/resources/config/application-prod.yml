@@ -20,7 +20,7 @@ spring:
     datasource:
         url: ${mia.gui.datasource.url:jdbc:postgresql://localhost:5432/miagui}
         name:
-        username: ${mia.datasource.username:miauser}
+        username: ${mia.datasource.username:svc.mia}
         password: ${mia.datasource.password:password}
     jpa:
         database-platform: nl.maastro.mia.gui.domain.util.FixedPostgreSQL82Dialect
