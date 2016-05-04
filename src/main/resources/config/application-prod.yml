@@ -18,10 +18,10 @@ spring:
         livereload:
             enabled: false
     datasource:
-        url: ${mia.gui.datasource.url:jdbc:postgresql://localhost:5432/mia}
-        name: ${mia.gui.datasource.name:name}
-        username: ${mia.gui.datasource.username:username}
-        password: ${mia.gui.datasource.password:password}
+        url: ${mia.gui.datasource.url:jdbc:postgresql://localhost:5432/miagui}
+        name:
+        username: ${mia.datasource.username:username}
+        password: ${mia.datasource.password:password}
     jpa:
         database-platform: nl.maastro.mia.gui.domain.util.FixedPostgreSQL82Dialect
         database: POSTGRESQL
