@@ -46,13 +46,14 @@
                     <td>{{container.configurationId}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
-                            <a ng-href="manager/api/map/container/{{container.id}}" class="btn btn-warning btn-sm">
+                            <a ng-href="manager/api/map/container/{{container.id}}" class="btn btn-warning btn-sm" ng-disabled="vm.isMappingDisabled(container.containerStatus)">
                                 <span class=" glyphicon glyphicon-new-window"></span>
                                 <span class="hidden-xs hidden-sm" translate="entity.action.map"></span>
                             </a>
                             <button type="submit"
                                     ui-sref="container.edit({id:container.id})"
-                                    class="btn btn-primary btn-sm">
+                                    class="btn btn-primary btn-sm"
+                                    ng-hide="true">
                                 <span class="glyphicon glyphicon-pencil"></span>
                                 <span class="hidden-xs hidden-sm" translate="entity.action.configure"></span>
                             </button>
@@ -64,7 +65,7 @@
                             </button>
                             <button type="submit" 
                                     ui-sref="container.delete({id:container.id})"
-                                    class="btn btn-danger btn-sm">
+                                    class="btn btn-danger btn-sm" ng-disabled="vm.isDisabled(container.containerStatus)">
                                 <span class="glyphicon glyphicon-remove-circle"></span>
                                 <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
                             </button>

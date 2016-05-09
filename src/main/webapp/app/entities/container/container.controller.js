@@ -18,6 +18,8 @@
         vm.search = search;
         vm.searchQuery = pagingParams.search;
         vm.currentSearch = pagingParams.search;
+        vm.isDisabled = isDisabled;
+        vm.isMappingDisabled = isMappingDisabled;
         vm.loadAll();
 
         function loadAll () {
@@ -87,6 +89,22 @@
             vm.currentSearch = null;
             vm.transition();
         }
-        
+
+        function isDisabled (containerStatus) {
+            if(containerStatus == "QUEUE" ||
+                containerStatus == "IDLE" ||
+                containerStatus == "RUNNING"
+                ){
+                return true;    
+            }
+            return false;
+        }
+
+        function isMappingDisabled (containerStatus) {
+            if(containerStatus == "MAPPINGERROR"){
+                return false;    
+            }
+            return true;
+        }
     }
 })();
