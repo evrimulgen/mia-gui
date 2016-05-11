@@ -33,7 +33,6 @@
                     <th jh-sort-by="userId"><span translate="miaApp.container.userId">UserId</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="providerId"><span translate="miaApp.container.providerId">ProviderId</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="configurationId"><span translate="miaApp.container.configurationId">ConfigurationId</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="calculationId"><span translate="miaApp.container.calculationId">CalculationId</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -45,27 +44,19 @@
                     <td>{{container.userId}}</td>
                     <td>{{container.providerId}}</td>
                     <td>{{container.configurationId}}</td>
-                    <td>{{container.calculationId}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
-                            <button type="submit"
-                                    ui-sref="container.edit({id:container.id})"
-                                    class="btn btn-primary btn-sm">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                                <span class="hidden-xs hidden-sm" translate="entity.action.configure"></span>
-                            </button>
-                        </div>
-                    </td>
-                    <td class="text-right">
-                        <div class="btn-group flex-btn-group-container">
-                            <a ng-href="manager/api/map/container/{{container.id}}" class="btn btn-warning btn-sm">
+                            <a ng-href="manager/api/map/container/{{container.id}}" class="btn btn-warning btn-sm" ng-disabled="vm.isMappingDisabled(container.containerStatus)">
                                 <span class=" glyphicon glyphicon-new-window"></span>
                                 <span class="hidden-xs hidden-sm" translate="entity.action.map"></span>
                             </a>
-                        </div>
-                    </td>
-                    <td class="text-right">
-                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="container.edit({id:container.id})"
+                                    class="btn btn-primary btn-sm"
+                                    ng-hide="true">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.configure"></span>
+                            </button>
                             <button type="submit" 
                                     ui-sref="container-detail({id:container.id})"
                                     class="btn btn-info btn-sm">
@@ -74,7 +65,7 @@
                             </button>
                             <button type="submit" 
                                     ui-sref="container.delete({id:container.id})"
-                                    class="btn btn-danger btn-sm">
+                                    class="btn btn-danger btn-sm" ng-disabled="vm.isDisabled(container.containerStatus)">
                                 <span class="glyphicon glyphicon-remove-circle"></span>
                                 <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
                             </button>

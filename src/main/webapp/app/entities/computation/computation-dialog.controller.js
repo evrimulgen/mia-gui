@@ -10,7 +10,7 @@
     function ComputationDialogController ($scope, $stateParams, $uibModalInstance, entity, Computation, VolumeOfInterest) {
         var vm = this;
         vm.computation = entity;
-        vm.volumeofinterests = VolumeOfInterest.query();
+        vm.volumeofinterests = VolumeOfInterest.query({page: 0, size: 1000});
         
         try{
         	entity.$promise.then(function(data){

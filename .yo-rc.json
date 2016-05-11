@@ -1,6 +1,6 @@
 {
   "generator-jhipster": {
-    "jhipsterVersion": "3.0.0",
+    "jhipsterVersion": "3.1.0",
     "baseName": "mia",
     "packageName": "nl.maastro.mia.gui",
     "packageFolder": "nl/maastro/mia/gui",
@@ -11,7 +11,7 @@
     "websocket": "no",
     "databaseType": "sql",
     "devDatabaseType": "h2Disk",
-    "prodDatabaseType": "mysql",
+    "prodDatabaseType": "postgresql",
     "searchEngine": "no",
     "buildTool": "maven",
     "useSass": false,
@@ -23,6 +23,8 @@
     "nativeLanguage": "en",
     "languages": [
       "en"
-    ]
+    ],
+    "enableSocialSignIn": false,
+    "jhiPrefix": "jhi"
   }
 }

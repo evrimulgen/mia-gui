@@ -10,7 +10,7 @@
     function ConfigurationDialogController ($scope, $stateParams, $uibModalInstance, entity, Configuration, Computation, Principal) {
         var vm = this;
         vm.configuration = entity;
-        vm.computations = Computation.query();
+        vm.computations = Computation.query({page: 0, size: 1000});
         vm.selectedComputation = {};
         vm.account = null;
 
