@@ -13,10 +13,13 @@
             <label class="control-label" translate="miaApp.containerconfiguration.configurationIdentifier" for="field_configurationIdentifier">ConfigurationIdentifier</label>
             <!-- type="number" min="49152" max="65535" -->
             <input 
-            type="text"
+            type="number"
             class="form-control" name="configurationIdentifier" id="field_configurationIdentifier"
                     ng-model="vm.configuration.configurationIdentifier"
-                    required />
+                    min="0" 
+                    max="65534"
+                    required
+                    integer />
             <div ng-show="editForm.configurationIdentifier.$invalid">
                 <p class="help-block"
                     ng-show="editForm.configurationIdentifier.$error.required" translate="entity.validation.required">
@@ -25,7 +28,10 @@
             </div>
             
              <p class="help-block"
-                    ng-show="editForm.configurationIdentifier.$error.number" translate="miaApp.containerconfiguration.invalidport">
+                    ng-show="editForm.configurationIdentifier.$error.integer 
+                        || editForm.configurationIdentifier.$error.min
+                        || editForm.configurationIdentifier.$error.max" 
+                    translate="miaApp.containerconfiguration.invalidport">
                     Not valid number!
                 </p>
          </div>
