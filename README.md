@@ -1,6 +1,47 @@
-# mia
+# MIA - Medical Image Analysis
 
-This application was generated using JHipster, you can find documentation and help at [https://jhipster.github.io](https://jhipster.github.io).
+The MIA framework is designed for performing calculations on large volumes of medical images (DICOM). 
+
+The MIA framework is build using [Spring Cloud](http://projects.spring.io/spring-cloud/), the framework is a collection of [Spring Boot](http://projects.spring.io/spring-boot/) micro services.
+
+The microservices in the framework can perform the following tasks:
+
+1. Creating referenced DICOM packages (FileService)
+2. Setting configuration for computations based on a DICOM port (ConfigurationService)
+3. Mapping structure names to RTOG standards (MappingService)
+4. Computations are validated and queued for distribution over workers
+5. Computations are implemented in workers, our open source worker implements DVH calculation (Dose Volume Histograms), a worker plugin is available to create your own worker.
+6. Results can be exported to SQL (H2, MSSQL, PostgreSQL) or SPARQL.
+
+
+This application (Graphical User Interface) was generated using JHipster, you can find documentation and help at [https://jhipster.github.io](https://jhipster.github.io).
+
+![MIA Design](src\main\resources\static\img\miadesign201605.png)
+
+
+
+
+
+## Usage ##
+
+Run the Eureka Discovery Service.
+
+Navigate to the Eureka Discovery Service in the browser (default http://localhost:8761). When the application is registered at Eureka, navigate to the application by clicking on the application instance in Eureka: "Instances currently registered with Eureka" column "status". 
+
+The GUI contains a login screen, the default user name and password are: admin, admin
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Development
 
@@ -50,29 +91,3 @@ Unit tests are run by [Karma][] and written with [Jasmine][]. They're located in
 
     gulp test
 
-
-
-## Continuous Integration
-
-To setup this project in Jenkins, use the following configuration:
-
-* Project name: `mia`
-* Source Code Management
-    * Git Repository: `git@github.com:xxxx/mia.git`
-    * Branches to build: `*/master`
-    * Additional Behaviours: `Wipe out repository & force clone`
-* Build Triggers
-    * Poll SCM / Schedule: `H/5 * * * *`
-* Build
-    * Invoke Maven / Tasks: `-Pprod clean package`
-* Post-build Actions
-    * Publish JUnit test result report / Test Report XMLs: `build/test-results/*.xml`
-
-[JHipster]: https://jhipster.github.io/
-[Node.js]: https://nodejs.org/
-[Bower]: http://bower.io/
-[Gulp]: http://gulpjs.com/
-[BrowserSync]: http://www.browsersync.io/
-[Karma]: http://karma-runner.github.io/
-[Jasmine]: http://jasmine.github.io/2.0/introduction.html
-[Protractor]: https://angular.github.io/protractor/
