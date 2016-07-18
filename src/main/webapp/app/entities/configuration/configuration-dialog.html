@@ -41,12 +41,16 @@
             <div class="panel-heading" translate="miaApp.containerconfiguration.computations">Panel heading</div>
             <div class="well">
             <div class="operatorlist">
-                
-             <div class="form-group">
-            <label translate="miaApp.containerconfiguration.computation" for="field_rtogs">Computation</label>
-            <select class="form-control" id="field_computation" name="computation" ng-model="vm.selectedComputation"ng-options="computation as computation.computationIdentifier for computation in vm.computations"></select>
-            </div>
 
+			<div class="form-group">
+				<label translate="miaApp.containerconfiguration.computation" for="field_computation">Computation</label>
+				<ui-select name=computation ng-model="vm.selectedComputation" ng-disabled="disabled" style="width: 100pct;"> 
+				<ui-select-match placeholder="Select a Computation...">{{$select.selected.computationIdentifier}}</ui-select-match>
+				<ui-select-choices repeat="computation in vm.computations | filter: $select.search">
+					<span ng-bind-html="computation.computationIdentifier | highlight: $select.search"></span>
+				</ui-select-choices> </ui-select>
+			</div>
+			
 					<ul ng-sortable="{animation:150}" class="list-group" ng-sortable>
 						<li ng-repeat="computation in vm.configuration.computations track by $index" class="list-group-item">	
 							<span class="glyphicon glyphicon glyphicon-trash pull-right" ng-click="vm.removeComputation($index)"></span>
