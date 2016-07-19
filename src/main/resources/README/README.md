@@ -16,7 +16,7 @@ The microservices in the framework can perform the following tasks:
 
 This application (Graphical User Interface) was generated using JHipster, you can find documentation and help at [https://jhipster.github.io](https://jhipster.github.io).
 
-![MIA Design](src\main\resources\static\img\miadesign201605.png)
+![MIA Design](img\miadesign201605.png)
 
 
 
