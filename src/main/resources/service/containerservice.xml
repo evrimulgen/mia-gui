@@ -1,8 +1,0 @@
-<service>
-  <id>MIA - ContainerService</id>
-  <name>MIA - ContainerService</name>
-  <description>The ContainerService for the MIA Framework</description>
-  <executable>java</executable>
-  <arguments>-Xmx512m -jar "%BASE%\containerservice.jar"</arguments>
-  <logmode>rotate</logmode>
-</service>
