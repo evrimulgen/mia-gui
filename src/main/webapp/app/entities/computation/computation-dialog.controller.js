@@ -56,9 +56,7 @@
         vm.selectedModuleName = function(){
         	return vm.computation.moduleName;
         }
-        
 
-        
         vm.modules = {
 	        DoseComputation:
 	        {
@@ -90,8 +88,5 @@
 	        }
         };
 	    
-	        
-	      
-        
     }
 })();
