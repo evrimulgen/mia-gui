@@ -22,6 +22,8 @@
             "userId": "UserId",
             "searchId": "Search for ID or Status",
             "providerId": "ProviderId",
+            "missingRtogs": "Missing Structures",
+            "modalities": "Modalities",
             "configurationId": "ConfigurationId",
             "calculationId": "CalculationId",
             "configurationJson": "ConfigurationJson",
