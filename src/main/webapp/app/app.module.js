@@ -17,7 +17,9 @@
             'infinite-scroll',
             'ng-sortable',
             // jhipster-needle-angularjs-add-module JHipster will add new module here
-            'angular-loading-bar'
+            'angular-loading-bar',
+            'ui.select', 
+            'ngSanitize'
         ])
         .run(run);
 

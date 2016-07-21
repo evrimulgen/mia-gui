@@ -19,7 +19,9 @@
         vm.searchQuery = pagingParams.search;
         vm.currentSearch = pagingParams.search;
         vm.isDisabled = isDisabled;
-        vm.isMappingDisabled = isMappingDisabled;
+        vm.isMappingEnabled = isMappingEnabled;
+        vm.getModalities = getModalities;
+        vm.getMissingRtogs = getMissingRtogs;
         vm.loadAll();
 
         function loadAll () {
@@ -100,11 +102,29 @@
             return false;
         }
 
-        function isMappingDisabled (containerStatus) {
+        function isMappingEnabled (containerStatus) {
             if(containerStatus == "MAPPINGERROR"){
-                return false;    
+                return true;    
             }
-            return true;
+            return false;
+        }
+        
+        function getModalities (container) {
+        	var modalities = '';
+        	for (var i = 0; i < container.dicomPackageEntity.modalities.length; i++){
+        		modalities += container.dicomPackageEntity.modalities[i].modality + ", ";
+        	}
+        	return modalities.substring(0, modalities.length-2);//get rid of comma
+        }
+        
+        function getMissingRtogs(container){
+        	var missingRtogs = '';
+        	for (var i in container.mappingRtogRoi) {
+        		if ('' == container.mappingRtogRoi[i] || null == container.mappingRtogRoi[i]){
+        			missingRtogs += i + ', ';
+        		}
+        	}
+        	return missingRtogs.substring(0, missingRtogs.length-2);//get rid of last comma
         }
     }
 })();

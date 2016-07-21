@@ -1,4 +1,3 @@
-
 <form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
 
     <div class="modal-header">
@@ -21,19 +20,21 @@
                 </p>
             </div>
         </div>
-        
-         <div class="form-group">
-                <label translate="miaApp.computation.moduleName" for="field_volumeOfInterest">volumeOfInterest</label>
-                <select class="form-control" id="field_volumeOfInterest" name="moduleName" ng-model="vm.computation.moduleName" ng-options="module.moduleName as module.moduleName for module in vm.modules"
-                required>
-                    <option value=""></option>
-                </select>
-                <p class="help-block"
-                        ng-show="editForm.field_doseoperation.$error.required" translate="entity.validation.required">
-                        This field is required.
-                </p>
-       </div>
-        
+		 
+		<div class="form-group">
+			<label translate="miaApp.computation.moduleName" for="field_moduleName">moduleName</label>
+			<ui-select name="moduleName" ng-model="vm.computation.moduleName" ng-disabled="disabled" ng-required=true style="width: 100pct;"> 
+			<ui-select-match placeholder="Select a computation module...">{{$select.selected.value.moduleName}}</ui-select-match>
+			<ui-select-choices repeat="module.value.moduleName as (key, module) in vm.modules | filter: $select.search">
+				<span ng-bind-html="module.value.moduleName | highlight: $select.search"></span> 
+			</ui-select-choices> 
+			</ui-select>
+			<p class="help-block"
+            	ng-show="editForm.moduleName.$error.required" translate="entity.validation.required">
+                This field is required.
+            </p>
+		</div>
+
         <div class="well">
             	        
 	         <div ng-switch="vm.selectedModuleName()">
@@ -195,16 +196,19 @@
         </div>
 
         <div class="form-group">
-            <label translate="miaApp.computation.volumeOfInterest" for="field_volumeOfInterest">volumeOfInterest</label>
-            <select class="form-control" id="field_volumeOfInterest" name="volumeOfInterest" ng-model="vm.computation.volumeOfInterest" ng-options="volumeOfInterest as volumeOfInterest.name for volumeOfInterest in vm.volumeofinterests track by volumeOfInterest.id" 
-                required>
-                <option value=""></option>
-            </select>
-            <p class="help-block"
-                    ng-show="editForm.volumeOfInterest.$error.required" translate="entity.validation.required">
-                    This field is required.
+			<label translate="miaApp.computation.volumeOfInterest" for="field_volumeOfInterest">volumeOfInterest</label>
+			<ui-select name=volumeOfInterest ng-model="vm.computation.volumeOfInterest" ng-disabled="disabled" ng-required=true style="width: 100pct;"> 
+			<ui-select-match placeholder="Select a Volume Of Interest...">{{$select.selected.name}}</ui-select-match>
+			<ui-select-choices repeat="volumeOfInterest in vm.volumeofinterests | filter: $select.search">
+				<span ng-bind-html="volumeOfInterest.name | highlight: $select.search"></span> 
+			</ui-select-choices> 
+			</ui-select>
+			<p class="help-block"
+            	ng-show="editForm.volumeOfInterest.$error.required" translate="entity.validation.required">
+                This field is required.
             </p>
-        </div>
+		</div>
+		
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
