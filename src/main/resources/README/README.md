@@ -7,7 +7,7 @@ The MIA framework is composed out of several [microservices](http://martinfowler
 **This is the general MIA framework documentation. Microservice specific documentation can be found in the root README.md of each micro service repository**
 
 
-### Problem Definition ###
+### General Description ###
 
 To make batch computations on large volumes DICOM data possible, the following tasks have to be solved:
 
@@ -299,29 +299,51 @@ All micro services are maven projects, projects can be build using `mvnw package
 
 **Currently where are moving the code from closed to open source. In this transition period code changes have to be made before project can be build!**
 
-1. Download "Microsoft JDBC Driver for SQL Server" (version 4.1) and add the jar to your local maven repository. `mvn install:install-file -Dfile=sqljdbc4.jar -DgroupId=com.microsoft.sqlserver -DartifactId=sqljdbc41 -Dversion=4.1 -Dpackaging=jar`
-2. In the pom.xml replace the MAASTRO parent by a Spring Boot parent 
-3. In the pom.xml remove the "scm connection"
-3. Tests require data from our non-public servers, therefore build the code using `mvnw package -DskipTests`. 
+### Missing dependencies. ### 
+
+Some used dependencies are not open source or not available on public maven repositories. When you have a jar, you can add it to your local maven repository as described in the following example.
+
+**Example of installation of jar to your local maven repository:** 
+
+	mvn install:install-file -Dfile=sqljdbc4.jar -DgroupId=com.microsoft.sqlserver -DartifactId=sqljdbc41 -Dversion=4.1 -Dpackaging=jar
 
 
 
-
-The dcm4che dependencies can be found [here](https://github.com/dcm4che/dcm4che/releases/tag/3.3.7)
+MSSQL (jar embedded in archive "Microsoft JDBC Driver for SQL Server" from the Microsoft website)
 
 	<dependency>
-		<groupId>https://github.com/dcm4che/dcm4che</groupId>
+		<groupId>com.microsoft.sqlserver</groupId>
+		<artifactId>sqljdbc41</artifactId>
+		<version>4.1</version>
+	</dependency>
+
+dcm4che dependencies, available [here](https://github.com/dcm4che/dcm4che)
+
+	<dependency>
+		<groupId>org.dcm4che</groupId>
 		<artifactId>dcm4che-json</artifactId>
 		<version>3.3.7</version>
 	</dependency>
 
-The dicomUtilities dependency will soon added to [Maven central](http://search.maven.org/).
+MATLAB javabuilder MCR 9.0 64-bit, available [here](http://nl.mathworks.com/products/compiler/mcr/). (install the .exe)
+	
+	<dependency>
+		<groupId>com.mathworks.toolbox</groupId>
+		<artifactId>javabuilder</artifactId>
+		<version>2015.2.0</version>
+	</dependency>
+
+After installation of the .exe: `mvn install:install-file -Dfile=C:\Program Files\MATLAB\MATLAB Runtime\v90\toolbox\javabuilder\jar\javabuilder.jar -DgroupId=com.mathworks.toolbox -DartifactId=javabuilder -Dversion=2015.2.0 -Dpackaging=jar
+`
+
+Maastro dicomUtilities can be installed from the source code (contact us): `mvnw install`.
 
 	<dependency>
-    	<groupId>nl.maastro</groupId>
-        <artifactId>dicomUtilities</artifactId>
-        <version>2.7.0</version>
-    </dependency>
+		<groupId>nl.maastro</groupId>
+		<artifactId>dicomUtilities</artifactId>
+		<version>2.7.1</version>
+	</dependency>
+
 
 ## Monitoring##
 
