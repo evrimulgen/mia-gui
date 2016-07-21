@@ -173,7 +173,7 @@ Add the `-h` flag on any command to see how you can use it. For example, `bower 
 
 ## Building for production
 
-To optimize the colourfulnews client for production, run:
+To optimize the mia client for production, run:
 
     ./mvnw -Pprod clean package
 
