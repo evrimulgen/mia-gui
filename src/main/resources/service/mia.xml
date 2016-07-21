@@ -1,0 +1,9 @@
+<service>
+  <id>MIA - GUI</id>
+  <name>MIA - GUI</name>
+  <description>The user interface for the MIA framework</description>
+  <!--env name="FILESERVICE_HOME" value="%BASE%"/-->
+  <executable>java</executable>
+  <arguments>-Xmx1024m -jar "%BASE%\mia.war"</arguments>
+  <logmode>rotate</logmode>
+</service>
