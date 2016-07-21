@@ -160,12 +160,13 @@ Set the following system environment variable to set the location of the Eureka 
 ### yaml configuration  ###
 
 Configuration can also be done using yaml files. Good to know about yaml files:
-
 - A yaml file is a plain text file with the extension .yml
 - Non-profile specific configuration is set in the "application.yml"
 - Profile specific configuration (e.g. database configuration) is set in the "application-dev.yml" or  "application-prod.yml"
 - These files should be located next to the jar
 - TABS are not allowed in yaml files
+- Each micro service contains a folder "\src\main\resources\README\application.yml" with a configuration template.
+
 
 For every application the following properties can be set in the "application.yml"
   
@@ -280,7 +281,7 @@ A Spring Boot application can be installed as a windows service using [winsw](ht
 
 Each micro service contains a folder "\src\main\resources\serviceconfiguration" with preconfigured configuration files for winsw. 
 
-1. Download the raw winsw configuratoin files 
+1. Download the raw winsw configuration files 
 2. Copy the configuration files next to the jar
 2. Run the .exe to install the jar as a service
 3. Open in Windows "services.msc" to configure the service (e.g. Log on as... for permissions) 
@@ -290,7 +291,22 @@ For more information:
 - [winsw](https://github.com/kohsuke/winsw) 
 - [Spring Boot Windows deployment documentation](https://docs.spring.io/spring-boot/docs/current/reference/html/deployment-windows.html "Spring Boot Windows deployment")
 
+## Monitoring##
 
+Monitoring applications can be done using Actuator.
+
+- Navigate to a microservice using Eureka: [http://localhost:8761](http://localhost:8761)
+- The link to the actuator manual can be found on each microservice homepage. 
+- Actuator provides path to several monitoring and mantainance services, for example the **/logfile** path [http://localhost:8118/logfile](http://localhost:8118/logfile)
+
+ 
+##API##
+
+All microservices have a REST API which is documented and accessible with Swagger (dev profile only).
+
+The link **API** on the homepage of each microservice refers to Swagger (often a page refresh is needed to show the html).
+
+![MIA Flow](img/monitoringmiaservice.png)
 
 
 ## Development ##
@@ -345,20 +361,10 @@ Maastro dicomUtilities can be installed from the source code (contact us): `mvnw
 	</dependency>
 
 
-## Monitoring##
 
-Monitoring applications can be done using Actuator.
+### Pom.xml ### 
 
-- Navigate to a microservice using Eureka: [http://localhost:8761](http://localhost:8761)
-- The link to the actuator manual can be found on each microservice homepage. 
-- Actuator provides path to several monitoring and mantainance services, for example the **/logfile** path [http://localhost:8118/logfile](http://localhost:8118/logfile)
+Most projects have a MAASTRO parent and a scm connection in the pom.xml: 
 
- 
-##API##
-
-All microservices have a REST API which is documented and accessible with Swagger (dev profile only).
-
-The link **API** on the homepage of each microservice refers to Swagger (often a page refresh is needed to show the html).
-
-![MIA Flow](img/monitoringmiaservice.png)
-
+- The scm connection has to be removed
+- The parent pom has to be replaced with a Spring Boot parent
