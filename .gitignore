@@ -132,3 +132,5 @@ Desktop.ini
 ######################
 .eslintcache
 miagui.log.1
+src/main/webapp/bower_components/
+miagui.log.*
