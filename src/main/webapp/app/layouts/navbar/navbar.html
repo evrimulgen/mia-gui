@@ -39,6 +39,12 @@
                         
                          <li ui-sref-active="active" ><a ui-sref="container" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
                         &#xA0;<span translate="global.menu.entities.container">Container</span></a></li>
+                        <li ui-sref-active="active" >
+                            <a ui-sref="dose-result" ng-click="vm.collapseNavbar()">
+                                <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                                <span translate="global.menu.entities.doseResult">Dose Result</span>
+                            </a>
+                        </li>
                         <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                     </ul>
                 </li>

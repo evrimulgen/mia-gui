@@ -1,0 +1,31 @@
+{
+    "miaApp": {
+        "doseResult" : {
+            "home": {
+                "title": "Dose Results",
+                "createLabel": "Create a new Dose Result",
+                "createOrEditLabel": "Create or edit a Dose Result",
+                "search": "Search for Dose Result"
+            },
+            "created": "A new Dose Result is created with identifier {{ param }}",
+            "updated": "A Dose Result is updated with identifier {{ param }}",
+            "deleted": "A Dose Result is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Dose Result {{ id }}?"
+            },
+            "detail": {
+                "title": "Dose Result"
+            },
+            "doseSopUid": "Dose Sop Uid",
+            "operation": "Operation",
+            "result": "Result",
+            "version": "Version",
+            "calculationIdentifier": "Calculation Identifier",
+            "patientId": "Patient Id",
+            "planLabel": "Plan Label",
+            "containerId": "Container Id",
+            "volumeOfInterest": "Volume Of Interest",
+            "error": "Error"
+        }
+    }
+}
