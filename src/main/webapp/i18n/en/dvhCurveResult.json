@@ -1,0 +1,33 @@
+{
+    "miaApp": {
+        "dvhCurveResult" : {
+            "home": {
+                "title": "Dvh Curve Results",
+                "createLabel": "Create a new Dvh Curve Result",
+                "createOrEditLabel": "Create or edit a Dvh Curve Result",
+                "search": "Search for Dvh Curve Result"
+            },
+            "created": "A new Dvh Curve Result is created with identifier {{ param }}",
+            "updated": "A Dvh Curve Result is updated with identifier {{ param }}",
+            "deleted": "A Dvh Curve Result is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Dvh Curve Result {{ id }}?"
+            },
+            "detail": {
+                "title": "Dvh Curve Result"
+            },
+            "version": "Version",
+            "calculationIdentifier": "Calculation Identifier",
+            "patientId": "Patient Id",
+            "planLabel": "Plan Label",
+            "containerId": "Container Id",
+            "volumeOfInterest": "Volume Of Interest",
+            "error": "Error",
+            "doseSopUid": "Dose Sop Uid",
+            "volumeUnit": "Volume Unit",
+            "dosevector": "Dosevector",
+            "volumevector": "Volumevector",
+            "binSize": "Bin Size"
+        }
+    }
+}
