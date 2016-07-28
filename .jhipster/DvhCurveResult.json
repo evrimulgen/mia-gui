@@ -51,8 +51,8 @@
         }
     ],
     "changelogDate": "20160726155233",
-    "dto": "no",
-    "service": "no",
+    "dto": "mapstruct",
+    "service": "serviceClass",
     "entityTableName": "dvh_curve_result",
     "pagination": "pagination"
 }
