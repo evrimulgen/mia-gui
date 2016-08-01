@@ -4,12 +4,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="dvh-curve-result.new" >
-                    <span class="glyphicon glyphicon-plus"></span>
-                    <span  translate="miaApp.dvhCurveResult.home.createLabel">
-                        Create new Dvh Curve Result
-                    </span>
-                </button>
+               
             </div>
         </div>
     </div>
@@ -19,36 +14,26 @@
             <thead>
                 <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
                     <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="containerId"><span translate="miaApp.dvhCurveResult.containerId">Container Id</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="version"><span translate="miaApp.dvhCurveResult.version">Version</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="calculationIdentifier"><span translate="miaApp.dvhCurveResult.calculationIdentifier">Calculation Identifier</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="patientId"><span translate="miaApp.dvhCurveResult.patientId">Patient Id</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="planLabel"><span translate="miaApp.dvhCurveResult.planLabel">Plan Label</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="containerId"><span translate="miaApp.dvhCurveResult.containerId">Container Id</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="volumeOfInterest"><span translate="miaApp.dvhCurveResult.volumeOfInterest">Volume Of Interest</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="error"><span translate="miaApp.dvhCurveResult.error">Error</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="doseSopUid"><span translate="miaApp.dvhCurveResult.doseSopUid">Dose Sop Uid</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="volumeUnit"><span translate="miaApp.dvhCurveResult.volumeUnit">Volume Unit</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dosevector"><span translate="miaApp.dvhCurveResult.dosevector">Dosevector</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="volumevector"><span translate="miaApp.dvhCurveResult.volumevector">Volumevector</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="binSize"><span translate="miaApp.dvhCurveResult.binSize">Bin Size</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="dvhCurveResult in vm.dvhCurveResults track by dvhCurveResult.id">
                     <td><a ui-sref="dvh-curve-result-detail({id:dvhCurveResult.id})">{{dvhCurveResult.id}}</a></td>
+                    <td>{{dvhCurveResult.containerId}}</td>
                     <td>{{dvhCurveResult.version}}</td>
-                    <td>{{dvhCurveResult.calculationIdentifier}}</td>
                     <td>{{dvhCurveResult.patientId}}</td>
                     <td>{{dvhCurveResult.planLabel}}</td>
-                    <td>{{dvhCurveResult.containerId}}</td>
                     <td>{{dvhCurveResult.volumeOfInterest}}</td>
                     <td>{{dvhCurveResult.error}}</td>
                     <td>{{dvhCurveResult.doseSopUid}}</td>
-                    <td>{{dvhCurveResult.volumeUnit}}</td>
-                    <td>{{dvhCurveResult.dosevector}}</td>
-                    <td>{{dvhCurveResult.volumevector}}</td>
-                    <td>{{dvhCurveResult.binSize}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"
@@ -56,18 +41,6 @@
                                     class="btn btn-info btn-sm">
                                 <span class="glyphicon glyphicon-eye-open"></span>
                                 <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="dvh-curve-result.edit({id:dvhCurveResult.id})"
-                                    class="btn btn-primary btn-sm">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="dvh-curve-result.delete({id:dvhCurveResult.id})"
-                                    class="btn btn-danger btn-sm">
-                                <span class="glyphicon glyphicon-remove-circle"></span>
-                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
                             </button>
                         </div>
                     </td>
