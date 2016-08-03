@@ -5,7 +5,7 @@
                 "title": "Dvh Curve Results",
                 "createLabel": "Create a new Dvh Curve Result",
                 "createOrEditLabel": "Create or edit a Dvh Curve Result",
-                "search": "Search for Dvh Curve Result"
+                "search": "Search for Dvh Curve Result by PatientId"
             },
             "created": "A new Dvh Curve Result is created with identifier {{ param }}",
             "updated": "A Dvh Curve Result is updated with identifier {{ param }}",

@@ -5,7 +5,7 @@
                 "title": "Dose Results",
                 "createLabel": "Create a new Dose Result",
                 "createOrEditLabel": "Create or edit a Dose Result",
-                "search": "Search for Dose Result"
+                "search": "Search for Dose Result by PatientId"
             },
             "created": "A new Dose Result is created with identifier {{ param }}",
             "updated": "A Dose Result is updated with identifier {{ param }}",

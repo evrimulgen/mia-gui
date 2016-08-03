@@ -5,7 +5,7 @@
                 "title": "Dvh Volume Results",
                 "createLabel": "Create a new Dvh Volume Result",
                 "createOrEditLabel": "Create or edit a Dvh Volume Result",
-                "search": "Search for Dvh Volume Result"
+                "search": "Search for Dvh Volume Result by PatientId"
             },
             "created": "A new Dvh Volume Result is created with identifier {{ param }}",
             "updated": "A Dvh Volume Result is updated with identifier {{ param }}",

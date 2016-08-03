@@ -5,7 +5,7 @@
                 "title": "Volume Results",
                 "createLabel": "Create a new Volume Result",
                 "createOrEditLabel": "Create or edit a Volume Result",
-                "search": "Search for Volume Result"
+                "search": "Search for Volume Result by PatientId"
             },
             "created": "A new Volume Result is created with identifier {{ param }}",
             "updated": "A Volume Result is updated with identifier {{ param }}",

@@ -5,7 +5,7 @@
                 "title": "Dvh Dose Results",
                 "createLabel": "Create a new Dvh Dose Result",
                 "createOrEditLabel": "Create or edit a Dvh Dose Result",
-                "search": "Search for Dvh Dose Result"
+                "search": "Search for Dvh Dose Result by PatientId"
             },
             "created": "A new Dvh Dose Result is created with identifier {{ param }}",
             "updated": "A Dvh Dose Result is updated with identifier {{ param }}",
