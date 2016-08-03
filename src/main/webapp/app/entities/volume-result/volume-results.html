@@ -32,10 +32,10 @@
                     <th jh-sort-by="containerId"><span translate="miaApp.volumeResult.containerId">Container Id</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="patientId"><span translate="miaApp.volumeResult.patientId">Patient Id</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="planLabel"><span translate="miaApp.volumeResult.planLabel">Plan Label</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="result"><span translate="miaApp.volumeResult.result">Result</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="volumeOfInterest"><span translate="miaApp.volumeResult.volumeOfInterest">Volume Of Interest</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="error"><span translate="miaApp.volumeResult.error">Error</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="doseSopUid"><span translate="miaApp.volumeResult.doseSopUid">Dose Sop Uid</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="result"><span translate="miaApp.volumeResult.result">Result</span> <span class="glyphicon glyphicon-sort"></span></th>
+                   <!--  <th jh-sort-by="doseSopUid"><span translate="miaApp.volumeResult.doseSopUid">Dose Sop Uid</span> <span class="glyphicon glyphicon-sort"></span></th> -->
                     
                     <th></th>
                 </tr>
@@ -46,10 +46,10 @@
                     <td>{{volumeResult.containerId}}</td>
                     <td>{{volumeResult.patientId}}</td>
                     <td>{{volumeResult.planLabel}}</td>  
-                    <td>{{volumeResult.result}}</td>
                     <td>{{volumeResult.volumeOfInterest}}</td>
+                    <td>{{volumeResult.result}}</td>
                     <td>{{volumeResult.error}}</td>
-                    <td>{{volumeResult.doseSopUid}}</td>
+                    <!-- <td>{{volumeResult.doseSopUid}}</td> -->
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"
