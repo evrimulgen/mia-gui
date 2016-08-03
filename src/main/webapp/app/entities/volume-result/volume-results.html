@@ -1,0 +1,76 @@
+<div>
+    <h2 translate="miaApp.volumeResult.home.title">Volume Results</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="volume-result.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="miaApp.volumeResult.home.createLabel">
+                        Create new Volume Result
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="doseSopUid"><span translate="miaApp.volumeResult.doseSopUid">Dose Sop Uid</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="result"><span translate="miaApp.volumeResult.result">Result</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="version"><span translate="miaApp.volumeResult.version">Version</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="calculationIdentifier"><span translate="miaApp.volumeResult.calculationIdentifier">Calculation Identifier</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="patientId"><span translate="miaApp.volumeResult.patientId">Patient Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="planLabel"><span translate="miaApp.volumeResult.planLabel">Plan Label</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="containerId"><span translate="miaApp.volumeResult.containerId">Container Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="volumeOfInterest"><span translate="miaApp.volumeResult.volumeOfInterest">Volume Of Interest</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="error"><span translate="miaApp.volumeResult.error">Error</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="volumeResult in vm.volumeResults track by volumeResult.id">
+                    <td><a ui-sref="volume-result-detail({id:volumeResult.id})">{{volumeResult.id}}</a></td>
+                    <td>{{volumeResult.doseSopUid}}</td>
+                    <td>{{volumeResult.result}}</td>
+                    <td>{{volumeResult.version}}</td>
+                    <td>{{volumeResult.calculationIdentifier}}</td>
+                    <td>{{volumeResult.patientId}}</td>
+                    <td>{{volumeResult.planLabel}}</td>
+                    <td>{{volumeResult.containerId}}</td>
+                    <td>{{volumeResult.volumeOfInterest}}</td>
+                    <td>{{volumeResult.error}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="volume-result-detail({id:volumeResult.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="volume-result.edit({id:volumeResult.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="volume-result.delete({id:volumeResult.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

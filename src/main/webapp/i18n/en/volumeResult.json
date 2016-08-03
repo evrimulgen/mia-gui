@@ -1,0 +1,30 @@
+{
+    "miaApp": {
+        "volumeResult" : {
+            "home": {
+                "title": "Volume Results",
+                "createLabel": "Create a new Volume Result",
+                "createOrEditLabel": "Create or edit a Volume Result",
+                "search": "Search for Volume Result"
+            },
+            "created": "A new Volume Result is created with identifier {{ param }}",
+            "updated": "A Volume Result is updated with identifier {{ param }}",
+            "deleted": "A Volume Result is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Volume Result {{ id }}?"
+            },
+            "detail": {
+                "title": "Volume Result"
+            },
+            "doseSopUid": "Dose Sop Uid",
+            "result": "Result",
+            "version": "Version",
+            "calculationIdentifier": "Calculation Identifier",
+            "patientId": "Patient Id",
+            "planLabel": "Plan Label",
+            "containerId": "Container Id",
+            "volumeOfInterest": "Volume Of Interest",
+            "error": "Error"
+        }
+    }
+}

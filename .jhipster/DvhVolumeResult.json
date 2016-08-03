@@ -6,6 +6,14 @@
             "fieldType": "String"
         },
         {
+            "fieldName": "boundary",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "volumeUnit",
+            "fieldType": "String"
+        },
+        {
             "fieldName": "result",
             "fieldType": "Float"
         },
@@ -41,6 +49,6 @@
     "changelogDate": "20160726155233",
     "dto": "mapstruct",
     "service": "serviceClass",
-    "entityTableName": "volume_result",
+    "entityTableName": "dvh_volume_result",
     "pagination": "pagination"
 }

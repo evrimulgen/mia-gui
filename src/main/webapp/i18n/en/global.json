@@ -14,6 +14,9 @@
                 "container": "Container",
                 "doseResult": "Dose Result",
                 "dvhCurveResult": "Dvh Curve Result",
+                "volumeResult": "Volume Result",
+                "dvhDoseResult": "Dvh Dose Result",
+                "dvhVolumeResult": "Dvh Volume Result",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

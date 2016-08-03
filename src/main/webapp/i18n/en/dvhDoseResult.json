@@ -1,0 +1,34 @@
+{
+    "miaApp": {
+        "dvhDoseResult" : {
+            "home": {
+                "title": "Dvh Dose Results",
+                "createLabel": "Create a new Dvh Dose Result",
+                "createOrEditLabel": "Create or edit a Dvh Dose Result",
+                "search": "Search for Dvh Dose Result"
+            },
+            "created": "A new Dvh Dose Result is created with identifier {{ param }}",
+            "updated": "A Dvh Dose Result is updated with identifier {{ param }}",
+            "deleted": "A Dvh Dose Result is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Dvh Dose Result {{ id }}?"
+            },
+            "detail": {
+                "title": "Dvh Dose Result"
+            },
+            "doseSopUid": "Dose Sop Uid",
+            "boundary": "Boundary",
+            "volumeUnit": "Volume Unit",
+            "doseUnit": "Dose Unit",
+            "targetPrescriptionDose": "Target Prescription Dose",
+            "result": "Result",
+            "version": "Version",
+            "calculationIdentifier": "Calculation Identifier",
+            "patientId": "Patient Id",
+            "planLabel": "Plan Label",
+            "containerId": "Container Id",
+            "volumeOfInterest": "Volume Of Interest",
+            "error": "Error"
+        }
+    }
+}
