@@ -10,7 +10,7 @@
     function stateConfig($stateProvider) {
         $stateProvider
         .state('volume-of-interest', {
-            parent: 'entity',
+            parent: 'miaconfiguration',
             url: '/volume-of-interest?page&sort&search',
             data: {
                 authorities: ['ROLE_USER'],

@@ -10,7 +10,7 @@
     function stateConfig($stateProvider) {
         $stateProvider
         .state('configuration', {
-            parent: 'entity',
+            parent: 'miaconfiguration',
             url: '/configuration?page&sort&search',
             data: {
                 authorities: ['ROLE_USER'],

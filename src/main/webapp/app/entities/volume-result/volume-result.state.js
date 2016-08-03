@@ -10,7 +10,7 @@
     function stateConfig($stateProvider) {
         $stateProvider
         .state('volume-result', {
-            parent: 'entity',
+            parent: 'result',
             url: '/volume-result?page&sort&search',
             data: {
                 authorities: ['ROLE_USER'],

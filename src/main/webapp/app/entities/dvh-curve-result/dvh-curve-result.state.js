@@ -10,7 +10,7 @@
     function stateConfig($stateProvider) {
         $stateProvider
         .state('dvh-curve-result', {
-            parent: 'entity',
+            parent: 'result',
             url: '/dvh-curve-result?page&sort&search',
             data: {
                 authorities: ['ROLE_USER'],

@@ -10,7 +10,7 @@
     function stateConfig($stateProvider) {
         $stateProvider
         .state('dvh-dose-result', {
-            parent: 'entity',
+            parent: 'result',
             url: '/dvh-dose-result?page&sort&search',
             data: {
                 authorities: ['ROLE_USER'],

@@ -10,7 +10,7 @@
     function stateConfig($stateProvider) {
         $stateProvider
         .state('dose-result', {
-            parent: 'entity',
+            parent: 'result',
             url: '/dose-result?page&sort&search',
             data: {
                 authorities: ['ROLE_USER'],
