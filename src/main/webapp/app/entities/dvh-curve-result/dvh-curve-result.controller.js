@@ -5,40 +5,57 @@
         .module('miaApp')
         .controller('DvhCurveResultController', DvhCurveResultController);
 
-    DvhCurveResultController.$inject = ['$scope', '$state', 'DvhCurveResult', 'ParseLinks', 'AlertService', 'pagingParams', 'paginationConstants'];
+    DvhCurveResultController.$inject = ['$scope', '$state', 'DvhCurveResult', 'DvhCurveResultSearch', 'ParseLinks', 'AlertService', 'pagingParams', 'paginationConstants'];
 
-    function DvhCurveResultController ($scope, $state, DvhCurveResult, ParseLinks, AlertService, pagingParams, paginationConstants) {
+    function DvhCurveResultController ($scope, $state, DvhCurveResult, DvhCurveResultSearch, ParseLinks, AlertService, pagingParams, paginationConstants) {
         var vm = this;
         vm.loadAll = loadAll;
         vm.loadPage = loadPage;
         vm.predicate = pagingParams.predicate;
         vm.reverse = pagingParams.ascending;
         vm.transition = transition;
+        
+        vm.clear = clear;
+        vm.search = search;
+        vm.searchQuery = pagingParams.search;
+        vm.currentSearch = pagingParams.search;
+        
         vm.loadAll();
 
         function loadAll () {
-            DvhCurveResult.query({
-                page: pagingParams.page - 1,
-                size: paginationConstants.itemsPerPage,
-                sort: sort()
-            }, onSuccess, onError);
-            function sort() {
-                var result = [vm.predicate + ',' + (vm.reverse ? 'asc' : 'desc')];
-                if (vm.predicate !== 'id') {
-                    result.push('id');
-                }
-                return result;
-            }
-            function onSuccess(data, headers) {
-                vm.links = ParseLinks.parse(headers('link'));
-                vm.totalItems = headers('X-Total-Count');
-                vm.queryCount = vm.totalItems;
-                vm.dvhCurveResults = data;
-                vm.page = pagingParams.page;
-            }
-            function onError(error) {
-                AlertService.error(error.data.message);
-            }
+
+        	if (pagingParams.search) {
+        		DvhCurveResultSearch.query({
+        			query: pagingParams.search,
+        			page: pagingParams.page - 1,
+        			size: paginationConstants.itemsPerPage,
+        			sort: sort()
+        		}, onSuccess, onError);
+        	} else {
+
+        		DvhCurveResult.query({
+        			page: pagingParams.page - 1,
+        			size: paginationConstants.itemsPerPage,
+        			sort: sort()
+        		}, onSuccess, onError);
+        	}
+        	function sort() {
+        		var result = [vm.predicate + ',' + (vm.reverse ? 'asc' : 'desc')];
+        		if (vm.predicate !== 'id') {
+        			result.push('id');
+        		}
+        		return result;
+        	}
+        	function onSuccess(data, headers) {
+        		vm.links = ParseLinks.parse(headers('link'));
+        		vm.totalItems = headers('X-Total-Count');
+        		vm.queryCount = vm.totalItems;
+        		vm.dvhCurveResults = data;
+        		vm.page = pagingParams.page;
+        	}
+        	function onError(error) {
+        		AlertService.error(error.data.message);
+        	}
         }
 
         function loadPage (page) {
@@ -52,6 +69,27 @@
                 sort: vm.predicate + ',' + (vm.reverse ? 'asc' : 'desc'),
                 search: vm.currentSearch
             });
+        }
+        
+        function search (searchQuery) {
+            if (!searchQuery){
+                return vm.clear();
+            }
+            vm.links = null;
+            vm.page = 1;
+            vm.predicate = 'id';
+            vm.reverse = true;
+            vm.currentSearch = searchQuery;
+            vm.transition();
+        }
+        
+        function clear () {
+            vm.links = null;
+            vm.page = 1;
+            vm.predicate = 'id';
+            vm.reverse = true;
+            vm.currentSearch = null;
+            vm.transition();
         }
 
     }

@@ -7,7 +7,7 @@
     DoseResult.$inject = ['$resource'];
 
     function DoseResult ($resource) {
-        var resourceUrl =  'resultservice/' +'api/dose-results/:id';
+        var resourceUrl = 'resultservice/' + 'api/dose-results/:id';
 
         return $resource(resourceUrl, {}, {
             'query': { method: 'GET', isArray: true},
