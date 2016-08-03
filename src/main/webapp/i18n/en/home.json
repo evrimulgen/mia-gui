@@ -12,7 +12,9 @@
             "stackoverflow": "JHipster on Stack Overflow",
             "bugtracker": "MIA bug tracker",
             "chat": "JHipster public chat room",
-            "follow": "follow @java_hipster on Twitter"
+            "follow": "follow @java_hipster on Twitter",
+            "guimanual":"GUI manual",
+            "generalmanual":"General Framework manual"
         },
         "like": "If you like JHipster, don't forget to give us a star on",
         "github": "GitHub"
