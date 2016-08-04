@@ -17,7 +17,7 @@
                 "title": "Volume Result"
             },
             "doseSopUid": "Dose Sop Uid",
-            "result": "Result",
+            "result": "Result (cc)",
             "version": "Version",
             "calculationIdentifier": "Calculation Identifier",
             "patientId": "Patient Id",

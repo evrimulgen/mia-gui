@@ -3,11 +3,11 @@
 
   angular
 	.module('miaApp')
-	.directive('doseCurveDirective', function (){
+	.directive('dvhResultCurveDirective', function (){
 		return {
 			restrict: 'E',
 			scope: { selectedCountry: '=filtered', allCountries: '=allcountries' },
-			templateUrl: 'app/entities/dose-result/dosecurve.linechart.directive.html',
+			templateUrl: 'app/entities/dvh-result-curve/dvh-result-curve.linechart.directive.html',
 			link: linkFunction
 		};
 	});

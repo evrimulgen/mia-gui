@@ -36,8 +36,8 @@
                     <th jh-sort-by="planLabel"><span translate="miaApp.dvhVolumeResult.planLabel">Plan Label</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="volumeOfInterest"><span translate="miaApp.dvhVolumeResult.volumeOfInterest">Volume Of Interest</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="boundary"><span translate="miaApp.dvhVolumeResult.boundary">Boundary</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="volumeUnit"><span translate="miaApp.dvhVolumeResult.volumeUnit">Volume Unit</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="result"><span translate="miaApp.dvhVolumeResult.result">Result</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="volumeUnit"><span translate="miaApp.dvhVolumeResult.volumeUnit">Volume Unit</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="error"><span translate="miaApp.dvhVolumeResult.error">Error</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
@@ -53,8 +53,8 @@
                     <td>{{dvhVolumeResult.planLabel}}</td>                 
                     <td>{{dvhVolumeResult.volumeOfInterest}}</td>
                     <td>{{dvhVolumeResult.boundary}}</td>
+                    <td>{{dvhVolumeResult.result | number : 2}}</td>
                     <td>{{dvhVolumeResult.volumeUnit}}</td>
-                    <td>{{dvhVolumeResult.result}}</td>
                     <td>{{dvhVolumeResult.error}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
