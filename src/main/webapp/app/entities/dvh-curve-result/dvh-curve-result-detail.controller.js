@@ -9,11 +9,9 @@
 
     function DvhCurveResultDetailController($scope, $rootScope, $stateParams, entity, DvhCurveResult) {
         var vm = this;
-        vm.dvhCurveResult = {};
-        vm.dvhCurveResult.dosevector = [];
-        vm.dvhCurveResult.volumevector = [];
         vm.dvhCurveResult = entity;
-        
+        vm.showrawvector = false;
+                
         var unsubscribe = $rootScope.$on('miaApp:dvhCurveResultUpdate', function(event, result) {
             vm.dvhCurveResult = result;
         });
@@ -79,20 +77,17 @@
 
 
   
-        $scope.data = chartData();
 
-        function chartData() {
+        vm.chartData = function(dosevector, volumevector) {
+        	
+        	console.log("call");
         	
         	var structure1 = [];
-        	var dosearray = angular.fromJson(vm.dvhCurveResult.dosevector);
-        	var volumearray = angular.fromJson(vm.dvhCurveResult.volumevector);
-        	
-        	if(volumearray[0]){
-        	var vMax = volumearray[0];
-        	}
-        	
+        	var dosearray = angular.fromJson(dosevector);
+        	var volumearray = angular.fromJson(volumevector);
+        	       	
         	for(var i=0; i<dosearray.length; i++){	
-        		var volume = (volumearray[i] / vMax) * 100; 		
+        		var volume = (volumearray[i] / volumearray[0]) * 100; 		
         		structure1.push({ 
         			x: dosearray[i], 
         			y: volume 
@@ -109,7 +104,14 @@
         	        }
         	];
         };
-                    
+
+        entity.$promise.then(
+        		function(){
+        			$scope.data = vm.chartData(vm.dvhCurveResult.dosevector, vm.dvhCurveResult.volumevector);
+        		}
+        		);
+                  
+       
         
     }
 })();

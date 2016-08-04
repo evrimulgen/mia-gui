@@ -1,4 +1,3 @@
-
 <div>
     <h2><span translate="miaApp.dvhCurveResult.detail.title">Dvh Curve Result</span> {{vm.dvhCurveResult.id}}</h2>
     <hr>
@@ -48,6 +47,29 @@
             <span>{{vm.dvhCurveResult.volumeUnit}}</span>
         </dd>
         <hr>
+
+        <dt><span translate="miaApp.dvhCurveResult.dvhCurve">Chart</span></dt>
+        <dd>
+            <nvd3 options="options" data="data"></nvd3>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.dvhCurveResult.binSize">Bin Size</span></dt>
+        <dd>
+            <span>{{vm.dvhCurveResult.binSize}}</span>
+        </dd>
+        <hr>
+        <span ng-show="!vm.showrawvector">
+        <dt><span translate="miaApp.dvhCurveResult.dosevector">Dosevector</span></dt>
+        <dd>
+            <button ng-show="!vm.showrawvector" type="submit"
+                ng-click="vm.showrawvector=true"
+                class="btn btn-info">
+                <span class=""></span>&nbsp;<span translate="miaApp.dvhCurveResult.showvector"> Show Vector</span>
+            </button>
+        </dd>
+        <hr>
+        </span>
+        <span ng-show="vm.showrawvector">
         <dt><span translate="miaApp.dvhCurveResult.dosevector">Dosevector</span></dt>
         <dd>
             <textarea rows="4" cols="100" readonly="true" class="boxsizingBorder">{{vm.dvhCurveResult.dosevector}}</textarea>
@@ -58,16 +80,16 @@
             <textarea rows="4" cols="100" readonly="true" class="boxsizingBorder">{{vm.dvhCurveResult.volumevector}}</textarea>
         </dd>
         <hr>
-        <dt><span translate="miaApp.dvhCurveResult.binSize">Bin Size</span></dt>
-        <dd>
-            <span>{{vm.dvhCurveResult.binSize}}</span>
-        </dd>
-        <hr>
+        </span>
     </dl>
+
+
 
     <button type="submit"
             onclick="window.history.back()"
             class="btn btn-info">
         <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
     </button>
+    
+     
 </div>
