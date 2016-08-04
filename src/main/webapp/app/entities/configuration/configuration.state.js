@@ -9,9 +9,9 @@
 
     function stateConfig($stateProvider) {
         $stateProvider
-        .state('configuration', {
+        .state('containerconfiguration', {
             parent: 'miaconfiguration',
-            url: '/configuration?page&sort&search',
+            url: '/containerconfiguration?page&sort&search',
             data: {
                 authorities: ['ROLE_USER'],
                 pageTitle: 'miaApp.configuration.home.title'
@@ -51,9 +51,9 @@
                 }]
             }
         })
-        .state('configuration-detail', {
-            parent: 'entity',
-            url: '/configuration/{id}',
+        .state('containerconfiguration-detail', {
+            parent: 'containerconfiguration',
+            url: '/containerconfiguration/{id}',
             data: {
                 authorities: ['ROLE_USER'],
                 pageTitle: 'miaApp.configuration.detail.title'
@@ -75,8 +75,8 @@
                 }]
             }
         })
-        .state('configuration.new', {
-            parent: 'configuration',
+        .state('containerconfiguration.new', {
+            parent: 'containerconfiguration',
             url: '/new',
             data: {
                 authorities: ['ROLE_USER']
@@ -98,14 +98,14 @@
                         }
                     }
                 }).result.then(function() {
-                    $state.go('configuration', null, { reload: true });
+                    $state.go('containerconfiguration', null, { reload: true });
                 }, function() {
-                    $state.go('configuration');
+                    $state.go('containerconfiguration');
                 });
             }]
         })
-        .state('configuration.edit', {
-            parent: 'configuration',
+        .state('containerconfiguration.edit', {
+            parent: 'containerconfiguration',
             url: '/{id}/edit',
             data: {
                 authorities: ['ROLE_USER']
@@ -123,14 +123,14 @@
                         }]
                     }
                 }).result.then(function() {
-                    $state.go('configuration', null, { reload: true });
+                    $state.go('containerconfiguration', null, { reload: true });
                 }, function() {
                     $state.go('^');
                 });
             }]
         })
-        .state('configuration.delete', {
-            parent: 'configuration',
+        .state('containerconfiguration.delete', {
+            parent: 'containerconfiguration',
             url: '/{id}/delete',
             data: {
                 authorities: ['ROLE_USER']
@@ -147,7 +147,7 @@
                         }]
                     }
                 }).result.then(function() {
-                    $state.go('configuration', null, { reload: true });
+                    $state.go('containerconfiguration', null, { reload: true });
                 }, function() {
                     $state.go('^');
                 });

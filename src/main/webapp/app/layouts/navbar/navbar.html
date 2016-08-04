@@ -34,7 +34,7 @@
                         &#xA0;<span translate="global.menu.entities.volumeOfInterest">Volume Of Interest</span></a></li>
                         <li ui-sref-active="active" ><a ui-sref="computation" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
                         &#xA0;<span translate="global.menu.entities.computation">Computation</span></a></li>
-                        <li ui-sref-active="active" ><a ui-sref="configuration" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
+                        <li ui-sref-active="active" ><a ui-sref="containerconfiguration" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
                         &#xA0;<span translate="global.menu.entities.configuration">Configuration</span></a></li>
                         <li role="separator" class="divider"></li>
                         
@@ -84,17 +84,12 @@
                             </a>
                         </li>
                         <li ui-sref-active="active" >
-                            <a ui-sref="dvh-curve-result" ng-click="vm.collapseNavbar()">
-                                <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
-                                <span translate="global.menu.entities.dvhCurveResult">Dvh Curve Result</span>
-                            </a>
-                        </li>
-                        <li ui-sref-active="active" >
                             <a ui-sref="volume-result" ng-click="vm.collapseNavbar()">
                                 <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
                                 <span translate="global.menu.entities.volumeResult">Volume Result</span>
                             </a>
                         </li>
+                        <li role="separator" class="divider"></li>
                         <li ui-sref-active="active" >
                             <a ui-sref="dvh-dose-result" ng-click="vm.collapseNavbar()">
                                 <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
@@ -105,6 +100,13 @@
                             <a ui-sref="dvh-volume-result" ng-click="vm.collapseNavbar()">
                                 <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
                                 <span translate="global.menu.entities.dvhVolumeResult">Dvh Volume Result</span>
+                            </a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li ui-sref-active="active" >
+                            <a ui-sref="dvh-curve-result" ng-click="vm.collapseNavbar()">
+                                <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                                <span translate="global.menu.entities.dvhCurveResult">Dvh Curve Result</span>
                             </a>
                         </li>
                         <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
