@@ -2,19 +2,19 @@
     "miaApp": {
         "dvhCurveResult" : {
             "home": {
-                "title": "Dvh Curve Results",
-                "createLabel": "Create a new Dvh Curve Result",
-                "createOrEditLabel": "Create or edit a Dvh Curve Result",
-                "search": "Search for Dvh Curve Result by PatientId"
+                "title": "DVH Curve Results",
+                "createLabel": "Create a new DVH Curve Result",
+                "createOrEditLabel": "Create or edit a DVH Curve Result",
+                "search": "Search for DVH Curve Result by PatientId"
             },
-            "created": "A new Dvh Curve Result is created with identifier {{ param }}",
-            "updated": "A Dvh Curve Result is updated with identifier {{ param }}",
-            "deleted": "A Dvh Curve Result is deleted with identifier {{ param }}",
+            "created": "A new DVH Curve Result is created with identifier {{ param }}",
+            "updated": "A DVH Curve Result is updated with identifier {{ param }}",
+            "deleted": "A DVH Curve Result is deleted with identifier {{ param }}",
             "delete": {
-                "question": "Are you sure you want to delete Dvh Curve Result {{ id }}?"
+                "question": "Are you sure you want to delete DVH Curve Result {{ id }}?"
             },
             "detail": {
-                "title": "Dvh Curve Result"
+                "title": "DVH Curve Result"
             },
             "version": "Version",
             "calculationIdentifier": "Calculation Identifier",
@@ -27,7 +27,10 @@
             "volumeUnit": "Volume Unit",
             "dosevector": "Dosevector",
             "volumevector": "Volumevector",
-            "binSize": "Bin Size"
+            "binSize": "Bin Size",
+            "dvhCurve":"DVH Curve",
+            "showvector":"Show Vector",
+            "hidevector":"Hide Vector"
         }
     }
 }

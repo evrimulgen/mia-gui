@@ -2,19 +2,19 @@
     "miaApp": {
         "dvhDoseResult" : {
             "home": {
-                "title": "Dvh Dose Results",
-                "createLabel": "Create a new Dvh Dose Result",
-                "createOrEditLabel": "Create or edit a Dvh Dose Result",
-                "search": "Search for Dvh Dose Result by PatientId"
+                "title": "DVH Dose Results",
+                "createLabel": "Create a new DVH Dose Result",
+                "createOrEditLabel": "Create or edit a DVH Dose Result",
+                "search": "Search for DVH Dose Result by PatientId"
             },
-            "created": "A new Dvh Dose Result is created with identifier {{ param }}",
-            "updated": "A Dvh Dose Result is updated with identifier {{ param }}",
-            "deleted": "A Dvh Dose Result is deleted with identifier {{ param }}",
+            "created": "A new DVH Dose Result is created with identifier {{ param }}",
+            "updated": "A DVH Dose Result is updated with identifier {{ param }}",
+            "deleted": "A DVH Dose Result is deleted with identifier {{ param }}",
             "delete": {
-                "question": "Are you sure you want to delete Dvh Dose Result {{ id }}?"
+                "question": "Are you sure you want to delete DVH Dose Result {{ id }}?"
             },
             "detail": {
-                "title": "Dvh Dose Result"
+                "title": "DVH Dose Result"
             },
             "doseSopUid": "Dose Sop Uid",
             "boundary": "Boundary",

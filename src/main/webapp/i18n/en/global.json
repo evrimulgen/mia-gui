@@ -15,10 +15,10 @@
                 "configuration":"ContainerConfiguration",
                 "container": "Container",
                 "doseResult": "Dose Result",
-                "dvhCurveResult": "Dvh Curve Result",
+                "dvhCurveResult": "DVH Curve Result",
                 "volumeResult": "Volume Result",
-                "dvhDoseResult": "Dvh Dose Result",
-                "dvhVolumeResult": "Dvh Volume Result",
+                "dvhDoseResult": "DVH Dose Result",
+                "dvhVolumeResult": "DVH Volume Result",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
