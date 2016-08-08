@@ -5,9 +5,9 @@
         .module('miaApp')
         .controller('ContainerController', ContainerController);
 
-    ContainerController.$inject = ['$scope', '$state', 'Container', 'ContainerSearch', 'ParseLinks', 'AlertService', 'pagingParams', 'paginationConstants'];
+    ContainerController.$inject = ['$scope', '$state', '$http', 'Container', 'ContainerSearch', 'ParseLinks', 'AlertService', 'pagingParams', 'paginationConstants'];
 
-    function ContainerController ($scope, $state, Container, ContainerSearch, ParseLinks, AlertService, pagingParams, paginationConstants) {
+    function ContainerController ($scope, $state, $http, Container, ContainerSearch, ParseLinks, AlertService, pagingParams, paginationConstants) {
         var vm = this;
         vm.loadAll = loadAll;
         vm.loadPage = loadPage;
@@ -110,21 +110,35 @@
         }
         
         function getModalities (container) {
-        	var modalities = '';
-        	for (var i = 0; i < container.dicomPackageEntity.modalities.length; i++){
-        		modalities += container.dicomPackageEntity.modalities[i].modality + ", ";
-        	}
-        	return modalities.substring(0, modalities.length-2);//get rid of comma
+        	var modalities = [];       	
+        	container.dicomPackageEntity.modalities.forEach(
+        			function(currentValue){ 
+        				modalities.push(currentValue.modality);
+        			});
+       	
+        	return modalities.sort() + "";
         }
         
         function getMissingRtogs(container){
-        	var missingRtogs = '';
+        	var missingRtogs = [];
         	for (var i in container.mappingRtogRoi) {
         		if ('' == container.mappingRtogRoi[i] || null == container.mappingRtogRoi[i]){
-        			missingRtogs += i + ', ';
+        			missingRtogs.push(i);
         		}
         	}
-        	return missingRtogs.substring(0, missingRtogs.length-2);//get rid of last comma
+        	return missingRtogs.sort() + "";
+        }
+        
+       
+        vm.redoContainer = function(containerId){         	
+        	$http({
+        		method: 'GET',
+        		url: 'manager/' + 'api/container/manual/' + containerId
+        	}).then(function successCallback(response) {
+        		loadAll();
+        	}, function errorCallback(response) {
+        		console.log('error: ' + response)
+        	});
         }
     }
 })();

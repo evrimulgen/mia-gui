@@ -1,0 +1,34 @@
+{
+    "miaApp": {
+        "dvhDoseResult" : {
+            "home": {
+                "title": "DVH Dose Results",
+                "createLabel": "Create a new DVH Dose Result",
+                "createOrEditLabel": "Create or edit a DVH Dose Result",
+                "search": "Search for DVH Dose Result by PatientId"
+            },
+            "created": "A new DVH Dose Result is created with identifier {{ param }}",
+            "updated": "A DVH Dose Result is updated with identifier {{ param }}",
+            "deleted": "A DVH Dose Result is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete DVH Dose Result {{ id }}?"
+            },
+            "detail": {
+                "title": "DVH Dose Result"
+            },
+            "doseSopUid": "Dose Sop Uid",
+            "boundary": "Boundary",
+            "volumeUnit": "Volume Unit",
+            "doseUnit": "Dose Unit",
+            "targetPrescriptionDose": "Target Prescription Dose",
+            "result": "Result",
+            "version": "Version",
+            "calculationIdentifier": "Calculation Identifier",
+            "patientId": "Patient Id",
+            "planLabel": "Plan Label",
+            "containerId": "Container Id",
+            "volumeOfInterest": "Volume Of Interest",
+            "error": "Error"
+        }
+    }
+}

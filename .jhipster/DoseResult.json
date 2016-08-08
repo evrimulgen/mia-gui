@@ -1,0 +1,50 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "doseSopUid",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "operation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "result",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "version",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "calculationIdentifier",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "patientId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "planLabel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "containerId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "volumeOfInterest",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "error",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160726155233",
+    "dto": "mapstruct",
+    "service": "serviceClass",
+    "entityTableName": "dose_result",
+    "pagination": "pagination"
+}

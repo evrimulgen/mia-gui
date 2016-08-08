@@ -277,6 +277,12 @@ ul#strengthBar {
 	font-size: large;
 }
 
+.boxsizingBorder {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
 /* dirty bootswatch hack */
 
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700,400italic");/*!

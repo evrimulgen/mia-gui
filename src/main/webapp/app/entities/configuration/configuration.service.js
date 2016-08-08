@@ -15,6 +15,7 @@
                 method: 'GET',
                 transformResponse: function (data) {
                     data = angular.fromJson(data);
+                    data.configurationIdentifier = angular.fromJson(data.configurationIdentifier);
                     return data;
                 }
             },

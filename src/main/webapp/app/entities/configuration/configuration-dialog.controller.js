@@ -37,6 +37,8 @@
         vm.save = function () {
             vm.isSaving = true;
             if (vm.configuration.id !== null) {
+            	console.log(vm.configuration.computations);
+            	
                 Configuration.update(vm.configuration, onSaveSuccess, onSaveError);
             } else {
             	vm.configuration.userId = vm.account.login;
@@ -67,6 +69,26 @@
                 vm.account = account;
             });
         }
+        
+              
+        $scope.sortableOptions = {
+        		animation: 150,
+        		group: 'ng',
+        		store: {
+        		    // Sorting acquisition (called during initialization)
+        		    get: function (sortable) {
+        		      var order = localStorage.getItem(sortable.options.group);
+        		      return order ? order.split('|') : [];
+        		    },
+
+        		    // Saving the acquired sorting (called each time upon sorting modification)
+        		    set: function (sortable) {
+        		      var order = sortable.toArray();
+        		      localStorage.setItem(sortable.options.group, order.join('|'));
+        		      console.log(order);
+        		    }
+        		  }
+        	  };
         
     }
 })();

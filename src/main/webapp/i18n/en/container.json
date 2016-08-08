@@ -28,7 +28,8 @@
             "calculationId": "CalculationId",
             "configurationJson": "ConfigurationJson",
             "dicomPackageEntity": "DicomPackageEntity",
-            "mappingRtogRoi": "MappingRtogRoi"
+            "mappingRtogRoi": "MappingRtogRoi",
+            "redo": "Redo"
         }
     }
 }

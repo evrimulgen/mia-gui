@@ -1,17 +1,24 @@
 {
     "global": {
-        "title": "Medical Image Analysis Framework",
+        "title": "MIA framework",
         "browsehappy": "You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/?locale=en\">upgrade your browser</a> to improve your experience.",
         "menu": {
             "home": "Home",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
+                "miaconfiguration":"Configuration",
+                "results":"Results",
                 "volumeOfInterest": "VolumeOfInterest",
                 "rtog": "Rtog",
                 "computation": "Computation",
                 "configuration":"ContainerConfiguration",
                 "container": "Container",
+                "doseResult": "Dose Result",
+                "dvhCurveResult": "DVH Curve Result",
+                "volumeResult": "Volume Result",
+                "dvhDoseResult": "DVH Dose Result",
+                "dvhVolumeResult": "DVH Volume Result",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

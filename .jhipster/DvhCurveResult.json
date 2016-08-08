@@ -1,0 +1,58 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "version",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "calculationIdentifier",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "patientId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "planLabel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "containerId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "volumeOfInterest",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "error",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "doseSopUid",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "volumeUnit",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dosevector",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "volumevector",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "binSize",
+            "fieldType": "Float"
+        }
+    ],
+    "changelogDate": "20160726155233",
+    "dto": "mapstruct",
+    "service": "serviceClass",
+    "entityTableName": "dvh_curve_result",
+    "pagination": "pagination"
+}

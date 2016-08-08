@@ -51,7 +51,7 @@
 				</ui-select-choices> </ui-select>
 			</div>
 			
-					<ul ng-sortable="{animation:150}" class="list-group" ng-sortable>
+					<ul ng-sortable="sortableOptions" class="list-group" id="sortedConfigurationList" ng-sortable>
 						<li ng-repeat="computation in vm.configuration.computations track by $index" class="list-group-item">	
 							<span class="glyphicon glyphicon glyphicon-trash pull-right" ng-click="vm.removeComputation($index)"></span>
 							{{computation.computationIdentifier}}

@@ -1,0 +1,86 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myDoseResultLabel" translate="miaApp.doseResult.home.createOrEditLabel">Create or edit a Dose Result</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.doseResult.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.doseResult.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="miaApp.doseResult.doseSopUid" for="field_doseSopUid">Dose Sop Uid</label>
+            <input type="text" class="form-control" name="doseSopUid" id="field_doseSopUid"
+                    ng-model="vm.doseResult.doseSopUid"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="miaApp.doseResult.operation" for="field_operation">Operation</label>
+            <input type="text" class="form-control" name="operation" id="field_operation"
+                    ng-model="vm.doseResult.operation"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="miaApp.doseResult.result" for="field_result">Result</label>
+            <input type="number" class="form-control" name="result" id="field_result"
+                    ng-model="vm.doseResult.result"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="miaApp.doseResult.version" for="field_version">Version</label>
+            <input type="text" class="form-control" name="version" id="field_version"
+                    ng-model="vm.doseResult.version"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="miaApp.doseResult.calculationIdentifier" for="field_calculationIdentifier">Calculation Identifier</label>
+            <input type="text" class="form-control" name="calculationIdentifier" id="field_calculationIdentifier"
+                    ng-model="vm.doseResult.calculationIdentifier"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="miaApp.doseResult.patientId" for="field_patientId">Patient Id</label>
+            <input type="text" class="form-control" name="patientId" id="field_patientId"
+                    ng-model="vm.doseResult.patientId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="miaApp.doseResult.planLabel" for="field_planLabel">Plan Label</label>
+            <input type="text" class="form-control" name="planLabel" id="field_planLabel"
+                    ng-model="vm.doseResult.planLabel"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="miaApp.doseResult.containerId" for="field_containerId">Container Id</label>
+            <input type="text" class="form-control" name="containerId" id="field_containerId"
+                    ng-model="vm.doseResult.containerId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="miaApp.doseResult.volumeOfInterest" for="field_volumeOfInterest">Volume Of Interest</label>
+            <input type="text" class="form-control" name="volumeOfInterest" id="field_volumeOfInterest"
+                    ng-model="vm.doseResult.volumeOfInterest"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="miaApp.doseResult.error" for="field_error">Error</label>
+            <input type="text" class="form-control" name="error" id="field_error"
+                    ng-model="vm.doseResult.error"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,58 @@
+
+<div>
+    <h2><span translate="miaApp.volumeResult.detail.title">Volume Result</span> {{vm.volumeResult.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="miaApp.volumeResult.structSopUid">Struct Sop Uid</span></dt>
+        <dd>
+            <span>{{vm.volumeResult.structSopUid}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.volumeResult.result">Result</span></dt>
+        <dd>
+            <span>{{vm.volumeResult.result | number : 2}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.volumeResult.version">Version</span></dt>
+        <dd>
+            <span>{{vm.volumeResult.version}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.volumeResult.calculationIdentifier">Calculation Identifier</span></dt>
+        <dd>
+            <span>{{vm.volumeResult.calculationIdentifier}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.volumeResult.patientId">Patient Id</span></dt>
+        <dd>
+            <span>{{vm.volumeResult.patientId}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.volumeResult.planLabel">Plan Label</span></dt>
+        <dd>
+            <span>{{vm.volumeResult.planLabel}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.volumeResult.containerId">Container Id</span></dt>
+        <dd>
+            <span>{{vm.volumeResult.containerId}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.volumeResult.volumeOfInterest">Volume Of Interest</span></dt>
+        <dd>
+            <span>{{vm.volumeResult.volumeOfInterest}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.volumeResult.error">Error</span></dt>
+        <dd>
+            <span>{{vm.volumeResult.error}}</span>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

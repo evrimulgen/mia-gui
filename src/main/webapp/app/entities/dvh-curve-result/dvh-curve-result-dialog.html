@@ -1,0 +1,98 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myDvhCurveResultLabel" translate="miaApp.dvhCurveResult.home.createOrEditLabel">Create or edit a Dvh Curve Result</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.dvhCurveResult.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.dvhCurveResult.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="miaApp.dvhCurveResult.version" for="field_version">Version</label>
+            <input type="text" class="form-control" name="version" id="field_version"
+                    ng-model="vm.dvhCurveResult.version"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="miaApp.dvhCurveResult.calculationIdentifier" for="field_calculationIdentifier">Calculation Identifier</label>
+            <input type="text" class="form-control" name="calculationIdentifier" id="field_calculationIdentifier"
+                    ng-model="vm.dvhCurveResult.calculationIdentifier"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="miaApp.dvhCurveResult.patientId" for="field_patientId">Patient Id</label>
+            <input type="text" class="form-control" name="patientId" id="field_patientId"
+                    ng-model="vm.dvhCurveResult.patientId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="miaApp.dvhCurveResult.planLabel" for="field_planLabel">Plan Label</label>
+            <input type="text" class="form-control" name="planLabel" id="field_planLabel"
+                    ng-model="vm.dvhCurveResult.planLabel"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="miaApp.dvhCurveResult.containerId" for="field_containerId">Container Id</label>
+            <input type="text" class="form-control" name="containerId" id="field_containerId"
+                    ng-model="vm.dvhCurveResult.containerId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="miaApp.dvhCurveResult.volumeOfInterest" for="field_volumeOfInterest">Volume Of Interest</label>
+            <input type="text" class="form-control" name="volumeOfInterest" id="field_volumeOfInterest"
+                    ng-model="vm.dvhCurveResult.volumeOfInterest"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="miaApp.dvhCurveResult.error" for="field_error">Error</label>
+            <input type="text" class="form-control" name="error" id="field_error"
+                    ng-model="vm.dvhCurveResult.error"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="miaApp.dvhCurveResult.doseSopUid" for="field_doseSopUid">Dose Sop Uid</label>
+            <input type="text" class="form-control" name="doseSopUid" id="field_doseSopUid"
+                    ng-model="vm.dvhCurveResult.doseSopUid"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="miaApp.dvhCurveResult.volumeUnit" for="field_volumeUnit">Volume Unit</label>
+            <input type="text" class="form-control" name="volumeUnit" id="field_volumeUnit"
+                    ng-model="vm.dvhCurveResult.volumeUnit"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="miaApp.dvhCurveResult.dosevector" for="field_dosevector">Dosevector</label>
+            <input type="text" class="form-control" name="dosevector" id="field_dosevector"
+                    ng-model="vm.dvhCurveResult.dosevector"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="miaApp.dvhCurveResult.volumevector" for="field_volumevector">Volumevector</label>
+            <input type="text" class="form-control" name="volumevector" id="field_volumevector"
+                    ng-model="vm.dvhCurveResult.volumevector"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="miaApp.dvhCurveResult.binSize" for="field_binSize">Bin Size</label>
+            <input type="number" class="form-control" name="binSize" id="field_binSize"
+                    ng-model="vm.dvhCurveResult.binSize"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

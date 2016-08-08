@@ -96,3 +96,6 @@ zuul:
     resource_fileservice:
       path: /fileservice/**
       serviceId: fileservice
+    resource_resultservice:
+      path: /resultservice/**
+      serviceId: resultservice

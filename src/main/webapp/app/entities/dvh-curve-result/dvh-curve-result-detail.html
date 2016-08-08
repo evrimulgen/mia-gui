@@ -1,0 +1,95 @@
+<div>
+    <h2><span translate="miaApp.dvhCurveResult.detail.title">Dvh Curve Result</span> {{vm.dvhCurveResult.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="miaApp.dvhCurveResult.version">Version</span></dt>
+        <dd>
+            <span>{{vm.dvhCurveResult.version}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.dvhCurveResult.calculationIdentifier">Calculation Identifier</span></dt>
+        <dd>
+            <span>{{vm.dvhCurveResult.calculationIdentifier}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.dvhCurveResult.patientId">Patient Id</span></dt>
+        <dd>
+            <span>{{vm.dvhCurveResult.patientId}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.dvhCurveResult.planLabel">Plan Label</span></dt>
+        <dd>
+            <span>{{vm.dvhCurveResult.planLabel}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.dvhCurveResult.containerId">Container Id</span></dt>
+        <dd>
+            <span>{{vm.dvhCurveResult.containerId}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.dvhCurveResult.volumeOfInterest">Volume Of Interest</span></dt>
+        <dd>
+            <span>{{vm.dvhCurveResult.volumeOfInterest}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.dvhCurveResult.error">Error</span></dt>
+        <dd>
+            <span>{{vm.dvhCurveResult.error}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.dvhCurveResult.doseSopUid">Dose Sop Uid</span></dt>
+        <dd>
+            <span>{{vm.dvhCurveResult.doseSopUid}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.dvhCurveResult.volumeUnit">Volume Unit</span></dt>
+        <dd>
+            <span>{{vm.dvhCurveResult.volumeUnit}}</span>
+        </dd>
+        <hr>
+
+        <dt><span translate="miaApp.dvhCurveResult.dvhCurve">Chart</span></dt>
+        <dd>
+            <nvd3 options="options" data="data"></nvd3>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.dvhCurveResult.binSize">Bin Size</span></dt>
+        <dd>
+            <span>{{vm.dvhCurveResult.binSize}}</span>
+        </dd>
+        <hr>
+        <span ng-show="!vm.showrawvector">
+        <dt><span translate="miaApp.dvhCurveResult.dosevector">Dosevector</span></dt>
+        <dd>
+            <button ng-show="!vm.showrawvector" type="submit"
+                ng-click="vm.showrawvector=true"
+                class="btn btn-default">
+                <span class=""></span>&nbsp;<span translate="miaApp.dvhCurveResult.showvector"> Show Vector</span>
+            </button>
+        </dd>
+        <hr>
+        </span>
+        <span ng-show="vm.showrawvector">
+        <dt><span translate="miaApp.dvhCurveResult.dosevector">Dosevector</span></dt>
+        <dd>
+            <textarea rows="4" cols="100" readonly="true" class="boxsizingBorder">{{vm.dvhCurveResult.dosevector}}</textarea>
+        </dd>
+        <hr>
+        <dt><span translate="miaApp.dvhCurveResult.volumevector">Volumevector</span></dt>
+        <dd>
+            <textarea rows="4" cols="100" readonly="true" class="boxsizingBorder">{{vm.dvhCurveResult.volumevector}}</textarea>
+        </dd>
+        <hr>
+        </span>
+    </dl>
+
+
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+    
+     
+</div>
