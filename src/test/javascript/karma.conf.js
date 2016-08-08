@@ -47,6 +47,10 @@ module.exports = function (config) {
             'src/main/webapp/bower_components/Sortable/Sortable.js',
             'src/main/webapp/bower_components/Sortable/ng-sortable.js',
             'src/main/webapp/bower_components/Sortable/react-sortable-mixin.js',
+            'src/main/webapp/bower_components/angular-ui-select/dist/select.js',
+            'src/main/webapp/bower_components/d3/d3.js',
+            'src/main/webapp/bower_components/nvd3/build/nv.d3.js',
+            'src/main/webapp/bower_components/angular-nvd3/dist/angular-nvd3.js',
             'src/main/webapp/bower_components/angular-mocks/angular-mocks.js',
             // endbower
             'src/main/webapp/app/app.module.js',
