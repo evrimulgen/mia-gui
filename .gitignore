@@ -134,4 +134,4 @@ Desktop.ini
 .eslintcache
 
 miagui.log.*
-*bower_components*
+/src/main/webapp/bower_components/**
