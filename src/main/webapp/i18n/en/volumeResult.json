@@ -16,7 +16,7 @@
             "detail": {
                 "title": "Volume Result"
             },
-            "doseSopUid": "Dose Sop Uid",
+            "structSopUid": "Struct Sop Uid",
             "result": "Result (cc)",
             "version": "Version",
             "calculationIdentifier": "Calculation Identifier",

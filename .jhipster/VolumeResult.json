@@ -2,7 +2,7 @@
     "relationships": [],
     "fields": [
         {
-            "fieldName": "doseSopUid",
+            "fieldName": "structSopUid",
             "fieldType": "String"
         },
         {
