@@ -9,31 +9,53 @@
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
         
-        <div class="form-group">
-            <label class="control-label" translate="miaApp.containerconfiguration.configurationIdentifier" for="field_configurationIdentifier">ConfigurationIdentifier</label>
-            <!-- type="number" min="49152" max="65535" -->
-            <input 
-            type="number"
-            class="form-control" name="configurationIdentifier" id="field_configurationIdentifier"
-                    ng-model="vm.configuration.configurationIdentifier"
-                    min="0" 
-                    max="65534"
-                    required
-                    integer />
-            <div ng-show="editForm.configurationIdentifier.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.configurationIdentifier.$error.required" translate="entity.validation.required">
-                    This field is required.
-                </p>
-            </div>
-            
-             <p class="help-block"
-                    ng-show="editForm.configurationIdentifier.$error.integer 
-                        || editForm.configurationIdentifier.$error.min
-                        || editForm.configurationIdentifier.$error.max" 
-                    translate="miaApp.containerconfiguration.invalidport">
-                    Not valid number!
-                </p>
+       <div class="form-group">
+       	
+	       <div class="form-group">
+	           <label class="control-label" translate="miaApp.containerconfiguration.name" for="field_name">Name</label>
+	           <input type="text" class="form-control" name="name" id="field_name"
+	                   ng-model="vm.configuration.name" required />
+	            <div ng-show="editForm.name.$invalid">
+	               <p class="help-block"
+	                   ng-show="editForm.name.$error.required" translate="entity.validation.required">
+	                   This field is required.
+	               </p>
+	           </div>
+	       </div>
+       
+           <label class="control-label" translate="miaApp.containerconfiguration.configurationIdentifier" for="field_configurationIdentifier">ConfigurationIdentifier (AE input port [0-65534])</label>
+           <input 
+           type="number"
+           class="form-control" name="configurationIdentifier" id="field_configurationIdentifier"
+                   ng-model="vm.configuration.configurationIdentifier"
+                   min="0" 
+                   max="65534"
+                   required
+                   integer />
+           <div ng-show="editForm.configurationIdentifier.$invalid">
+               <p class="help-block"
+                   ng-show="editForm.configurationIdentifier.$error.required" translate="entity.validation.required">
+                   This field is required.
+               </p>
+           </div>
+           
+           <label class="control-label" translate="miaApp.containerconfiguration.outputPort" for="field_outputPort">AE output port [0-65534]</label>
+           <input 
+           type="number"
+           class="form-control" name="outputPort" id="field_outputPort"
+                   ng-model="vm.configuration.outputPort"
+                   min="0" 
+                   max="65534"
+                   integer
+           />
+                       
+       		<p class="help-block"
+              ng-show="editForm.configurationIdentifier.$error.integer 
+                  || editForm.configurationIdentifier.$error.min
+                  || editForm.configurationIdentifier.$error.max" 
+              translate="miaApp.containerconfiguration.invalidport">
+              Not valid number!
+          	</p>
          </div>
         
         <p>

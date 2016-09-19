@@ -25,7 +25,9 @@
                   "title": "ContainerConfiguration"
               },
               "userId": "UserId",
-              "configurationIdentifier": "Id (AE Port [0-65534])",
+              "name": "Name",
+              "configurationIdentifier": "AE input port [0-65534]",
+              "outputPort": "AE output port [0-65534]",
               "computation": "Computation",
               "computations": "Computations",
               "add":"Add",
