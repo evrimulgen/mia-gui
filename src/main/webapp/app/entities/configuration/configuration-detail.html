@@ -3,16 +3,30 @@
     <h2><span translate="miaApp.containerconfiguration.detail.title">Configuration</span> {{vm.configuration.id}}</h2>
     <hr>
     <dl class="dl-horizontal">
+        <dt><span translate="miaApp.containerconfiguration.name">Name</dt></dt>
+        <dd>
+            <span>{{vm.configuration.name}}<span>
+        </dd>
+        <hr>
         <dt><span translate="miaApp.containerconfiguration.userId">UserId</dt></dt>
         <dd>
             <span>{{vm.configuration.userId}}<span>
         </dd>
-        <hr>
-        <dt><span translate="miaApp.containerconfiguration.configurationIdentifier">ConfigurationIdentifier</dt></dt>
+        <dt><span translate="miaApp.containerconfiguration.configurationIdentifier">AE input port</dt></dt>
         <dd>
             <span>{{vm.configuration.configurationIdentifier}}<span>
         </dd>
-        <hr>
+        <dt><span translate="miaApp.containerconfiguration.outputPort">AE output port</dt></dt>
+        <dd>
+            <span>{{vm.configuration.outputPort}}<span>
+        </dd>
+        <dt><span translate="miaApp.containerconfiguration.computations">Computations</dt></dt>
+        <dd>
+            <span ng-repeat="computation in vm.configuration.computations">
+            	
+            	<td><a ui-sref="computation-detail({id:computation.id})">{{computation.computationIdentifier}}</a></td>
+            <span>{{$last ? '' : ', '}}
+        </dd>
     </dl>
 
     <button type="submit"
