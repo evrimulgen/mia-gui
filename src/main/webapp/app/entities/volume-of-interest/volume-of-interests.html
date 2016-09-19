@@ -18,7 +18,6 @@
         <table class="jh-table table table-striped">
             <thead>
                 <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
-                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="name"><span translate="miaApp.volumeOfInterest.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th><span translate="miaApp.volumeOfInterest.rtogs">Rtogs</span></th>
                     <th><span translate="miaApp.volumeOfInterest.operators">Operators</span></th>
@@ -27,8 +26,7 @@
             </thead>
             <tbody>
                 <tr ng-repeat="volumeOfInterest in vm.volumeOfInterests track by volumeOfInterest.id">
-                    <td><a ui-sref="volume-of-interest-detail({id:volumeOfInterest.id})">{{volumeOfInterest.id}}</a></td>
-                    <td>{{volumeOfInterest.name}}</td>
+                    <td><a ui-sref="volume-of-interest-detail({id:volumeOfInterest.id})">{{volumeOfInterest.name}}</a></td>
                     <td>{{volumeOfInterest.rtogs}}</td>
                     <td>{{volumeOfInterest.operators}}</td>
                     <td class="text-right">
