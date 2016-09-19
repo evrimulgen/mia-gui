@@ -23,7 +23,7 @@
 	           </div>
 	       </div>
        
-           <label class="control-label" translate="miaApp.containerconfiguration.configurationIdentifier" for="field_configurationIdentifier">ConfigurationIdentifier (AE input port [0-65534])</label>
+           <label class="control-label" translate="miaApp.containerconfiguration.configurationIdentifierDialog" for="field_configurationIdentifier">ConfigurationIdentifier (AE input port [0-65534])</label>
            <input 
            type="number"
            class="form-control" name="configurationIdentifier" id="field_configurationIdentifier"
@@ -39,7 +39,15 @@
                </p>
            </div>
            
-           <label class="control-label" translate="miaApp.containerconfiguration.outputPort" for="field_outputPort">AE output port [0-65534]</label>
+           <p class="help-block"
+              ng-show="editForm.configurationIdentifier.$error.integer 
+                  || editForm.configurationIdentifier.$error.min
+                  || editForm.configurationIdentifier.$error.max" 
+              translate="miaApp.containerconfiguration.invalidport">
+              Not valid number!
+          	</p>
+           
+           <label class="control-label" translate="miaApp.containerconfiguration.outputPortDialog" for="field_outputPort">AE output port [0-65534]</label>
            <input 
            type="number"
            class="form-control" name="outputPort" id="field_outputPort"
@@ -48,14 +56,15 @@
                    max="65534"
                    integer
            />
-                       
-       		<p class="help-block"
-              ng-show="editForm.configurationIdentifier.$error.integer 
-                  || editForm.configurationIdentifier.$error.min
-                  || editForm.configurationIdentifier.$error.max" 
+           
+           <p class="help-block"
+              ng-show="editForm.outputPort.$error.integer 
+                  || editForm.outputPort.$error.min
+                  || editForm.outputPort.$error.max" 
               translate="miaApp.containerconfiguration.invalidport">
               Not valid number!
-          	</p>
+          	</p>                      
+       		
          </div>
         
         <p>

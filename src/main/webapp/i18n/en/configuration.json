@@ -26,15 +26,17 @@
               },
               "userId": "UserId",
               "name": "Name",
-              "configurationIdentifier": "AE input port [0-65534]",
-              "outputPort": "AE output port [0-65534]",
+              "configurationIdentifierDialog": "AE input port [0-65534]",
+              "configurationIdentifierOverview": "AE input port",
+              "outputPortDialog": "AE output port [0-65534]",
+              "outputPortOverview": "AE output port",
               "computation": "Computation",
               "computations": "Computations",
               "add":"Add",
               "startstopScp":"Dicom SCP",
               "start":"Start",
               "stop":"Stop",
-              "invalidport":"Invalid port range is [0-65534] where port is an integer",
+              "invalidport":"Invalid port. Port must be an integer between 0 and 65534",
               "title": "Configuration"
         }
     }
