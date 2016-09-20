@@ -69,7 +69,7 @@
         
         <p>
         <div class="panel panel-default">
-            <div class="panel-heading" translate="miaApp.containerconfiguration.computations">Panel heading</div>
+            <div class="panel-heading" translate="miaApp.containerconfiguration.computations">Computations</div>
             <div class="well">
             <div class="operatorlist">
 
@@ -82,14 +82,23 @@
 				</ui-select-choices> </ui-select>
 			</div>
 			
-					<ul ng-sortable="sortableOptions" class="list-group" id="sortedConfigurationList" ng-sortable>
+					<!-- 
+					<ul ng-sortable="sortableOptions" class="list-group" id="sortedConfigurationList">
 						<li ng-repeat="computation in vm.configuration.computations track by $index" class="list-group-item">	
 							<span class="glyphicon glyphicon glyphicon-trash pull-right" ng-click="vm.removeComputation($index)"></span>
 							{{computation.computationIdentifier}}
 						</li>
 						
 					</ul>
-
+					 -->
+					
+					<ul ui-sortable class="list-group" ng-model="vm.configuration.computations">
+					  <li ng-repeat="computation in vm.configuration.computations" class="list-group-item">
+					  	<span class="glyphicon glyphicon glyphicon-trash pull-right" ng-click="vm.removeComputation($index)"></span>
+					  	{{ computation.computationIdentifier }}
+					  </li>
+					</ul>
+										
 					<hr>
                 <button type="button" class="btn btn-primary" ng-click="vm.addComputation()">
                 <span class="glyphicon glyphicon-plus"></span>&nbsp;<span translate="miaApp.containerconfiguration.add">Add</span>
