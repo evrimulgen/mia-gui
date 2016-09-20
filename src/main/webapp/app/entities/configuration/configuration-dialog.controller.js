@@ -56,12 +56,6 @@
         	}
         }
         
-        vm.addComputationNew = function(){
-        	if(vm.selectedComputation.id && vm.configuration.computations.indexOf(vm.selectedComputation)==-1){
-        		vm.configuration.computations.push(vm.selectedComputation);
-        	}
-        }
-        
         vm.removeComputation= function(index){
         	if (index > -1) {
         		vm.configuration.computations.splice(index, 1);
