@@ -29,7 +29,7 @@
     "ng-file-upload": "12.0.4",
     "ngInfiniteScroll": "1.2.2",
     "swagger-ui": "2.1.4",
-    "Sortable": "angular-ng-sortablejs#^1.4.2",
+    "angular-ui-sortable": "v0.14.3",
     "angular-ui-select": "^0.18.1",
     "d3": "3.5.17",
     "angular-nvd3": "^1.0.8"
@@ -46,13 +46,6 @@
     "bootstrap": {
       "main": [
         "dist/css/bootstrap.css"
-      ]
-    },
-    "Sortable": {
-      "main": [
-        "Sortable.js",
-        "ng-sortable.js",
-        "react-sortable-mixin.js"
       ]
     }
   },

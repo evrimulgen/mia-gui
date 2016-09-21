@@ -6,7 +6,7 @@
         .controller('ConfigurationDialogController', ConfigurationDialogController);
 
     ConfigurationDialogController.$inject = ['$scope', '$stateParams', '$uibModalInstance', 'entity', 'Configuration', 'Computation', 'Principal'];
-
+    
     function ConfigurationDialogController ($scope, $stateParams, $uibModalInstance, entity, Configuration, Computation, Principal) {
         var vm = this;
         vm.configuration = entity;
@@ -69,26 +69,5 @@
                 vm.account = account;
             });
         }
-        
-              
-        $scope.sortableOptions = {
-        		animation: 150,
-        		group: 'ng',
-        		store: {
-        		    // Sorting acquisition (called during initialization)
-        		    get: function (sortable) {
-        		      var order = localStorage.getItem(sortable.options.group);
-        		      return order ? order.split('|') : [];
-        		    },
-
-        		    // Saving the acquired sorting (called each time upon sorting modification)
-        		    set: function (sortable) {
-        		      var order = sortable.toArray();
-        		      localStorage.setItem(sortable.options.group, order.join('|'));
-        		      console.log(order);
-        		    }
-        		  }
-        	  };
-        
     }
 })();
