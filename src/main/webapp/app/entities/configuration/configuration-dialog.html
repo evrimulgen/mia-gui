@@ -81,17 +81,7 @@
 					<span ng-bind-html="computation.computationIdentifier | highlight: $select.search"></span>
 				</ui-select-choices> </ui-select>
 			</div>
-			
-					<!-- 
-					<ul ng-sortable="sortableOptions" class="list-group" id="sortedConfigurationList">
-						<li ng-repeat="computation in vm.configuration.computations track by $index" class="list-group-item">	
-							<span class="glyphicon glyphicon glyphicon-trash pull-right" ng-click="vm.removeComputation($index)"></span>
-							{{computation.computationIdentifier}}
-						</li>
-						
-					</ul>
-					 -->
-					
+
 					<ul ui-sortable class="list-group" ng-model="vm.configuration.computations">
 					  <li ng-repeat="computation in vm.configuration.computations" class="list-group-item">
 					  	<span class="glyphicon glyphicon glyphicon-trash pull-right" ng-click="vm.removeComputation($index)"></span>
