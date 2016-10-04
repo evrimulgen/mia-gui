@@ -92,7 +92,9 @@
                         entity: function () {
                             return {
                                 userId: null,
-                                configurationIdentifier: null,
+                                name: null,
+                                inputPort: null,
+                                outputPort: null,
                                 id: null
                             };
                         }
