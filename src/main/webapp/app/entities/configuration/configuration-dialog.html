@@ -23,26 +23,26 @@
 	           </div>
 	       </div>
        
-           <label class="control-label" translate="miaApp.containerconfiguration.configurationIdentifierDialog" for="field_configurationIdentifier">ConfigurationIdentifier (AE input port [0-65534])</label>
+           <label class="control-label" translate="miaApp.containerconfiguration.inputPortDialog" for="field_inputPort">AE input port [0-65534]</label>
            <input 
            type="number"
-           class="form-control" name="configurationIdentifier" id="field_configurationIdentifier"
-                   ng-model="vm.configuration.configurationIdentifier"
+           class="form-control" name="inputPort" id="field_inputPort"
+                   ng-model="vm.configuration.inputPort"
                    min="0" 
                    max="65534"
                    required
                    integer />
-           <div ng-show="editForm.configurationIdentifier.$invalid">
+           <div ng-show="editForm.inputPort.$invalid">
                <p class="help-block"
-                   ng-show="editForm.configurationIdentifier.$error.required" translate="entity.validation.required">
+                   ng-show="editForm.inputPort.$error.required" translate="entity.validation.required">
                    This field is required.
                </p>
            </div>
            
            <p class="help-block"
-              ng-show="editForm.configurationIdentifier.$error.integer 
-                  || editForm.configurationIdentifier.$error.min
-                  || editForm.configurationIdentifier.$error.max" 
+              ng-show="editForm.inputPort.$error.integer 
+                  || editForm.inputPort.$error.min
+                  || editForm.inputPort.$error.max" 
               translate="miaApp.containerconfiguration.invalidport">
               Not valid number!
           	</p>

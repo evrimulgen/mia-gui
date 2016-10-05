@@ -19,7 +19,7 @@
             <thead>
                 <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
                     <th jh-sort-by="name"><span translate="miaApp.containerconfiguration.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="configurationIdentifier"><span translate="miaApp.containerconfiguration.configurationIdentifier">ConfigurationIdentifier</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="inputPort"><span translate="miaApp.containerconfiguration.inputPort">AE input port</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="outputPort"><span translate="miaApp.containerconfiguration.outputPort">AE output port</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th><span translate="miaApp.containerconfiguration.startstopScp">startstopScp</span></th>
                     <th></th>
@@ -28,15 +28,15 @@
             <tbody>
                 <tr ng-repeat="configuration in vm.configurations track by configuration.id">
                     <td><a ui-sref="containerconfiguration-detail({id:configuration.id})">{{configuration.name}}</a></td>
-                    <td>{{configuration.configurationIdentifier}}</td>
+                    <td>{{configuration.inputPort}}</td>
                     <td>{{configuration.outputPort}}</td>
                     <td>
-                        <button ng-click="vm.stopScp(configuration.configurationIdentifier)"
+                        <button ng-click="vm.stopScp(configuration.inputPort)"
                                     class="btn btn-primary btn-sm">
                                 <span class="glyphicon glyphicon-stop"></span>
                                 <span class="hidden-xs hidden-sm" translate="miaApp.containerconfiguration.stop"></span>
                             </button>
-                            <button ng-click="vm.startScp(configuration.userId , configuration.configurationIdentifier)"
+                            <button ng-click="vm.startScp(configuration.userId , configuration.inputPort)"
                                     class="btn btn-primary btn-sm">
                                 <span class="glyphicon glyphicon-play"></span>
                                 <span class="hidden-xs hidden-sm" translate="miaApp.containerconfiguration.start"></span>

@@ -15,7 +15,7 @@
                 method: 'GET',
                 transformResponse: function (data) {
                     data = angular.fromJson(data);
-                    data.configurationIdentifier = angular.fromJson(data.configurationIdentifier);
+                    data.inputPort = angular.fromJson(data.inputPort);
                     return data;
                 }
             },
