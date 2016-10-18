@@ -11,7 +11,7 @@
 
     <groupId>nl.maastro.mia.gui</groupId>
     <artifactId>mia</artifactId>
-    <version>1.0.7</version>
+    <version>1.0.8-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>mia</name>
 
@@ -21,7 +21,7 @@
 
     <scm>
         <connection>scm:git:http://fs-bitbucket-01/scm/mia/gui.git</connection>
-        <tag>1.0.7</tag>
+        <tag>1.15.1</tag>
         <url>http://fs-bitbucket-01/scm/mia/gui.git</url>
     </scm>
 
