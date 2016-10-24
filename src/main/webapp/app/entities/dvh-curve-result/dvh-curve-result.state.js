@@ -102,7 +102,6 @@
                                 volumeUnit: null,
                                 dosevector: null,
                                 volumevector: null,
-                                binSize: null,
                                 id: null
                             };
                         }

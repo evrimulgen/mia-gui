@@ -66,8 +66,7 @@
 	        DvhCurveComputation:
 	        {
 	        	moduleName: "DvhCurveComputation",
-	        	absolute: ["true","false"],
-	        	binsize: "integer"
+	        	absolute: ["true","false"]
 	        },
 	        DvhDoseComputation:
 	        {
